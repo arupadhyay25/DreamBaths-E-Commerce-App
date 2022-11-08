@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Top_offers = () => {
+export const TopOffers = () => {
   return <div>Top_offers</div>;
 };

@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Body_care = () => {
+export const BodyCare = () => {
   return <div>Body_care</div>;
 };

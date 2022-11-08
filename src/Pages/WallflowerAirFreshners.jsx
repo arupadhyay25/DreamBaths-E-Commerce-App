@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Wallflower_AirFreshners = () => {
+export const WallflowerAirFreshners = () => {
   return <div>Wallflower_AirFreshners</div>;
 };

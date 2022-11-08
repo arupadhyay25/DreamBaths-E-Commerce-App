@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const HandSoaps_Sanitizers = () => {
+export const HandSoapsSanitizers = () => {
   return (
     <div>HandSoaps_Sanitizers</div>
   )

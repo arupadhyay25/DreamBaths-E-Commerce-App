@@ -1,29 +1,29 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "../Pages/HomePage";
-import { Top_offers } from "../Pages/Top_offers";
-import { Body_care } from "../Pages/Body_care";
+import { TopOffers } from "../Pages/TopOffers";
+import { BodyCare } from "../Pages/BodyCare";
 import { Candles } from "../Pages/Candles";
-import { Wallflower_AirFreshners } from "../Pages/Wallflower_AirFreshners";
-import { HandSoaps_Sanitizers } from "../Pages/HandSoaps_Sanitizers";
-import { Mens_Shop } from "../Pages/Mens_Shop";
+import { WallflowerAirFreshners } from "../Pages/WallflowerAirFreshners";
+import { HandSoapsSanitizers } from "../Pages/HandSoapsSanitizers";
+import { MensShop } from "../Pages/MensShop";
 import { Moxy } from "../Pages/Moxy";
-import { Holiday_Shop } from "../Pages/Holiday_Shop";
-import { Login_page } from "../Pages/Login_page";
+import { HolidayShop } from "../Pages/HolidayShop";
+import { LoginPage } from "../Pages/LoginPage";
 
 export const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="login" element={<Login_page />} />
-      <Route path="/top-offers" element={<Top_offers />} />
-      <Route path="/body-care" element={<Body_care />} />
+      <Route path="login" element={<LoginPage />} />
+      <Route path="/top-offers" element={<TopOffers />} />
+      <Route path="/body-care" element={<BodyCare />} />
       <Route path="/candles" element={<Candles />} />
-      <Route path="/home-fragrance" element={<Wallflower_AirFreshners />} />
-      <Route path="/hand-soaps-sanitizers" element={<HandSoaps_Sanitizers />} />
-      <Route path="/mens-shop" element={<Mens_Shop />} />
+      <Route path="/home-fragrance" element={<WallflowerAirFreshners />} />
+      <Route path="/hand-soaps-sanitizers" element={<HandSoapsSanitizers />} />
+      <Route path="/mens-shop" element={<MensShop />} />
       <Route path="/moxy-collection" element={<Moxy />} />
-      <Route path="/holiday-shop" element={<Holiday_Shop />} />
+      <Route path="/holiday-shop" element={<HolidayShop />} />
     </Routes>
   );
 };

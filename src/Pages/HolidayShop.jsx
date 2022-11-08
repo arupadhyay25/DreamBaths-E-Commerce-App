@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Holiday_Shop = () => {
+export const HolidayShop = () => {
   return <div>Holiday_Shop</div>;
 };
