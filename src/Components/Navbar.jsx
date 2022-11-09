@@ -43,44 +43,44 @@ export const Navbar = () => {
 
           <div className="signupsection">
             <button className="logbtn">
-              <Link to="/login">Login/Signup</Link>
+              <Link to="/login"><i class="fa-regular fa-user"></i></Link>
             </button>
-            <button className="logbtn">fav</button>
-            <button>cart</button>
+            <button className="logbtn"><i class="fa-sharp fa-solid fa-heart"></i></button>
+            <button className="cartbtn-0nav"><i class="fa-solid fa-cart-shopping"></i></button>
           </div>
         </div>
         <div className="navbar-links">
-          <Link to="/top-offers">Top Offers</Link>
-          <Link to="/body-care">Body Care</Link>
-          <Link to="/candles">Candles</Link>
-          <Link to="/home-fragrance">Wallflower & AirFreshners</Link>
-          <Link to="/hand-soaps-sanitizers">Hand Soaps & Sanitizers </Link>
-          <Link to="/mens-shop">Men's Shop</Link>
-          <Link to="/moxy-collection">Moxy</Link>
-          <Link to="holiday-shop">Holiday Shop</Link>
+          <Link  className="pagelinks-cat012" to="/top-offers">Top Offers</Link>
+          <Link  className="pagelinks-cat012" to="/body-care">Body Care</Link>
+          <Link  className="pagelinks-cat012" to="/candles">Candles</Link>
+          <Link  className="pagelinks-cat012" to="/home-fragrance">Wallflower & AirFreshners</Link>
+          <Link className="pagelinks-cat012"   to="/hand-soaps-sanitizers">Hand Soaps & Sanitizers </Link>
+          <Link  className="pagelinks-cat012" to="/mens-shop">Men's Shop</Link>
+          <Link  className="pagelinks-cat012" to="/moxy-collection">Moxy</Link>
+          <Link  className="pagelinks-cat012" to="holiday-shop">Holiday Shop</Link>
         </div>
       </div>
       <div className={isMobail?"resdrawer":"norespon"}>
-        <div className="closebuton" ><button onClick={()=>setisMobail(!isMobail)}> close x</button></div>
+        <div className="closebuton" ><button onClick={()=>setisMobail(!isMobail)} className="btnclosedrawer-987"> <i class="fa-solid fa-xmark"></i></button></div>
         <div className="navbar-links-drawer">
 
-          <h4 onClick={()=>setisMobail(!isMobail)}> <Link to="/top-offers">Top Offers</Link></h4>
-        
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link to="/body-care">Body Care</Link></h4>
-        
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link to="/candles">Candles</Link></h4>
-        
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link to="/home-fragrance">Wallflower & AirFreshners</Link></h4>
-        
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link to="/hand-soaps-sanitizers">Hand Soaps & Sanitizers </Link></h4>
-        
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link to="/mens-shop">Men's Shop</Link></h4>
-        
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link to="/moxy-collection">Moxy</Link></h4>
-        
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link to="holiday-shop">Holiday Shop</Link></h4>
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link >Favereat</Link></h4>
-          <h4 onClick={()=>setisMobail(!isMobail)}><Link >Login</Link></h4>
+          <h4 onClick={()=>setisMobail(!isMobail)}> <Link className="drawer-links-0934"  to="/top-offers">Top Offers</Link></h4>
+          
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" to="/body-care">Body Care</Link></h4>
+          
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" to="/candles">Candles</Link></h4>
+          
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" to="/home-fragrance">Wallflower & AirFreshners</Link></h4>
+          
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" to="/hand-soaps-sanitizers">Hand Soaps & Sanitizers </Link></h4>
+          
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" to="/mens-shop">Men's Shop</Link></h4>
+          
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" to="/moxy-collection">Moxy</Link></h4>
+          
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" to="holiday-shop">Holiday Shop</Link></h4>
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" >WishList</Link></h4>
+          <h4 onClick={()=>setisMobail(!isMobail)}><Link  className="drawer-links-0934" >Login</Link></h4>
         </div>
 
 
