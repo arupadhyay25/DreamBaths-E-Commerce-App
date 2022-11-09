@@ -1,6 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.slid{
+  margin-top: -25px;
+  height: 45px;
+  background-color:#e5f0da;
+  color: rgb(17, 77, 30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar{
+  max-width: 100%;
+  
+}
+.drawer{
+  display: none;
+}
 .navbar-links {
   width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
+}
+.logosection{
+ width: 100%;
+padding: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: blanchedalmond;
+ 
+
+}
+.logosection>div{
+  width: 33.33%;
+}
+.logo{
+max-width:250px;
+margin: auto;
+}
+.signupsection{
+justify-self:flex-end;
+}
+.resdrawer{
+  width:80%;
+  height: 100%;
+
+  background-color: rgb(231, 219, 219);
+  position: fixed;
+  top: 0;
+}
+.norespon{
+  display:none;
+}
+.closebuton{
+  height: 50px;
+width: 100%;
+
+background-color: aqua;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+}
+.navbar-links-drawer{
+ text-align: left;
+  
+}
+
+@media screen and (max-width: 780px) {
+  .navbar-links {
+    display: none;
+  }
+  .drawer{
+    display:block;
+  }
+  .logbtn{
+    display: none;
+   
+   }
+
+
 }
