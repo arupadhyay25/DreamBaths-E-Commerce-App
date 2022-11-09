@@ -1,0 +1,4 @@
+[
+    {"id":1,"firstname":"hello","lastname":"world","email":"helloWorld@123.com","password":"123","role":"admin"},
+    {"id":2,"firstname":"sachin","lastname":"tendulakar","email":"sachin@123.com","password":"123","role":"user"}
+]
