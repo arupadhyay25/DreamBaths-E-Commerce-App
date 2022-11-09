@@ -2,10 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 const Info = styled.div`
-  width : 40%;
-  height : auto;
-  margin : 100px auto;
+  width : 100%;
+  margin : auto 40px;
   text-align : left;
+ 
+  @media (min-width: 768px){
+    width : 40%;
+    height : auto;
+    margin : 100px auto;
+    text-align : left;
+
+  }
   
 `;
 const Detail = styled.p`
@@ -17,26 +24,46 @@ const Detail = styled.p`
   
 `
 const TopOfferDiv = styled.div`
+ 
+  grid-template-columns : repeat(1,1fr);
+  width : 100%;
+  padding-left : 40px;
+  @media (min-width: 768px) {
   display : grid;
   grid-template-columns : repeat(2,1fr);
   grid-gap : 20px;
   width : 40%;
   height : auto;
   margin : 50px auto;
-  
+  padding-left : 0px;
+  }
+
+`
+const TopOfferDataDiv = styled.div`
+  margin-bottom : 30px;
+  @media (min-width: 768px){
+  margin-bottom: 30px;
+  }
 `
 const Header = styled.div`
-  width : 40%;
-  height : auto;
-  margin : 50px auto;
-  margin-bottom : -10px;
-  line-height: 0px;
-  text-align : left;
- 
+  display : none;
+  @media (min-width: 768px){
+    width : 40%;
+    height : auto;
+    margin : 50px auto;
+    margin-bottom : -10px;
+    line-height: 0px;
+    text-align : left;
+    display: block ;
+  }
 `
 const ProductImage = styled.img`
-  height : 250px;
-  width : 250px;
+height : 350px;
+width : 350px;
+  @media (min-width: 768px){
+    height : 200px;
+    width : 200px;
+  }
  
 `
 const ShopButton = styled.button`
@@ -44,6 +71,14 @@ const ShopButton = styled.button`
   font-size : 12px;
   padding : 10px 70px;
   background-color : transparent;
+`
+const OfferAdd = styled.p`
+font-size : 16px;
+
+ @media (min-width: 768px){
+  font-size : 18px;
+  font-weight : 300;
+ }
 `
 export const TopOffers = () => {
   const offerData = [
@@ -87,21 +122,20 @@ export const TopOffers = () => {
   return (
           <>
             <Header>
-            <h2>TOP OFFERS</h2>
-            <br></br>
-            <p style={{fontSize:"18px", fontWeight:"300"}}>Too good to pass up! Shop our best offers now.</p>
+            <h2 style={{marginBottom:"40px"}}>TOP OFFERS</h2>
+            <OfferAdd>Too good to pass up! Shop our best offers now.</OfferAdd>
             <hr className="Top-offer-hr" />
             </Header>
             
             <TopOfferDiv className="topoffer-div" >
             {offerData.map((e) => {
             return (
-              <div className="topoffer-data-div" style={{marginBottom:"30px"}}>
+              <TopOfferDataDiv className="topoffer-data-div">
                 <ProductImage className="topoffer-data-div-img" src={e.image} alt="" />
                 <p className="offer-box-div-p">{e.text}</p>
                 <h2 className="offer-box-div-p1" style={{fontWeight:"400"}}>{e.btext}</h2>
                 <ShopButton className="offer-box-div-but">SHOP</ShopButton>
-              </div>
+              </TopOfferDataDiv>
             );
             })}
             </TopOfferDiv>
