@@ -1,0 +1,8 @@
+.bodycare-products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.bodycare-products>div>img{
+   width: 100px;
+   height: 300px;
+}
