@@ -10,11 +10,13 @@ import { MensShop } from "../Pages/MensShop";
 import { Moxy } from "../Pages/Moxy";
 import { HolidayShop } from "../Pages/HolidayShop";
 import { LoginPage } from "../Pages/LoginPage";
+import { Admin } from "../Pages/Admin";
 
 export const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/admin" element={<Admin />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="/top-offers" element={<TopOffers />} />
       <Route path="/body-care" element={<BodyCare />} />
