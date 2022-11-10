@@ -1,0 +1,230 @@
+.Footer_Main{
+    display: grid;
+    grid-template-columns: 27% 73%;
+    padding: 40px 150px;
+    gap: 50px;
+}
+.Footer_One{
+    height: 100%;
+}
+.Footer_One_Head{
+    text-align: left;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+    color: #333333;
+  }
+.Footer_One_Child{
+font-size: 14px;
+text-align: left;
+margin: 7px 0px;
+}
+.Footer_One_Child_box{
+    display: flex;
+}
+.Footer_One_Child_box input{
+    margin-left: -45px;
+    font-size: 16px;
+    width: 50%;
+    border: 1px solid #9c9797;
+    color: gray;
+    padding: 10px 30px;
+}
+.Footer_One_Child_box input:hover{
+    border: 1px dashed grey;
+}
+.Footer_One_Child_submit{
+    margin-left: 134px;
+    position: relative;
+    top: -40px;
+    border: none;
+    font-size: 12px;
+    color: white;
+    background-color: #333333;
+    padding: 13px 20px;
+}
+.Footer_One_Child_submit:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.Footer_info{
+   margin-left:-40px;
+   font-size: 16px;
+   padding: 5px;
+   margin-top: 3px;
+   border-radius: 30px;
+   color: #696868;
+   background-color:#fcf2f2
+} 
+.Footer_info:hover{
+    color: white;
+    background-color: black;
+    cursor: s;
+}
+.Footer_One_Icons_Main{
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 15px;  
+}
+.Footer_One_Icons{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    font-size: 28px;
+}
+.Facebook{
+    color: #005699;
+}
+.Facebook:hover{
+  cursor: pointer;
+  
+}
+.Twitter{
+    color: #54a9e9;
+    font-size: 28px;
+}
+.Twitter:hover{
+    cursor: pointer;
+}
+.Instagram{
+    color: white;
+    background-color: #0a548d;
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 3px;
+    font-size: 20px;
+}
+.Instagram:hover{
+    cursor: pointer;
+}
+.TikTok{
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 30px;
+}
+.TikTok:hover{
+  cursor: pointer;
+}
+.Youtube{
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+    padding: 3px;
+    font-size: 20px;
+}
+.Youtube:hover{
+    cursor: pointer;
+}
+.pin{
+    color: rgb(173, 11, 11);
+}
+.pin:hover{
+    cursor: pointer;
+}
+.Footer_Two{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+    margin: auto;
+}
+.Footer_Two_columnHead{
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
+    margin-left: 7px;
+ }
+.Footer_Two_columnChild{
+   padding: 7px;
+}
+.Footer_Two_columnChild:hover{
+    color: #005699;
+    cursor: pointer;
+ }
+.Footer_Main2 {
+  font-size: 14px;
+}
+
+span{
+    font-size: 14px;
+    color: #333333;  
+}
+
+.Footer_icons{
+
+    font-size: 20px;
+}
+.Footer_Main2{
+    background-color: #F2F2F2;
+}
+.Footer_Main2 div{
+    margin: auto;
+    display: flex;
+    margin-top: 13px;
+}
+.Footer_Main2_child{
+    border: 1px solid grey;
+    padding: 0px 10px;
+    border-top: none;
+    border-bottom: none;
+    color: #333333;
+}
+.Footer_Main2_child:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.Footer_Main22{
+   position: relative;
+   top: -38px;
+}
+.Footer_Main3{
+   width: 30%;
+   position: relative;
+   top: -30px;
+    text-align: center;
+    color: #666666;
+}
+hr{
+    color: #F2F2F2;
+    border: 1px solid #F2F2F2;
+    
+}
+
+
+@media (max-width:750px){
+    .Footer_Main{
+        grid-template-columns: 100% 0%;
+        padding: 20px;
+        gap: 0px;
+    }
+    .Footer_One_Head{
+        text-align: left;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: bold;
+        color: #333333;
+      }
+    .Footer_Two{
+        display: none;
+    }
+    .Footer_Main2 div{
+        display: block;
+        border: none;
+        text-align: left;
+    }
+    .Footer_Main22{
+        position: relative;
+        top: -5px;
+     }
+    .Footer_Main3{
+        width: 95%;
+        position: relative;
+        top: 5px;
+     }
+}
