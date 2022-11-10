@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import "./Navbar.css";
 import Slider from "react-slick";
 import { useState } from "react";
 
 export const Navbar = () => {
   const [isMobail, setisMobail] = useState(false);
+  const navigate = useNavigate()
   var settings = {
     dots: false,
     infinite: true,
@@ -36,7 +37,7 @@ export const Navbar = () => {
             </button>
           </div>
           <div>
-            <img src="/Image/logo.png" alt="dfd" className="logo" />
+            <img src="/Image/logo.png" alt="dfd" className="logo" onClick={() => navigate('/')}/>
           </div>
 
           <div className="signupsection">
@@ -45,7 +46,7 @@ export const Navbar = () => {
                 <i class="fa-regular fa-user"></i>
               </Link>
             </button>
-            <button className="logbtn">
+            <button className="favbtn">
               <i class="fa-sharp fa-solid fa-heart"></i>
             </button>
             <button className="cartbtn-0nav">

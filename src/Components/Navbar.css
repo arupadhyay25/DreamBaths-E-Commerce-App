@@ -67,7 +67,7 @@
 .navbar-links-drawer {
   text-align: left;
 }
-.logbtn,
+.logbtn,.favbtn,
 .cartbtn-0nav {
   color: #015394;
   margin-left: 25px;
@@ -123,9 +123,7 @@
     background-color: #e5f0da;
     border: 0;
   }
-  .logbtn {
-    display: none;
-  }
+
   .logosection {
     width: 100%;
     display: flex;
@@ -140,12 +138,27 @@
     width: 10%;
   }
   .logosection > div:nth-child(2) {
-    width: 60%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .logosection > div:nth-child(3) {
-    width: 10%;
+    display: flex;
+    width:30%;
+    align-items: center;
+    justify-content:flex-end;
   }
-  .cartbtn-0nav {
-    font-size: 1.2rem;
+  .favbtn{
+    display: none;
   }
+  .logbtn,
+.cartbtn-0nav {
+  color: #015394;
+  margin-left: 15px;
+  border: 0;
+  font-size: 1.3rem;
+  background-color: rgb(255, 255, 255);
+}
+  
 }
