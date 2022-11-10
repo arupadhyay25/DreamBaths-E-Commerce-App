@@ -1,5 +1,5 @@
 import React from "react";
-import star from "../Images/star.jpg";
+
 
 export const Singleproduct = ({ image, title, titledesp, price, category }) => {
   return (
@@ -14,7 +14,7 @@ export const Singleproduct = ({ image, title, titledesp, price, category }) => {
           .fill("")
           .map((_, i) => (
             <span>
-              <img src={star} alt="dhfjkdh" width="30px" height="35px" />
+              <img src="/Image/star.jpg" alt="dhfjkdh" width="30px" height="35px" />
             </span>
           ))}
       </span>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import logo from "./logo.png";
 import Slider from "react-slick";
 import { useState } from "react";
 
@@ -37,7 +36,7 @@ export const Navbar = () => {
             </button>
           </div>
           <div>
-            <img src={logo} alt="" className="logo" />
+            <img src="/Image/logo.png" alt="dfd" className="logo" />
           </div>
 
           <div className="signupsection">
