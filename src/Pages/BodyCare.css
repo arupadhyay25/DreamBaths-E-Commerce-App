@@ -1,14 +1,100 @@
-.bodycare-products {
-  width: 85%;
+/* header */
+.Product-header {
+  width: 100%;
+  height: auto;
   margin: auto;
+  padding: 10px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Product-header > div > h1 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* main */
+.Product-main-div {
+  width: 95%;
+  height: auto;
+  margin: auto;
+  display: flex;
+}
+/* left */
+.Product-left-div {
+  width: 15%;
+  height: auto;
+  padding: 10px;
+}
+.Product-left-div-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* right */
+.Product-right-div {
+  width: 85%;
+  height:  auto;
+}
+
+.Product-grid{
+  width: 100%;
+  height: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 10px;
 }
-.bodycare-products > div {
-  border: solid;
+.Product-grid>div{
+  zoom: 0.8;
 }
-.bodycare-products > div > img {
-  width: 100px;
-  height: 300px;
+.sort-by{
+  text-align: left;
+  font-size: large;
+}
+
+
+/* media Query */
+@media screen and (max-width: 480px) {
+  .Product-header {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    zoom: 0.5;
+  }
+  .Product-main-div {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    display: flex;
+  }
+  .Product-left-div {
+    width: 25%;
+    height: auto;
+  }
+  .Product-right-div {
+    width: 75%;
+    height: auto;
+  }
+  .Product-left-div{
+    zoom: 0.6;
+    padding-top: 20px;
+  }
+  .Product-left-div-header {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Product-grid{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 10px;
+    zoom: 0.6;
+  }
 }

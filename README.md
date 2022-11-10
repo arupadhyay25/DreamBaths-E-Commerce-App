@@ -37,3 +37,18 @@ _DreamBaths is an E-Commerce websitr that sells personal care and beauty product
 - 👤 [Madhusudan Prajapat](https://github.com/Madhusudan0906)
 
 - 👤 [Saif Arif Shaikh](https://github.com/Saif-sk5417)
+
+
+
+  let arr=state.filter((e) => e.category === "candles")
+  let obj={}
+
+  for (let i = 0; i < arr.length; i++) {
+   if(obj[arr[i].titledesp]==undefined){
+    obj[arr[i].titledesp]=1
+   }else{
+    obj[arr[i].titledesp]++
+   }
+    
+  }
+  console.log(obj);

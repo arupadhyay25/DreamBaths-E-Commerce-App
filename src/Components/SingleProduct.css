@@ -1,0 +1,9 @@
+.single-product-starrating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-product-price {
+  text-decoration: line-through;
+}
