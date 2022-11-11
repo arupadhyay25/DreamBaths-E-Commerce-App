@@ -71,32 +71,36 @@ const LoginComp = ({ onShow }) => {
     };
     return (
         <div>
-            <Heading as='h4'>Login</Heading>
+            <Heading size='xl' className={styles.textColorGradient}>Welcome Back</Heading>
             
             <p className={styles.textp}>If you already have an account with us, sign in below</p>
             <br />
             <div className={styles.formlogin}>
+                <p style={{fontSize:"14px",marginTop:"-15px",marginBottom:"-15px",marginLeft:"5px"}}>Email Address</p>
+                <br/>
                 <input
                     type="email"
                     className={styles.inp}
-                    placeholder="Email Address"
                     ref={emailLRef}
                 />
                 <br />
+                <p style={{fontSize:"14px",marginTop:"-15px",marginBottom:"-15px",marginLeft:"5px"}}>Password</p>
+                <br/>
                 <input
                     type="password"
                     className={styles.inp}
-                    placeholder="Password"
+                    
                     ref={passLRef}
                 />
                 <br />
+                <p className={styles.colorBlue}>Forgot Password ?</p>
                 <button className={styles.sub} onClick={handleLogin}>
                     Login
                 </button>
                 {/* <input type="submit" value="Login" className={styles.sub} /> */}
                 <div className={styles.linehr}></div>
                 <div className={styles.forgotsignFlex}>
-                    <p className={styles.colorBlue}>Forgot Password ?</p>
+                    
                     <p className={styles.pointerhover}>
                         Don't have an account?{" "}
                         <span
@@ -142,59 +146,53 @@ const SignupComp = ({ onShow }) => {
     };
     return (
         <div>
-            <Heading as='h4'>Sign Up</Heading>
+            <Heading size='lg' className={styles.textColorGradient}>Sign Up</Heading>
             
             <p className={styles.textp}>Lets get you set Up</p>
             <br />
             <div className={styles.formlogin}>
+            <p style={{fontSize:"14px",marginLeft:"5px"}}>First Name</p>
                 <input
                     type="text"
                     className={styles.sinp}
-                    placeholder="First Name"
                     ref={fNameRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Last Name</p>
                 <input
                     type="text"
                     className={styles.sinp}
-                    placeholder="Last Name"
                     ref={lNameRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Email Address</p>
                 <input
                     type="email"
                     className={styles.sinp}
-                    placeholder="Email Address"
                     ref={sEmailRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Confirm Email Address</p>
                 <input
                     type="email"
                     className={styles.sinp}
-                    placeholder="Confirm Email Address"
                     ref={sEmailConfRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Password</p>
                 <input
                     type="password"
                     className={styles.sinp}
-                    placeholder="Password"
                     ref={SPassRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Confirm Password</p>
                 <input
                     type="password"
                     className={styles.sinp}
-                    placeholder="Confirm Password"
                     ref={SPassConfRef}
                     required
                 />
-                <br />
                 <button className={styles.ssub} onClick={handleSignup}>
                     Sign Up
                 </button>

@@ -1,17 +1,13 @@
 import React, { useEffect, useRef } from "react";
+import * as ReactDOM from 'react-dom';
 import styles from "./Admin.module.css";
 import Plot from "react-plotly.js";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import {category,categoryList,getTitleDesp,categoryListCount} from "./Admin.utits.js"
+import { useState } from "react";
 export const Admin = () => {
-    const getData = () => {
-        let db = [];
-        let n = db.length;
-        let category = new Set();
-        for (let i = 0; i < n; i++) {
-            category.add(db[i].category);
-        }
-        console.log(category);
-    };
+    const [rawData,setRawData]=useState({});
+    const [selectedCat,setSelectedCat]=useState("");
     const dashRef = useRef();
     const categoryRef = useRef();
     const productRef = useRef();
@@ -32,8 +28,24 @@ export const Admin = () => {
     };
     useEffect(() => {
         visibleDash();
+        let result=getTitleDesp('bodycare');
+        setSelectedCat('Bodycare');
+        setRawData(result);
     }, []);
 
+    const pickColor=()=>{
+      let col=['red','blue','green','pink','aqua','Aquamarine','Brown','Coral','DarkCyan','DarkMagenta','DarkSalmon','DodgerBlue','GoldenRod','IndianRed','MediumOrchid','MediumTurquoise','Navy','Orange','Sienna'];
+      let random_col= col[Math.floor(Math.random()*col.length)];
+      return random_col;
+    }
+    const showData=(e)=>{
+        console.log(e.target.innerText);
+        let cat=e.target.innerText;
+        setSelectedCat(cat);
+        cat=cat.toLowerCase();
+        let result=getTitleDesp(cat.trim());
+        setRawData(result);
+    }
     return (
         <div className={styles.main}>
             <div className={styles.sideMenuAdmin}>
@@ -69,22 +81,14 @@ export const Admin = () => {
                         <Plot
                             data={[
                                 {
-                                    x: [
-                                        "sun",
-                                        "mon",
-                                        "tue",
-                                        "wed",
-                                        "thur",
-                                        "fri",
-                                        "sat",
-                                    ],
-                                    y: [72, 20, 40, 40, 50, 55, 65, 60],
+                                    x: categoryList,
+                                    y: categoryListCount,
                                     type: "bar",
                                     mode: "line+markers",
                                     maker: { color: "green" },
                                 },
                             ]}
-                            layout={{ width: 600, height: 320, title: "Sales" }}
+                            layout={{ width: 600, height: 320, title: "Category Counts" }}
                         />
                     </div>
                     <div>
@@ -112,6 +116,40 @@ export const Admin = () => {
             <div ref={categoryRef} className={styles.mainDash}>
                 <Heading as="h4" size='lg' style={{textDecoration:"underline"}}>Category</Heading>
                 <br/>
+                <div className={styles.categoryBox}>
+                {categoryList&&categoryList.map((e,i)=>{
+                  return (<div key={i} className={`${styles.categoryCard} ${styles[pickColor()]}`}>
+                    <p onClick={(e)=>{showData(e)}}>{e}</p>
+                  </div>)
+                })}
+                </div>
+                <div className={styles.showSubCat}>
+                    <Heading size='md'>{selectedCat}</Heading>
+                    <br/>
+                <Table>
+                    <Thead>
+                        <Tr>
+                            <Th>Sub-Category</Th>
+                            <Th>Product Count</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody className={styles.scrollShowSubCat}>
+
+                    {Object.keys(rawData).map((e,i)=>{
+                        return (
+                            <Tr key={i}>
+                                <Td>{e}</Td>
+                                <Td>{rawData[e]}</Td>
+                            </Tr>
+                        );
+                    })}            
+                    </Tbody>
+               
+                                
+                </Table>
+                    
+                </div>
+                
             </div>
             <div ref={productRef} className={styles.mainDash}>
                 <Heading as="h4" size='lg' style={{textDecoration:"underline"}}>Products</Heading>

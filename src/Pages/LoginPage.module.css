@@ -1,5 +1,7 @@
     *>p{
         font-weight: 500;
+        text-align: left;
+        margin-left: 15px;
     }
     .main{
         width:95%;
@@ -10,17 +12,27 @@
         /* border: 1px solid transparent; */
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
+    .textColorGradient{
+        background:linear-gradient(90deg,#00dbde,#fc00ff);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+    .textp{
+        text-align: center;
+        margin-bottom: -20px;
+    }
     .pagePart{
         display: flex;
         justify-content: center;
-        gap:10px;
+        gap:50px;
         padding: 20px;
     }
     .ppPart1{
-        width: 45%;
+        width: 50%;
     }
     .ppPart2{
-        width: 55%;
+        width: 50%;
     }
     .loginImg{
         margin-top: 40px;
@@ -28,19 +40,22 @@
     .linehr{
         border: 1px solid;
         width:80%;
-        margin: auto;
+        /* margin: auto; */
         margin-top: 10px;
         padding: 0px;
     }
     .formlogin{
         width: 80%;
-        background-color: #fdfcfc;
-        margin: auto;
+        /* background-color: #fdfcfc; */
+        /* margin: auto; */
         /* border: 1px solid; */
         border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
         padding: 30px 10px;
         /* padding-top: 20px; */
+        display: flex;
+        flex-direction: column;
+
     }
     .pointerhover{
         cursor: pointer;
@@ -50,22 +65,22 @@
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
-        font-family: Helvetica, Arial, sans-serif;
+        /* font-family: Helvetica, Arial, sans-serif; */
         border-radius: 5px;
-        margin-top: 10px;
+        /* margin-top: 10px; */
         font-size: 17px;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
     .formlogin>.sinp{
         width: 70%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
-        font-family: Helvetica, Arial, sans-serif;
+        /* font-family: Helvetica, Arial, sans-serif; */
         border-radius: 5px;
-        margin-top: 10px;
+        /* margin-top: 10px; */
         font-size: 17px;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
     
     .formlogin>.sub{
@@ -136,20 +151,22 @@
     }
     .linehr{
         border: 1px solid;
-        width:80%;
-        margin: auto;
+        width:90%;
+        /* margin: auto; */
         margin-top: 10px;
         padding: 0px;
     }
     .formlogin{
         /* width: 80%; */
-        background-color: #fdfcfc;
-        margin: auto;
+        /* background-color: #fdfcfc; */
+        /* margin: auto; */
         /* border: 1px solid; */
         border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
         padding: 30px 10px;
         /* padding-top: 20px; */
+        display: flex;
+        flex-direction: column;
     }
     .pointerhover{
         cursor: pointer;
@@ -159,22 +176,22 @@
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
-        font-family: Helvetica, Arial, sans-serif;
+        /* font-family: Helvetica, Arial, sans-serif; */
         border-radius: 5px;
         margin-top: 10px;
         font-size: 17px;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
     .formlogin>.sinp{
         width: 70%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
-        font-family: Helvetica, Arial, sans-serif;
+        /* font-family: Helvetica, Arial, sans-serif; */
         border-radius: 5px;
         margin-top: 10px;
         font-size: 17px;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
     
     .formlogin>.sub{
@@ -250,18 +267,18 @@
     }
     .linehr{
         border: 1px solid;
-        width:80%;
-        margin: auto;
+        width:90%;
+        /* margin: auto; */
         margin-top: 10px;
         padding: 0px;
     }
     .formlogin{
         /* width: 90%; */
-        background-color: #fdfcfc;
-        margin: auto;
+        /* background-color: #fdfcfc; */
+        /* margin: auto; */
         /* border: 1px solid; */
         border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
         padding: 30px 10px;
         /* padding-top: 20px; */
     }
@@ -273,22 +290,22 @@
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
-        font-family: Helvetica, Arial, sans-serif;
+        /* font-family: Helvetica, Arial, sans-serif; */
         border-radius: 5px;
         margin-top: 10px;
         font-size: 17px;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
     .formlogin>.sinp{
         width: 90%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
-        font-family: Helvetica, Arial, sans-serif;
+        /* font-family: Helvetica, Arial, sans-serif; */
         border-radius: 5px;
         margin-top: 10px;
         font-size: 17px;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
     
     .formlogin>.sub{
