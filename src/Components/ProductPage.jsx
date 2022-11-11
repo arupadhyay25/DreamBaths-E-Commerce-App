@@ -7,17 +7,16 @@ import { getproductsuccess } from "../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { FilterSort } from "../Components/FilterSort";
 import { useLocation, useSearchParams } from "react-router-dom";
-import axios from "axios";
 
 export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
   let [page, setpage] = useState(1);
   let [cart, setcart] = useState([]);
   let dispatch = useDispatch();
   let Products = useSelector((s) => s.products);
+  let [state, setstate] = useState(0);
 
   let [searchParams] = useSearchParams();
   let location = useLocation();
-  console.log(cart);
 
   useEffect(() => {
     if (location || Products.length === 0) {
@@ -31,14 +30,13 @@ export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
         _sort: _sort[0],
         _order: _order[0],
         _page: page,
-        _limit: 25,
+        _limit: 13,
       };
       let url = `http://localhost:8080/products?category=${category}`;
       let data = [url, queryparams];
       dispatch(getproductsuccess(data));
-      axios.get("http://localhost:8080/cart").then((r) => setcart(r.data));
     }
-  }, [page, location.search]);
+  }, [page, location.search, state]);
 
   return (
     <>
@@ -78,6 +76,9 @@ export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
                   rating={e.rating}
                   reviewCount={e.reviewCount}
                   cartquantity={e.cartquantity}
+                  id={e.id}
+                  state={state}
+                  setstate={setstate}
                 />
               ))}
           </div>

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import {
+  ADD_PRODUCTS_QUANTITY,
   GET_PRODUCTS_FAILURE,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
@@ -35,3 +36,9 @@ export const getproductfailure = () => {
     type: GET_PRODUCTS_FAILURE,
   };
 };
+export const addproductquantity = () => {
+  return {
+    type: ADD_PRODUCTS_QUANTITY,
+  };
+};
+

@@ -1,5 +1,7 @@
 import { StarIcon } from "@chakra-ui/icons";
 import {
+  Alert,
+  AlertIcon,
   Badge,
   Box,
   Button,
@@ -8,7 +10,8 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import "./SingleProduct.css";
 
 export const Singleproduct = ({
@@ -20,7 +23,15 @@ export const Singleproduct = ({
   rating,
   reviewCount,
   cartquantity,
+  id,
+  state,
+  setstate,
 }) => {
+  let handleAddtocart = (id) => {
+    axios.patch(`http://localhost:8080/products/${id}`, { cartquantity: 1 });
+    setstate(state + 1);
+  };
+
   return (
     <Flex
       maxW=""
@@ -93,9 +104,20 @@ export const Singleproduct = ({
           </Box>
         </Box>
         <Box>
-          <Button disabled={cartquantity > 0}>
-            {cartquantity > 0 ? "Added" : "ADD TO CART"}
-          </Button>
+          {cartquantity != 0 ? (
+            <Alert borderRadius={15} w="auto" status="success">
+              <AlertIcon />
+              Added to cart !!
+            </Alert>
+          ) : (
+            <Button
+              onClick={() => handleAddtocart(id)}
+              disabled={cartquantity > 0}
+              colorScheme="teal"
+            >
+              {cartquantity > 0 ? "added" : "ADD TO CART"}
+            </Button>
+          )}
         </Box>
       </VStack>
     </Flex>
