@@ -5,7 +5,6 @@ const Info = styled.div`
   width : 100%;
   margin : auto 40px;
   text-align : left;
- 
   @media (min-width: 768px){
     width : 40%;
     height : auto;
@@ -27,15 +26,14 @@ const TopOfferDiv = styled.div`
  
   grid-template-columns : repeat(1,1fr);
   width : 100%;
-  padding-left : 40px;
   @media (min-width: 768px) {
   display : grid;
-  grid-template-columns : repeat(2,1fr);
+  grid-template-columns : repeat(4,1fr);
   grid-gap : 20px;
-  width : 40%;
+  width : 80%;
   height : auto;
-  margin : 50px auto;
-  padding-left : 0px;
+  margin : 100px auto;
+  border:1px solid;
   }
 
 `
@@ -43,6 +41,7 @@ const TopOfferDataDiv = styled.div`
   margin-bottom : 30px;
   @media (min-width: 768px){
   margin-bottom: 30px;
+  border:1px solid;
   }
 `
 const Header = styled.div`
@@ -62,7 +61,7 @@ height : 350px;
 width : 350px;
   @media (min-width: 768px){
     height : 200px;
-    width : 200px;
+    width : 100%;
   }
  
 `
@@ -70,7 +69,8 @@ const ShopButton = styled.button`
   border : 2px solid black;
   font-size : 12px;
   padding : 10px 70px;
-  background-color : transparent;
+  background-color : black;
+  color : white;
 `
 const OfferAdd = styled.p`
 font-size : 16px;
@@ -118,11 +118,23 @@ export const TopOffers = () => {
       text: " ROOM SPRAYS",
       btext: "All @ B2G1",
     },
+    {
+      image:
+        "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw6310a4a8/images/Christmas2022/bc_travel_c1_ss.jpg?yocs=o_s_",
+      text: " TRAVEL, HAND & LIP CARE",
+      btext: "All @ B3G1",
+    },
+    {
+      image:
+        "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwc0851ed2/images/Christmas2022/sn_pbac_ch1_ss.jpg?yocs=o_s_",
+      text: " HAND SANITIZER",
+      btext: "BUY 5 @ ₹ 1099",
+    },
   ];
   return (
           <>
             <Header>
-            <h2 style={{marginBottom:"40px"}}>TOP OFFERS</h2>
+            <h1 style={{marginBottom:"40px"}}>TOP OFFERS</h1>
             <OfferAdd>Too good to pass up! Shop our best offers now.</OfferAdd>
             <hr className="Top-offer-hr" />
             </Header>
