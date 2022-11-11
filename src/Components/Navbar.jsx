@@ -33,7 +33,7 @@ export const Navbar = () => {
         <div className="logosection">
           <div>
             <button className="drawer" onClick={() => setisMobail(!isMobail)}>
-              <i class="fa-solid fa-bars"></i>
+              <i className="fa-solid fa-bars"></i>
             </button>
           </div>
           <div>
@@ -43,14 +43,14 @@ export const Navbar = () => {
           <div className="signupsection">
             <button className="logbtn">
               <Link to="/login">
-                <i class="fa-regular fa-user"></i>
+                <i className="fa-regular fa-user"></i>
               </Link>
             </button>
             <button className="favbtn">
-              <i class="fa-sharp fa-solid fa-heart"></i>
+              <i className="fa-sharp fa-solid fa-heart"></i>
             </button>
             <button className="cartbtn-0nav">
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"></i>
             </button>
           </div>
         </div>
