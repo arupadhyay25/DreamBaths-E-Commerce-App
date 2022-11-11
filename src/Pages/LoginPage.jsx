@@ -1,3 +1,4 @@
+import { Heading } from "@chakra-ui/react";
 import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
@@ -10,7 +11,7 @@ const users = [
         id: 1,
         firstname: "hello",
         lastname: "world",
-        email: "helloWorld@123.com",
+        email: "hello@Admin.com",
         password: "123",
         role: "admin",
     },
@@ -29,11 +30,18 @@ export const LoginPage = () => {
 
     return (
         <div className={styles.main}>
+            <div className={styles.pagePart}>
+                <div className={styles.ppPart1}>
+                    <img src="/Image/people.jpeg" alt='peopleImg' width="100%" className={styles.loginImg} />
+                </div>
+                <div className={styles.ppPart2}>
             {show ? (
                 <LoginComp onShow={() => setShow(false)} />
             ) : (
                 <SignupComp onShow={() => setShow(true)} />
             )}
+            </div>
+            </div>
         </div>
     );
 };
@@ -63,8 +71,9 @@ const LoginComp = ({ onShow }) => {
     };
     return (
         <div>
-            <h3>Login </h3>
-            <p>If you already have an account with us, sign in below</p>
+            <Heading as='h4'>Login</Heading>
+            
+            <p className={styles.textp}>If you already have an account with us, sign in below</p>
             <br />
             <div className={styles.formlogin}>
                 <input
@@ -133,8 +142,9 @@ const SignupComp = ({ onShow }) => {
     };
     return (
         <div>
-            <h3>Sign Up </h3>
-            <p>Lets get you set Up</p>
+            <Heading as='h4'>Sign Up</Heading>
+            
+            <p className={styles.textp}>Lets get you set Up</p>
             <br />
             <div className={styles.formlogin}>
                 <input

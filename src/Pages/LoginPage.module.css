@@ -1,8 +1,29 @@
-
+    *>p{
+        font-weight: 500;
+    }
     .main{
-        width:80%;
+        width:95%;
         margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
         min-height: 600px;
+        /* border: 1px solid transparent; */
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .pagePart{
+        display: flex;
+        justify-content: center;
+        gap:10px;
+        padding: 20px;
+    }
+    .ppPart1{
+        width: 45%;
+    }
+    .ppPart2{
+        width: 55%;
+    }
+    .loginImg{
+        margin-top: 40px;
     }
     .linehr{
         border: 1px solid;
@@ -12,7 +33,7 @@
         padding: 0px;
     }
     .formlogin{
-        width: 50%;
+        width: 80%;
         background-color: #fdfcfc;
         margin: auto;
         /* border: 1px solid; */
@@ -91,10 +112,27 @@
     }
 
 @media screen and (max-width:768px) {
+
     .main{
         width:80%;
         margin: auto;
         min-height: 600px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .pagePart{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+        padding: 20px;
+    }
+    .ppPart1{
+        width: 80%;
+        margin: auto;
+    }
+    .ppPart2{
+        width: 90%;
     }
     .linehr{
         border: 1px solid;
@@ -104,7 +142,7 @@
         padding: 0px;
     }
     .formlogin{
-        width: 80%;
+        /* width: 80%; */
         background-color: #fdfcfc;
         margin: auto;
         /* border: 1px solid; */
@@ -193,6 +231,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .pagePart{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+        padding: 10px;
+    }
+    .ppPart1{
+        width: 80%;
+        margin: auto;
+    }
+    .ppPart2{
+        width: 90%;
     }
     .linehr{
         border: 1px solid;
@@ -202,7 +256,7 @@
         padding: 0px;
     }
     .formlogin{
-        width: 90%;
+        /* width: 90%; */
         background-color: #fdfcfc;
         margin: auto;
         /* border: 1px solid; */
