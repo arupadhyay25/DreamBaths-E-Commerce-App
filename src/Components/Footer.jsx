@@ -47,8 +47,8 @@ export const Footer = () => {
     return (
       <div className={styles.Footer_Two_column}>
         <div className={styles.Footer_Two_columnHead}>{head}</div>
-        {arr.map((el) => (
-          <div className={styles.Footer_Two_columnChild}>{el}</div>
+        {arr.map((el,i) => (
+          <div key={i} className={styles.Footer_Two_columnChild}>{el}</div>
         ))}
       </div>
     );
