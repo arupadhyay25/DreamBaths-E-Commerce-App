@@ -5,6 +5,18 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import { IoLogoInstagram } from "react-icons/io";
 import { FaTiktok } from "react-icons/fa";
 import { TfiYoutube } from "react-icons/tfi";
+import {
+  Menu,
+  Button,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from '@chakra-ui/react'
+import { ChevronDownIcon } from '@chakra-ui/icons';
 export const Footer = () => {
   const column_1 = [
     "Help & FAQs",
@@ -74,12 +86,15 @@ export const Footer = () => {
           </div>
           <div>
             <div className={styles.Footer_One_Child}>Confirm Email</div>
-            <div className={styles.Footer_One_Child_box}>
+            <div className={styles.Footer_One_Child_box2}>
               <div>
                 <input type="text" />
               </div>
+              <div>
+              <button className={styles.Footer_One_Child_submit}>SUBMIT</button>
+              </div>
             </div>
-            <button className={styles.Footer_One_Child_submit}>SUBMIT</button>
+            
           </div>
           <div>
             <div className={styles.Footer_One_Icons_Main}>Get Connected</div>
@@ -100,18 +115,41 @@ export const Footer = () => {
           <FooterColumn head="FIND US" arr={column_4} />
         </div>
       </div>
+      <div className={styles.Footer_media_columns}>
+        <Menu>
+  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}
+    px={20}
+    py={5}
+    colorScheme='#F2F2F2'
+    transition='all 0.2s'
+    borderRadius='lg'
+    borderWidth='1px'
+    _hover={{ bg: 'gray.400' }}
+    _expanded={{ bg: 'blue.400' }}
+    _focus={{ boxShadow: 'outline' }}
+  >
+   LET US HELP !
+  </MenuButton>
+  < MenuList>
+  <MenuItem>CUSTOMER CARE</MenuItem>
+  <MenuItem>MY ACCOUNT</MenuItem>
+  <MenuItem>DISCOVER</MenuItem>
+  <MenuItem>FIND US</MenuItem>
+  </ MenuList>
+  </Menu>
+        </div>
       <div className={styles.Footer_Main2}>
         <div>
           <div className={styles.Footer_Main21}>
-            {bhai.map((el) => (
-              <div className={styles.Footer_Main2_child}>{el}</div>
+            {bhai.map((el,i) => (
+              <div key={i} className={styles.Footer_Main2_child}>{el}</div>
             ))}
           </div>
         </div>
         <div>
           <div className={styles.Footer_Main22}>
-            {bhai2.map((el) => (
-              <div className={styles.Footer_Main2_child}>{el}</div>
+            {bhai2.map((el,i) => (
+              <div key={i} className={styles.Footer_Main2_child}>{el}</div>
             ))}
           </div>
         </div>
