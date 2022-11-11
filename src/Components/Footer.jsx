@@ -59,8 +59,8 @@ export const Footer = () => {
     return (
       <div className={styles.Footer_Two_column}>
         <div className={styles.Footer_Two_columnHead}>{head}</div>
-        {arr.map((el) => (
-          <div className={styles.Footer_Two_columnChild}>{el}</div>
+        {arr.map((el,i) => (
+          <div key={i} className={styles.Footer_Two_columnChild}>{el}</div>
         ))}
       </div>
     );
@@ -141,15 +141,15 @@ export const Footer = () => {
       <div className={styles.Footer_Main2}>
         <div>
           <div className={styles.Footer_Main21}>
-            {bhai.map((el) => (
-              <div className={styles.Footer_Main2_child}>{el}</div>
+            {bhai.map((el,i) => (
+              <div key={i} className={styles.Footer_Main2_child}>{el}</div>
             ))}
           </div>
         </div>
         <div>
           <div className={styles.Footer_Main22}>
-            {bhai2.map((el) => (
-              <div className={styles.Footer_Main2_child}>{el}</div>
+            {bhai2.map((el,i) => (
+              <div key={i} className={styles.Footer_Main2_child}>{el}</div>
             ))}
           </div>
         </div>
