@@ -6,7 +6,7 @@
       "price": 79.75637918307795,
       "titledesp": "Ultimate Hydration Body Cream",
       "id": 1,
-      "cartquantity": 0,
+      "cartquantity": 1,
       "category": "bodycare",
       "reviewCount": 299,
       "rating": 1
@@ -50,7 +50,7 @@
       "price": 121.02335990995867,
       "titledesp": "Shower Gel",
       "id": 5,
-      "cartquantity": 0,
+      "cartquantity": 1,
       "category": "bodycare",
       "reviewCount": 150,
       "rating": 5
@@ -61,7 +61,7 @@
       "price": 114.47972378043387,
       "titledesp": "Body Spray",
       "id": 6,
-      "cartquantity": 0,
+      "cartquantity": 1,
       "category": "bodycare",
       "reviewCount": 263,
       "rating": 3
@@ -8359,6 +8359,41 @@
       "category": "holidays",
       "reviewCount": 197,
       "rating": 3
+    }
+  ],
+  "cart": [
+    {
+      "title": "Bourbon",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwef08bb2c/crop/026552804_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 79.75637918307795,
+      "titledesp": "Ultimate Hydration Body Cream",
+      "id": 1,
+      "cartquantity": 0,
+      "category": "bodycare",
+      "reviewCount": 299,
+      "rating": 1
+    },
+    {
+      "title": "Classic Flannel",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwcf9d3d94/crop/026553504_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 91.60612210633235,
+      "titledesp": "Body Spray",
+      "id": 2,
+      "cartquantity": 0,
+      "category": "bodycare",
+      "reviewCount": 264,
+      "rating": 4
+    },
+    {
+      "title": "Eucalyptus Lavender",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw729ebf2e/crop/026569410_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 94.36499501852572,
+      "titledesp": "Shower Steamers",
+      "id": 3,
+      "cartquantity": 0,
+      "category": "bodycare",
+      "reviewCount": 294,
+      "rating": 1
     }
   ]
 }

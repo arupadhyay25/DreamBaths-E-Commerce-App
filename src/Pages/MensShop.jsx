@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react";
+import { ProductPage } from "../Components/ProductPage";
 
-export const MensShop = () => {
+export let MensShop = () => {
   return (
-    <div>Mens_Shop</div>
-  )
-}
+    <ProductPage
+      category={"mensshop"}
+      heading={"Men's Fragrance, Body Care & More"}
+      cat1={"Body Spray"}
+      cat2={"Wallflowers Fragrance Refill"}
+      cat3={"Ultimate Hydration Body Cream"}
+      cat4={"Gentle Foaming Hand Soap"}
+    />
+  );
+};

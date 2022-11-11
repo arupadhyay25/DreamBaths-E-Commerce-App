@@ -19,6 +19,7 @@ export const Singleproduct = ({
   category,
   rating,
   reviewCount,
+  cartquantity,
 }) => {
   return (
     <Flex
@@ -31,7 +32,6 @@ export const Singleproduct = ({
       textAlign="left"
     >
       <VStack>
-        ={" "}
         <Box>
           <Image
             src={image}
@@ -42,7 +42,6 @@ export const Singleproduct = ({
             p={10}
           />
         </Box>
-        ={" "}
       </VStack>
       <VStack>
         <Box p="6">
@@ -69,7 +68,6 @@ export const Singleproduct = ({
           >
             {titledesp}
           </Box>
-
           <Box>
             <Box as="span" color="gray.600" fontSize="xl">
               <Text as="s">₹{(price + price / 10).toFixed(2)}</Text>
@@ -95,7 +93,9 @@ export const Singleproduct = ({
           </Box>
         </Box>
         <Box>
-          <Button>ADD TO CART</Button>
+          <Button disabled={cartquantity > 0}>
+            {cartquantity > 0 ? "Added" : "ADD TO CART"}
+          </Button>
         </Box>
       </VStack>
     </Flex>

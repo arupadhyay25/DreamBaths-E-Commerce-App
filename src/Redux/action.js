@@ -15,10 +15,10 @@ let params={
   _sort:"price",
   _order:"asc"
 }
-export let getproductsuccess = (queryparams) => (dispatch) => {
+export let getproductsuccess = (data) => (dispatch) => {
   axios
-    .get("http://localhost:8080/products?category=candles", {
-      params: queryparams,
+    .get(data[0], {
+      params: data[1],
     })
     .then((result) => {
       dispatch({
