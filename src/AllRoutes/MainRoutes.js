@@ -12,12 +12,14 @@ import { HolidayShop } from "../Pages/HolidayShop";
 import { LoginPage } from "../Pages/LoginPage";
 import { Admin } from "../Pages/Admin";
 import { Cartpage } from "../Pages/Cartpage";
+import { Trail } from "../Pages/Trail";
 
 export const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/admin" element={<Admin />} />
+      <Route path="/trail" element={<Trail />} />
       <Route path="/cart" element={<Cartpage />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="/top-offers" element={<TopOffers />} />

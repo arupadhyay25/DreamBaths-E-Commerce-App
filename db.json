@@ -6,7 +6,7 @@
       "price": 79.75637918307795,
       "titledesp": "Ultimate Hydration Body Cream",
       "id": 1,
-      "cartquantity": 1,
+      "cartquantity": 0,
       "category": "bodycare",
       "reviewCount": 299,
       "rating": 1
@@ -50,7 +50,7 @@
       "price": 121.02335990995867,
       "titledesp": "Shower Gel",
       "id": 5,
-      "cartquantity": 1,
+      "cartquantity": 0,
       "category": "bodycare",
       "reviewCount": 150,
       "rating": 5
@@ -61,7 +61,7 @@
       "price": 114.47972378043387,
       "titledesp": "Body Spray",
       "id": 6,
-      "cartquantity": 1,
+      "cartquantity": 0,
       "category": "bodycare",
       "reviewCount": 263,
       "rating": 3
