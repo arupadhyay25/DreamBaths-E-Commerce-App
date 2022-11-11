@@ -1,3 +1,4 @@
+import { StarIcon } from "@chakra-ui/icons";
 import { Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -7,6 +8,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
   let [category, setcategory] = useState(
     searchParams.getAll("titledesp") || []
   );
+  let [rating, setrating] = useState(searchParams.getAll("rating") || []);
   let [sort, setsort] = useState(searchParams.getAll("_sort") || []);
   let [order, setorder] = useState(searchParams.getAll("_order") || []);
 
@@ -32,19 +34,33 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
       setsort(newsort);
     }
   };
+  let handlerating = (e) => {
+    let option = e.target.value;
+    let newrating = [...rating];
+    if (newrating.includes(option)) {
+      newrating.splice(newrating.indexOf(option), 1);
+    } else {
+      newrating.push(option);
+    }
+    setrating(newrating);
+  };
+  let handlereset = (e) => {
+    console.log("khfk");
+  };
 
   useEffect(() => {
     let params = {};
     category && (params.titledesp = category);
+    rating && (params.rating = rating);
     order && (params._sort = sort) && (params._order = order);
     setSearchParams(params);
-  }, [order, category, setSearchParams]);
+  }, [rating,order, category, setSearchParams]);
 
   return (
     <>
       <div className="Product-left-div-header">
         <Text fontSize="2xl">Filters</Text>
-        <Text as="u" color="blue">
+        <Text onClick={handlereset} id="filter-reset" as="u" color="blue">
           ClearAll
         </Text>
       </div>
@@ -124,6 +140,112 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
           <label>{val4}</label>
         </span>
         <br />
+      </div>
+      <br />
+      {/* sort by rating */}
+      <div className="sort-by">
+        <label>Sort by Rating</label>
+        <br />
+        <div>
+          <div>
+            <input
+              type="checkbox"
+              value={1}
+              onChange={handlerating}
+              defaultChecked={rating.includes(1)}
+            />
+            &nbsp;&nbsp;
+          </div>
+          <div>
+            <label>
+              {Array(5)
+                .fill("")
+                .map((_, i) => (
+                  <StarIcon key={i} color={i < 1 ? "teal.500" : "gray.300"} />
+                ))}
+            </label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <input
+              type="checkbox"
+              value={2}
+              onChange={handlerating}
+              defaultChecked={rating.includes(2)}
+            />
+            &nbsp;&nbsp;
+          </div>
+          <div>
+            <label>
+              {Array(5)
+                .fill("")
+                .map((_, i) => (
+                  <StarIcon key={i} color={i < 2 ? "teal.500" : "gray.300"} />
+                ))}
+            </label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <input
+              type="checkbox"
+              value={3}
+              onChange={handlerating}
+              defaultChecked={rating.includes(3)}
+            />
+            &nbsp;&nbsp;
+          </div>
+          <div>
+            <label>
+              {Array(5)
+                .fill("")
+                .map((_, i) => (
+                  <StarIcon key={i} color={i < 3 ? "teal.500" : "gray.300"} />
+                ))}
+            </label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <input
+              type="checkbox"
+              value={4}
+              onChange={handlerating}
+              defaultChecked={rating.includes(4)}
+            />
+            &nbsp;&nbsp;
+          </div>
+          <div>
+            <label>
+              {Array(5)
+                .fill("")
+                .map((_, i) => (
+                  <StarIcon key={i} color={i < 4 ? "teal.500" : "gray.300"} />
+                ))}
+            </label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <input
+              type="checkbox"
+              value={5}
+              onChange={handlerating}
+              defaultChecked={rating.includes(5)}
+            />
+            &nbsp;&nbsp;
+          </div>
+          <div>
+            <label>
+              {Array(5)
+                .fill("")
+                .map((_, i) => (
+                  <StarIcon key={i} color={i < 5 ? "teal.500" : "gray.300"} />
+                ))}
+            </label>
+          </div>
+        </div>
       </div>
     </>
   );
