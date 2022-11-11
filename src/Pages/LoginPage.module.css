@@ -44,6 +44,7 @@
         margin-top: 10px;
         padding: 0px;
     }
+    
     .formlogin{
         width: 80%;
         /* background-color: #fdfcfc; */
@@ -55,13 +56,16 @@
         /* padding-top: 20px; */
         display: flex;
         flex-direction: column;
+        align-items: center;
+        /* justify-content: space-around */
 
     }
     .pointerhover{
         cursor: pointer;
     }
-    .formlogin>.inp{
-        width: 70%;
+    .formlogin>div{width: 80%;}
+    .formlogin>div>.inp{
+        width: 100%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
@@ -71,8 +75,8 @@
         font-size: 17px;
         /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
-    .formlogin>.sinp{
-        width: 70%;
+    .formlogin>div>.sinp{
+        width: 100%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
@@ -171,8 +175,11 @@
     .pointerhover{
         cursor: pointer;
     }
-    .formlogin>.inp{
+    .formlogin>div{
         width: 70%;
+    }
+    .formlogin>div>.inp{
+        width: 100%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
@@ -182,8 +189,8 @@
         font-size: 17px;
         /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
-    .formlogin>.sinp{
-        width: 70%;
+    .formlogin>div>.sinp{
+        width: 100%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
@@ -285,8 +292,11 @@
     .pointerhover{
         cursor: pointer;
     }
-    .formlogin>.inp{
+    .formlogin>div{
         width: 90%;
+    }
+    .formlogin>div>.inp{
+        width: 100%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;
@@ -296,8 +306,8 @@
         font-size: 17px;
         /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
     }
-    .formlogin>.sinp{
-        width: 90%;
+    .formlogin>div>.sinp{
+        width: 100%;
         padding: 10px;
         border: 1px solid #dddfe2;
         color: #1d2129;

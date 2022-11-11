@@ -70,29 +70,32 @@ const LoginComp = ({ onShow }) => {
         }
     };
     return (
-        <div>
+        <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
             <Heading size='xl' className={styles.textColorGradient}>Welcome Back</Heading>
             
             <p className={styles.textp}>If you already have an account with us, sign in below</p>
             <br />
             <div className={styles.formlogin}>
-                <p style={{fontSize:"14px",marginTop:"-15px",marginBottom:"-15px",marginLeft:"5px"}}>Email Address</p>
-                <br/>
+                <div>
+                    
+                
+                <p style={{fontSize:"14px"}}>Email Address</p>
+               
                 <input
                     type="email"
                     className={styles.inp}
                     ref={emailLRef}
                 />
-                <br />
-                <p style={{fontSize:"14px",marginTop:"-15px",marginBottom:"-15px",marginLeft:"5px"}}>Password</p>
-                <br/>
+                <br/><br/>
+                <p style={{fontSize:"14px"}}>Password</p>
+                
                 <input
                     type="password"
                     className={styles.inp}
                     
                     ref={passLRef}
                 />
-                <br />
+                </div>
                 <p className={styles.colorBlue}>Forgot Password ?</p>
                 <button className={styles.sub} onClick={handleLogin}>
                     Login
@@ -112,6 +115,7 @@ const LoginComp = ({ onShow }) => {
                     </p>
                 </div>
             </div>
+            
         </div>
     );
 };
@@ -145,12 +149,13 @@ const SignupComp = ({ onShow }) => {
         }
     };
     return (
-        <div>
+        <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
             <Heading size='lg' className={styles.textColorGradient}>Sign Up</Heading>
             
             <p className={styles.textp}>Lets get you set Up</p>
             <br />
             <div className={styles.formlogin}>
+                <div>
             <p style={{fontSize:"14px",marginLeft:"5px"}}>First Name</p>
                 <input
                     type="text"
@@ -158,6 +163,7 @@ const SignupComp = ({ onShow }) => {
                     ref={fNameRef}
                     required
                 />
+                
                 <p style={{fontSize:"14px",marginLeft:"5px"}}>Last Name</p>
                 <input
                     type="text"
@@ -193,6 +199,7 @@ const SignupComp = ({ onShow }) => {
                     ref={SPassConfRef}
                     required
                 />
+                </div>
                 <button className={styles.ssub} onClick={handleSignup}>
                     Sign Up
                 </button>

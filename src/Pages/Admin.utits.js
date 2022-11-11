@@ -1,4 +1,4 @@
-
+  
   let arr=[
       {
         "title": "Bourbon",
@@ -8361,10 +8361,10 @@
         "rating": 3
       }
     ]
-
+  
     // arr=arr.filter((e) => e.category === "bodycare")
     let category={};
-  
+
     for (let i = 0; i < arr.length; i++) {
      if(category[arr[i].category]==undefined){
         category[arr[i].category]=1
@@ -8381,7 +8381,6 @@
       categoryListCount.push(category[categoryList[i]]);
     }
 
-    
     function getTitleDesp(cat){
       
         let newarr=arr.filter((e) => e.category === cat);

@@ -56,6 +56,26 @@
     font-size: 18px;
     font-weight: 700;
 }
+.productAdd{
+    width: 70%;;
+    margin: auto;
+}
+.productAdd>p{
+    margin-left: 10%;
+}
+.productAdd>button{
+    
+    border-radius: 5px;
+    background-color: purple;
+    padding: 5px 10px;
+}
+.productAdd>input{
+    border: 1px solid #dddfe2;
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 0px;
+}
 .colorGreen{
     background-color: rgb(6, 185, 6);color: white;
 }
