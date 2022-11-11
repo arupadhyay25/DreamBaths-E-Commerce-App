@@ -1,9 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 
 .slid {
+  width:100%;
   margin-top: -25px;
   height: 45px;
   background-color: #e5f0da;
@@ -11,7 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
+
 .navbar {
   max-width: 100%;
 }
