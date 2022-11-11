@@ -3,7 +3,6 @@ import {
   Badge,
   Box,
   Button,
-  Center,
   Flex,
   Image,
   Text,
@@ -32,17 +31,19 @@ export const Singleproduct = ({
       textAlign="left"
     >
       <VStack>
-=          <Box>
-            <Image
-              src={image}
-              alt={title}
-              w="200px"
-              h="350px"
-              margin="auto"
-              p={10}
-            />
-          </Box>
-=      </VStack>
+        ={" "}
+        <Box>
+          <Image
+            src={image}
+            alt={title}
+            w="200px"
+            h="350px"
+            margin="auto"
+            p={10}
+          />
+        </Box>
+        ={" "}
+      </VStack>
       <VStack>
         <Box p="6">
           <Badge borderRadius="full" px="2" colorScheme="teal">
@@ -71,11 +72,11 @@ export const Singleproduct = ({
 
           <Box>
             <Box as="span" color="gray.600" fontSize="xl">
-              <Text as="s">₹{((price + price / 10) * 50).toFixed(2)}</Text>
+              <Text as="s">₹{(price + price / 10).toFixed(2)}</Text>
             </Box>
             &nbsp; &nbsp;
             <Box as="span" color="gray.600" fontSize="2xl" fontWeight="bold">
-              ₹{(price * 50.2).toFixed(2)}
+              ₹{price.toFixed(2)}
             </Box>
           </Box>
 
@@ -100,29 +101,3 @@ export const Singleproduct = ({
     </Flex>
   );
 };
-
-/*    <div>
-      <img src={image} alt="title" />
-      <h3>{title}</h3>
-      <p>{titledesp}</p>
-      <p>{category}</p>
-      <p>
-        <span className="single-product-price">$ {price + price / 10}</span>{" "}
-        &nbsp; $ {price}
-      </p>
-      <span className="single-product-starrating">
-        Rating :
-        {Array(Math.floor(Math.random() * 5) + 1)
-          .fill("")
-          .map((_, i) => (
-            <span>
-              <img
-                src="/Image/star.jpg"
-                alt="dhfjkdh"
-                width="30px"
-                height="35px"
-              />
-            </span>
-          ))}
-      </span>
-    </div>*/
