@@ -148,6 +148,7 @@ export const Navbar = () => {
           </h4>
         </div>
       </div>
+      <img src="/Image/homepage/adbaner.jpg" alt="add" className="navaddsec-21"/>
     </>
   );
 };

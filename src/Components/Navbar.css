@@ -18,13 +18,16 @@
   display: none;
 }
 .navbar-links {
-  width: 90%;
+  width: 80%;
   height: 40px;
   text-transform: uppercase;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  border-bottom: 0.5px solid rgb(206, 206, 206);
+  font-weight: 500;
+
 }
 .logosection {
   width: 100%;
@@ -33,6 +36,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 255, 255);
+
 }
 .logosection > div {
   width: 33.33%;
@@ -109,6 +113,12 @@
   text-decoration: none;
   margin-left: 25px;
 }
+.navaddsec-21{
+width: 80%;
+margin: auto;
+margin-top: 10px;
+border-radius: 5px;
+}
 @media screen and (max-width: 780px) {
   .navbar-links {
     display: none;
@@ -159,5 +169,10 @@
   font-size: 1.3rem;
   background-color: rgb(255, 255, 255);
 }
-  
+.navaddsec-21{
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  } 
 }
