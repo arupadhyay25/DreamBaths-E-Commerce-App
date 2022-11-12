@@ -29,15 +29,20 @@
 
 }
 .mainDash{
-    margin: 0px;
-    margin-top: 20px;
     
     width: 80%;
+    margin: auto;
+    /* margin: 0px; */
+    margin-top: 20px;
+    
     /* background-color: pink; */
 }
 .dashFlexItem{
+    /* width: 80%; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    
+    flex-wrap: wrap;
     gap:20px;
 }
 .cardBox{
@@ -57,7 +62,7 @@
     font-weight: 700;
 }
 .productAdd{
-    width: 70%;;
+    width: 70%;
     margin: auto;
 }
 .productAdd>p{
@@ -66,7 +71,10 @@
 .productAdd>button{
     
     border-radius: 5px;
-    background-color: purple;
+    background-color: rgb(68, 245, 68);
+    color: rgb(17, 95, 1);
+    /* font-size: 18px; */
+    font-weight: 700;
     padding: 5px 10px;
 }
 .productAdd>input{
@@ -86,7 +94,9 @@
     background-color: rgb(250, 124, 145);color: white;
 }
 .datacharts{
+    width: fit-content;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     gap:20px;
 }
@@ -117,6 +127,13 @@
     margin: auto;
     margin-top: 20px;
 }
+.productPageCss{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap:20px;
+}
 /* .scrollShowSubCat{
     max-height: 500px;
     overflow-y: scroll;
@@ -142,3 +159,128 @@
 .Orange{background-color:Orange;}
 .Sienna{background-color:Sienna;}
 
+@media screen and (max-width:768px) {
+    .sideMenuAdmin{
+        margin: 0px;
+        width: 30%;
+        min-height: 700px;
+        /* background-color: aqua; */
+        box-shadow: 10px 0 5px -5px #888;
+        z-index: 10;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .sideMenuAdmin>p{
+        width:99%;
+        padding: 5px;
+        /* border: 1px solid; */
+        margin: 1px 5px;
+        box-shadow: rgba(87, 87, 87, 0.15) 1.95px 1.95px 2.6px;
+        /* border-radius: 5px; */
+        cursor: pointer;
+        text-align: center;
+    
+    }
+    .mainDash{
+    
+        width: 70%;
+        margin: auto;
+        /* margin: 0px; */
+        margin-top: 20px;
+        
+        /* background-color: pink; */
+    }
+    .dashFlexItem{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+    .datacharts{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+    .cardBox{
+        width: 50%;
+        padding: 10px 5px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+}
+@media screen and (max-width:768px) {
+    .sideMenuAdmin{
+        margin: 0px;
+        width: 30%;
+        min-height: 700px;
+        /* background-color: aqua; */
+        box-shadow: 10px 0 5px -5px #888;
+        z-index: 10;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .sideMenuAdmin>p{
+        width:99%;
+        padding: 5px;
+        /* border: 1px solid; */
+        margin: 1px 5px;
+        box-shadow: rgba(87, 87, 87, 0.15) 1.95px 1.95px 2.6px;
+        /* border-radius: 5px; */
+        cursor: pointer;
+        text-align: center;
+    
+    }
+    .mainDash{
+    
+        width: 70%;
+        margin: auto;
+        /* margin: 0px; */
+        margin-top: 20px;
+        
+        /* background-color: pink; */
+    }
+    .dashFlexItem{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+    .datacharts{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+    .cardBox{
+        width: 50%;
+        padding: 10px 5px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}

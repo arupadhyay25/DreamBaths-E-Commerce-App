@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { BiUpArrow, BiDownArrow } from "react-icons/bi";
 import styles from "./Admin.module.css";
 import Plot from "react-plotly.js";
-import { Heading, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { Heading, Table, Tbody, Td, Th, Thead, Tr, useMediaQuery } from "@chakra-ui/react";
 import {
     category,
     categoryList,
@@ -14,6 +14,7 @@ import { useState } from "react";
 export const Admin = () => {
     const [rawData, setRawData] = useState({});
     const [selectedCat, setSelectedCat] = useState("");
+    const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)");
     const dashRef = useRef();
     const categoryRef = useRef();
     const productRef = useRef();
@@ -117,8 +118,8 @@ export const Admin = () => {
     const descSortProd = () => {
         let newa = rawData;
         let sortData = [];
-        for (var key in rawData) {
-            sortData.push([key, rawData[key]]);
+        for (var key in newa) {
+            sortData.push([key, newa[key]]);
         }
 
         sortData.sort(function (a, b) {
@@ -132,6 +133,7 @@ export const Admin = () => {
         }
         setRawData(obj);
     };
+    
     return (
         <div className={styles.main}>
             <div className={styles.sideMenuAdmin}>
@@ -180,9 +182,13 @@ export const Admin = () => {
                                     maker: { color: "green" },
                                 },
                             ]}
-                            layout={{
+                            layout={isLargerThan1024?{
                                 width: 600,
                                 height: 320,
+                                title: "Category Counts",
+                            }:{
+                                width: 400,
+                                height: 280,
                                 title: "Category Counts",
                             }}
                         />
@@ -200,9 +206,13 @@ export const Admin = () => {
                                     type: "pie",
                                 },
                             ]}
-                            layout={{
+                            layout={isLargerThan1024?{
                                 width: 400,
                                 height: 400,
+                                title: "Visitors from",
+                            }:{
+                                width: 300,
+                                height: 300,
                                 title: "Visitors from",
                             }}
                         />
@@ -295,7 +305,36 @@ export const Admin = () => {
                     Products
                 </Heading>
                 <br />
+                <div className={styles.productPageCss}>
                 <div className={styles.productAdd}>
+                    <Heading size='md'>Product Update</Heading>
+                    <br/>
+                    <p>Get data by Id</p>
+                    <input type="text" />
+                    <br/><br/>
+                    <button>Get Product</button>
+                    <p>Title</p>
+                    <input type="text" />
+                    <p>image_url</p>
+                    <input type="text"/>
+                    <p>Price</p>
+                    <input type="text"/>
+                    <p>Sub-Category</p>
+                    <input type="text"/>
+                    <p>Category</p>
+                    <input type="text"/>
+                    <p>Cart-Quantity</p>
+                    <input type="text" />
+                    <p>Review_count</p>
+                    <input type="text" />
+                    <p>Rating</p>
+                    <input type="text" />
+                    <br/><br/>
+                    <button>Update Product</button>
+                </div>
+                <div className={styles.productAdd}>
+                    <Heading size='md'>Product Add</Heading>
+                    <br/>
                     <p>Title</p>
                     <input type="text" />
                     <p>image_url</p>
@@ -315,6 +354,8 @@ export const Admin = () => {
                     <br/><br/>
                     <button>Add Product</button>
                 </div>
+                </div>
+                
             </div>
         </div>
     );
