@@ -1,6 +1,7 @@
 import React from "react";
 import "./HomePage.css";
 import Slider from "react-slick";
+// import ShopCollection from "../Components/ShopCollection";
 
 export const HomePage = () => {
   const settings = {
@@ -134,6 +135,7 @@ export const HomePage = () => {
         alt=""
         className="homeimg-tpohead4"
       />
+      {/* <ShopCollection/> */}
     </>
   );
 };
