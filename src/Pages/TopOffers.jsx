@@ -10,7 +10,6 @@ const Info = styled.div`
     height : auto;
     margin : 100px auto;
     text-align : left;
-
   }
   
 `;
@@ -18,6 +17,7 @@ const Detail = styled.p`
   margin : 0;
   margin-top : 15px;
   font-size : 15px;
+  font-weigth : 100;
   color : black;
   line-height : 25px;
   
@@ -28,12 +28,11 @@ const TopOfferDiv = styled.div`
   width : 100%;
   @media (min-width: 768px) {
   display : grid;
-  grid-template-columns : repeat(4,1fr);
+  grid-template-columns : repeat(3,1fr);
   grid-gap : 20px;
-  width : 80%;
+  width : 70%;
   height : auto;
-  margin : 100px auto;
-  border:1px solid;
+  margin : 50px auto ; 
   }
 
 `
@@ -41,118 +40,130 @@ const TopOfferDataDiv = styled.div`
   margin-bottom : 30px;
   @media (min-width: 768px){
   margin-bottom: 30px;
-  border:1px solid;
+  border:1px solid #D3D3D3;
   }
 `
 const Header = styled.div`
-  display : none;
-  @media (min-width: 768px){
-    width : 40%;
+    width : 80%;
     height : auto;
-    margin : 50px auto;
-    margin-bottom : -10px;
-    line-height: 0px;
-    text-align : left;
+    margin : 20px auto;
     display: block ;
-  }
+    text-align : left;
+`
+const Anounce = styled.div`
+  display : block;
+  text-align : center;
+  align-itmes: center;
+  height : 40px;
+  padding-top : 5px;
+  border : 1px solid;
+  width : 100%;
+  background-color: rgb(228,5,50);
+  color : white;
+  font-size : 18px;
+  font-weight: bold;
+`
+const Advertise = styled.img`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 `
 const ProductImage = styled.img`
-height : 350px;
-width : 350px;
+// height : 350px;
+// width : 350px;
   @media (min-width: 768px){
-    height : 200px;
+    height : 300px;
     width : 100%;
+
   }
  
 `
-const ShopButton = styled.button`
-  border : 2px solid black;
-  font-size : 12px;
-  padding : 10px 70px;
-  background-color : black;
-  color : white;
+const ProductTitle = styled.p`
+margin : 15px;
+font-size : 18px;
+font-weight : 400;
 `
-const OfferAdd = styled.p`
-font-size : 16px;
+const ProductPrice = styled.p`
+font-size : 18px;
+font-weight:600;
+margin : 15px;
 
- @media (min-width: 768px){
-  font-size : 18px;
-  font-weight : 300;
- }
 `
+const ShopButton = styled.button`
+  // border : 2px solid black;
+  font-size : 15px;
+  margin : 0px 0px 30px;
+  padding : 10px 80px;
+  background-color : rgb(51,51,51);
+  color : white;
+  font-weight : 700;
+`;
+
 export const TopOffers = () => {
   const offerData = [
     {
       image:
-        "https://www.bathandbodyworks.in/on/demandware.static/-/Sites-bathandbody_storefront_catalog/default/dwe657fa3a/fbc_give-love-spring_fall1_ss.jpg",
-      text: " BODY CARE",
-      btext: "ALL @ B3G1",
+        "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw6687083f/images/Christmas2022/bc_hol-trads_c1_ss.jpg?yocs=o_s_",
+      text: " All Full-Size Body Care",
+      btext: "Buy 3, Get 1 FREE",
     },
     {
       image:
-        "https://www.bathandbodyworks.in/on/demandware.static/-/Sites-bathandbody_storefront_catalog/default/dw1e3e0abb/obc_travel_fall1_ss.jpg",
-      text: " TRAVEL SIZE",
-      btext: "ALL @ B2G1",
+        "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw9216acfe/images/Christmas2022/diff_decor_c1_ss.jpg?yocs=o_s_",
+      text: " Wallflowers Fragrance Refills",
+      btext: "5/$25",
     },
     {
       image:
-        "https://www.bathandbodyworks.in/on/demandware.static/-/Sites-bathandbody_storefront_catalog/default/dw0243e6a5/cndl_mday_fall1_ss.jpg",
-      text: " 3-WICK CANDLES",
+        "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw7afb083a/images/Christmas2022/sp_holtrads-gifting_c1_ss.jpg?yocs=o_s_",
+      text: " Hand Soaps",
       btext: "All @ ₹ 2199",  
     },
     {
       image:
-        "https://www.bathandbodyworks.in/on/demandware.static/-/Sites-bathandbody_storefront_catalog/default/dw0be54642/cndl_sw_fall1_ss.jpg",
-      text: " SINGLE-WICK CANDLES",
-      btext: "All @ ₹ 1099",
-    },
-    {
-      image:
-        "https://www.bathandbodyworks.in/on/demandware.static/-/Sites-bathandbody_storefront_catalog/default/dw91a5cf38/HANDSOAPSCLEANSERS1.jpg",
-      text: " HAND SOAPS",
-      btext: "BUY 4 @ ₹ 2099 / 6 @ ₹ 2999",
-    },
-    {
-      image:
-        "https://www.bathandbodyworks.in/on/demandware.static/-/Sites-bathandbody_storefront_catalog/default/dw9b6c9d0c/roomsprays1.jpg",
-      text: " ROOM SPRAYS",
-      btext: "All @ B2G1",
-    },
-    {
-      image:
         "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw6310a4a8/images/Christmas2022/bc_travel_c1_ss.jpg?yocs=o_s_",
-      text: " TRAVEL, HAND & LIP CARE",
-      btext: "All @ B3G1",
+      text: " Travel, Hand & Lip Care",
+      btext: "Buy 3, Get 1 FREE",
     },
     {
       image:
         "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwc0851ed2/images/Christmas2022/sn_pbac_ch1_ss.jpg?yocs=o_s_",
-      text: " HAND SANITIZER",
-      btext: "BUY 5 @ ₹ 1099",
+      text: " Hand Sanitizer 5-Packs",
+      btext: "₹ 2999",
+    },
+    {
+      image:
+        "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwf285eec9/images/Christmas2022/diff_crs_c1_ss.jpg?yocs=o_s_",
+      text: " Room Sprays",
+      btext: "3/$22",
     },
   ];
   return (
           <>
             <Header>
-            <h1 style={{marginBottom:"40px"}}>TOP OFFERS</h1>
-            <OfferAdd>Too good to pass up! Shop our best offers now.</OfferAdd>
-            <hr className="Top-offer-hr" />
+            <h1 style={{fontWeight:"bolder",fontSize:"22px"}}>TOP OFFERS</h1>
+            <br></br>
+            <Anounce>
+              <h1> LIMITED TIME ONLY!</h1>
+            </Anounce>
             </Header>
             
+            <Advertise src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwd53d69dd/images/Christmas2022/b1g1candles_c1_6x1.gif?yocs=s_" alt='Banner' width="80%" />
             <TopOfferDiv className="topoffer-div" >
             {offerData.map((e) => {
             return (
               <TopOfferDataDiv className="topoffer-data-div">
                 <ProductImage className="topoffer-data-div-img" src={e.image} alt="" />
-                <p className="offer-box-div-p">{e.text}</p>
-                <h2 className="offer-box-div-p1" style={{fontWeight:"400"}}>{e.btext}</h2>
+                <ProductTitle className="offer-box-div-p">{e.text}</ProductTitle>
+                <ProductPrice className="offer-box-div-p1">{e.btext}</ProductPrice>
                 <ShopButton className="offer-box-div-but">SHOP</ShopButton>
               </TopOfferDataDiv>
             );
             })}
             </TopOfferDiv>
+            <Advertise src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwd2941b82/images/Fall2022/boc-launch-prospects_sb_0.jpg?yocs=o_s_" alt="add" />
             <Info>
-              <h1 style={{fontWeight:"400", fontSize:"23px"}}>About Top Offers from Bath & Body Works</h1>
+              <h1 style={{fontSize:"25px",fontWeight:"600"}}>About Top Offers from Bath & Body Works</h1>
           
               <Detail>Welcome to the one-stop-shop for all Bath & Body Works coupons. This is the spot to watch for the latest deals, coupon codes, hottest steals and the most need-right-now promotions we’ve got going on. From home fragrance favorites to body care loves, we definitely have something amazing for whatever mood (or season) you’re feeling..</Detail>
             
@@ -161,6 +172,23 @@ export const TopOffers = () => {
               <Detail>Another way we love using Bath & Body Works coupon codes? On gifts, of course! Check your calendar: if you have any birthdays or holidays on the horizon, this would be the perfect time to stock up on someone’s (or your) favorite fragrance. You could even score a few extra hand soaps or single wick candles to keep in your gift closet for the next celebration. (Incredible gifting strategy, go you!) And if you have a few common questions, let’s answer them here…</Detail>
              
               <Detail>How do you get Bath & Body Works coupons mailed to you? Just fill out our Mailing Address Update email form. Choose "Add me to your mailing list" as your Request Type and provide all relevant information. Then you should be good to go!</Detail>
+              <br />
+              <h1 style={{fontSize:"22px",fontWeight:"600"}}>How do you get Bath & Body Works coupons mailed to you?</h1>
+              <Detail>
+              Just fill out our Mailing Address Update email form. Choose "Add me to your mailing list" as your Request Type and provide all relevant information. Then you should be good to go!
+              </Detail>
+              <br />
+              <h1  style={{fontSize:"25px",fontWeight:"600"}}>Does Bath & Body Works offer free shipping?</h1>
+              <Detail>
+              Sometimes! Sign up for emails to stay in the know – it’s that easy. Don’t forget you can also see our best deals on this page
+              </Detail>
+              <br />
+              <h1 style={{fontSize:"25px",fontWeight:"600"}}>How many promo codes can you redeem per online order?</h1>
+              <Detail>Just one! Keep in mind that a lot of offers and promotions don’t require a promo code, so you can still add one in that case. If more than one code is entered at checkout, the only code that will be applied is the last promo code entered.
+              </Detail>
+              <br />
+              <h1 style={{fontSize:"25px",fontWeight:"600"}}>What is the Bath & Body Works return policy?</h1>
+              <Detail>We’re always updating this page with the latest and greatest Bath & Body Works sales, so bookmark it now and check back often. Other coupon sites can wait – this is the spot to check for the best deals. Hint, hint: now that you’ve seen our greatest deals shop our <span><a href="/">newest arrivals.</a></span> </Detail>
             </Info>
           </>
           );
