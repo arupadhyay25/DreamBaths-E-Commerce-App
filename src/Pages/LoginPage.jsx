@@ -23,6 +23,18 @@ const users = [
         password: "123",
         role: "user",
     },
+    {id: 3,
+        firstname: "user",
+        lastname: "1",
+        email: "masai@user.com",
+        password: "123",
+        role: "user",},
+    {id: 4,
+        firstname: "admin",
+        lastname: "1",
+        email: "masai@admin.com",
+        password: "123",
+        role: "admin",}
 ];
 
 export const LoginPage = () => {
