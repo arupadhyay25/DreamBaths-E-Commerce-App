@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Info = styled.div`
-  width : 100%;
-  margin : auto 40px;
+  width : 90%;
+  margin : auto 20px;
   text-align : left;
+
   @media (min-width: 768px){
     width : 40%;
     height : auto;
-    margin : 100px auto;
+    margin : 50px auto;
     text-align : left;
   }
   
@@ -17,10 +18,14 @@ const Detail = styled.p`
   margin : 0;
   margin-top : 15px;
   font-size : 15px;
-  font-weigth : 100;
+  font-weight : 100;
   color : black;
   line-height : 25px;
   
+`
+const Detailtitle = styled.h1`
+  font-size : 22px;
+  font-weigth : 800;
 `
 const TopOfferDiv = styled.div`
  
@@ -37,10 +42,13 @@ const TopOfferDiv = styled.div`
 
 `
 const TopOfferDataDiv = styled.div`
-  margin-bottom : 30px;
+    margin-left:20px;
+ 
   @media (min-width: 768px){
-  margin-bottom: 30px;
-  border:1px solid #D3D3D3;
+    display: block ;
+    text-align : center;
+    margin : auto;
+    border:1px solid #D3D3D3;
   }
 `
 const Header = styled.div`
@@ -64,33 +72,37 @@ const Anounce = styled.div`
   font-weight: bold;
 `
 const Advertise = styled.img`
+width: 80%;
+margin : auto;  
+@media (min-width: 768px){
   display: block;
   margin-left: auto;
   margin-right: auto;
+}  
 `
 const ProductImage = styled.img`
-// height : 350px;
-// width : 350px;
+
+width : 95%;
   @media (min-width: 768px){
     height : 300px;
     width : 100%;
-
   }
  
 `
 const ProductTitle = styled.p`
 margin : 15px;
+text-align : center;
 font-size : 18px;
 font-weight : 400;
 `
 const ProductPrice = styled.p`
+text-align : center;
 font-size : 18px;
 font-weight:600;
 margin : 15px;
 
 `
 const ShopButton = styled.button`
-  // border : 2px solid black;
   font-size : 15px;
   margin : 0px 0px 30px;
   padding : 10px 80px;
@@ -99,6 +111,16 @@ const ShopButton = styled.button`
   font-weight : 700;
 `;
 
+const UnderLine = styled.hr`
+  width : 100%;
+  border-bottom : 1px solid black;
+  margin : 40px auto;
+  @media (min-width: 768px){
+    border-bottom : 1px solid black;
+    margin : 40px auto;
+    width : 45%;
+  } 
+`
 export const TopOffers = () => {
   const offerData = [
     {
@@ -141,29 +163,33 @@ export const TopOffers = () => {
   return (
           <>
             <Header>
-            <h1 style={{fontWeight:"bolder",fontSize:"22px"}}>TOP OFFERS</h1>
-            <br></br>
+            <h1 style={{fontSize: "25px",fontWeight: "600"}}>TOP OFFERS</h1>
+            <hr style={{borderBottom : "1px solid black",margin : "20px auto 30px",width : "100%"}}/>
+            
             <Anounce>
               <h1> LIMITED TIME ONLY!</h1>
             </Anounce>
             </Header>
-            
-            <Advertise src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwd53d69dd/images/Christmas2022/b1g1candles_c1_6x1.gif?yocs=s_" alt='Banner' width="80%" />
-            <TopOfferDiv className="topoffer-div" >
+    
+            <Advertise src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwd53d69dd/images/Christmas2022/b1g1candles_c1_6x1.gif?yocs=s_" alt='Banner'/>
+
+            <TopOfferDiv >
             {offerData.map((e) => {
             return (
-              <TopOfferDataDiv className="topoffer-data-div">
-                <ProductImage className="topoffer-data-div-img" src={e.image} alt="" />
-                <ProductTitle className="offer-box-div-p">{e.text}</ProductTitle>
-                <ProductPrice className="offer-box-div-p1">{e.btext}</ProductPrice>
-                <ShopButton className="offer-box-div-but">SHOP</ShopButton>
+              <TopOfferDataDiv >
+                <ProductImage src={e.image} alt="" />
+                <ProductTitle >{e.text}</ProductTitle>
+                <ProductPrice >{e.btext}</ProductPrice>
+                <ShopButton >SHOP</ShopButton>
               </TopOfferDataDiv>
             );
             })}
             </TopOfferDiv>
-            <Advertise src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwd2941b82/images/Fall2022/boc-launch-prospects_sb_0.jpg?yocs=o_s_" alt="add" />
+
+            <img src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwd2941b82/images/Fall2022/boc-launch-prospects_sb_0.jpg?yocs=o_s_" alt="addvertise" style={{margin:"auto"}}/>
+            <UnderLine/>
             <Info>
-              <h1 style={{fontSize:"25px",fontWeight:"600"}}>About Top Offers from Bath & Body Works</h1>
+              <Detailtitle>About Top Offers from Bath & Body Works</Detailtitle>
           
               <Detail>Welcome to the one-stop-shop for all Bath & Body Works coupons. This is the spot to watch for the latest deals, coupon codes, hottest steals and the most need-right-now promotions we’ve got going on. From home fragrance favorites to body care loves, we definitely have something amazing for whatever mood (or season) you’re feeling..</Detail>
             
@@ -173,21 +199,21 @@ export const TopOffers = () => {
              
               <Detail>How do you get Bath & Body Works coupons mailed to you? Just fill out our Mailing Address Update email form. Choose "Add me to your mailing list" as your Request Type and provide all relevant information. Then you should be good to go!</Detail>
               <br />
-              <h1 style={{fontSize:"22px",fontWeight:"600"}}>How do you get Bath & Body Works coupons mailed to you?</h1>
+              <Detailtitle>How do you get Bath & Body Works coupons mailed to you?</Detailtitle>
               <Detail>
               Just fill out our Mailing Address Update email form. Choose "Add me to your mailing list" as your Request Type and provide all relevant information. Then you should be good to go!
               </Detail>
               <br />
-              <h1  style={{fontSize:"25px",fontWeight:"600"}}>Does Bath & Body Works offer free shipping?</h1>
+              <Detailtitle>Does Bath & Body Works offer free shipping?</Detailtitle>
               <Detail>
               Sometimes! Sign up for emails to stay in the know – it’s that easy. Don’t forget you can also see our best deals on this page
               </Detail>
               <br />
-              <h1 style={{fontSize:"25px",fontWeight:"600"}}>How many promo codes can you redeem per online order?</h1>
+              <Detailtitle>How many promo codes can you redeem per online order?</Detailtitle>
               <Detail>Just one! Keep in mind that a lot of offers and promotions don’t require a promo code, so you can still add one in that case. If more than one code is entered at checkout, the only code that will be applied is the last promo code entered.
               </Detail>
               <br />
-              <h1 style={{fontSize:"25px",fontWeight:"600"}}>What is the Bath & Body Works return policy?</h1>
+              <Detailtitle>What is the Bath & Body Works return policy?</Detailtitle>
               <Detail>We’re always updating this page with the latest and greatest Bath & Body Works sales, so bookmark it now and check back often. Other coupon sites can wait – this is the spot to check for the best deals. Hint, hint: now that you’ve seen our greatest deals shop our <span><a href="/">newest arrivals.</a></span> </Detail>
             </Info>
           </>
