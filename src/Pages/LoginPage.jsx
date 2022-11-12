@@ -23,6 +23,18 @@ const users = [
         password: "123",
         role: "user",
     },
+    {id: 3,
+        firstname: "user",
+        lastname: "1",
+        email: "masai@user.com",
+        password: "123",
+        role: "user",},
+    {id: 4,
+        firstname: "admin",
+        lastname: "1",
+        email: "masai@admin.com",
+        password: "123",
+        role: "admin",}
 ];
 
 export const LoginPage = () => {
@@ -70,33 +82,40 @@ const LoginComp = ({ onShow }) => {
         }
     };
     return (
-        <div>
-            <Heading as='h4'>Login</Heading>
+        <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+            <Heading size='xl' className={styles.textColorGradient}>Welcome Back</Heading>
             
             <p className={styles.textp}>If you already have an account with us, sign in below</p>
             <br />
             <div className={styles.formlogin}>
+                <div>
+                    
+                
+                <p style={{fontSize:"14px"}}>Email Address</p>
+               
                 <input
                     type="email"
                     className={styles.inp}
-                    placeholder="Email Address"
                     ref={emailLRef}
                 />
-                <br />
+                <br/><br/>
+                <p style={{fontSize:"14px"}}>Password</p>
+                
                 <input
                     type="password"
                     className={styles.inp}
-                    placeholder="Password"
+                    
                     ref={passLRef}
                 />
-                <br />
+                </div>
+                <p className={styles.colorBlue}>Forgot Password ?</p>
                 <button className={styles.sub} onClick={handleLogin}>
                     Login
                 </button>
                 {/* <input type="submit" value="Login" className={styles.sub} /> */}
                 <div className={styles.linehr}></div>
                 <div className={styles.forgotsignFlex}>
-                    <p className={styles.colorBlue}>Forgot Password ?</p>
+                    
                     <p className={styles.pointerhover}>
                         Don't have an account?{" "}
                         <span
@@ -108,6 +127,7 @@ const LoginComp = ({ onShow }) => {
                     </p>
                 </div>
             </div>
+            
         </div>
     );
 };
@@ -141,60 +161,57 @@ const SignupComp = ({ onShow }) => {
         }
     };
     return (
-        <div>
-            <Heading as='h4'>Sign Up</Heading>
+        <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+            <Heading size='lg' className={styles.textColorGradient}>Sign Up</Heading>
             
             <p className={styles.textp}>Lets get you set Up</p>
             <br />
             <div className={styles.formlogin}>
+                <div>
+            <p style={{fontSize:"14px",marginLeft:"5px"}}>First Name</p>
                 <input
                     type="text"
                     className={styles.sinp}
-                    placeholder="First Name"
                     ref={fNameRef}
                     required
                 />
-                <br />
+                
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Last Name</p>
                 <input
                     type="text"
                     className={styles.sinp}
-                    placeholder="Last Name"
                     ref={lNameRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Email Address</p>
                 <input
                     type="email"
                     className={styles.sinp}
-                    placeholder="Email Address"
                     ref={sEmailRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Confirm Email Address</p>
                 <input
                     type="email"
                     className={styles.sinp}
-                    placeholder="Confirm Email Address"
                     ref={sEmailConfRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Password</p>
                 <input
                     type="password"
                     className={styles.sinp}
-                    placeholder="Password"
                     ref={SPassRef}
                     required
                 />
-                <br />
+                <p style={{fontSize:"14px",marginLeft:"5px"}}>Confirm Password</p>
                 <input
                     type="password"
                     className={styles.sinp}
-                    placeholder="Confirm Password"
                     ref={SPassConfRef}
                     required
                 />
-                <br />
+                </div>
                 <button className={styles.ssub} onClick={handleSignup}>
                     Sign Up
                 </button>

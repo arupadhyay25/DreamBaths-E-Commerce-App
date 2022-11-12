@@ -15,15 +15,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .sideMenuAdmin>p{
     width:99%;
     padding: 5px;
     /* border: 1px solid; */
     margin: 1px 5px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(87, 87, 87, 0.15) 1.95px 1.95px 2.6px;
     /* border-radius: 5px; */
     cursor: pointer;
+    
+
 }
 .mainDash{
     margin: 0px;
@@ -53,6 +56,26 @@
     font-size: 18px;
     font-weight: 700;
 }
+.productAdd{
+    width: 70%;;
+    margin: auto;
+}
+.productAdd>p{
+    margin-left: 10%;
+}
+.productAdd>button{
+    
+    border-radius: 5px;
+    background-color: purple;
+    padding: 5px 10px;
+}
+.productAdd>input{
+    border: 1px solid #dddfe2;
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 0px;
+}
 .colorGreen{
     background-color: rgb(6, 185, 6);color: white;
 }
@@ -67,3 +90,55 @@
     justify-content: space-evenly;
     gap:20px;
 }
+.categoryBox{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.categoryCard{
+    padding: 10px 5px;
+    width: 20%;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 5px;
+    color:rgb(255, 255, 255);
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+    /* background-color:DarkMagenta; */
+}
+.categoryCard>p{
+    text-align: center;
+}
+.showSubCat{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+/* .scrollShowSubCat{
+    max-height: 500px;
+    overflow-y: scroll;
+} */
+.red{background-color:red;}
+.blue{background-color:blue;}
+.green{background-color:green;}
+/* .yellow{background-color:yellow;} */
+.pink{background-color:pink;}
+.aqua{background-color:aqua;}
+.Aquamarine{background-color:Aquamarine;}
+.Brown{background-color:Brown;}
+.Coral{background-color:Coral;}
+.DarkCyan{background-color:DarkCyan;}
+.DarkMagenta{background-color:DarkMagenta;}
+.DarkSalmon{background-color:DarkSalmon;}
+.DodgerBlue{background-color:DodgerBlue;}
+.GoldenRod{background-color:GoldenRod;}
+.IndianRed{background-color:IndianRed;}
+.MediumOrchid{background-color:MediumOrchid;}
+.MediumTurquoise{background-color:MediumTurquoise;}
+.Navy{background-color:Navy;}
+.Orange{background-color:Orange;}
+.Sienna{background-color:Sienna;}
+
