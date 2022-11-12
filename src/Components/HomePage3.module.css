@@ -1,0 +1,90 @@
+.HomePage3_Main{
+    width:80%;
+    margin: auto;
+}
+.Holiday_img1{
+    margin-top: 70px;
+}
+.Holiday_img2{
+    display: none;
+}
+.HomePage3_button_arr{
+    width: 90%;
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+    margin: auto;
+}
+.HomePage3_button_arr div{
+    margin-top: 30px;
+    padding: 15px 9px;
+    font-size: 16px;
+    border: 1px solid black;
+    color: white;
+    font-weight: 700;
+    background-color: #333333;
+}
+.HomePage3_button_arr div:hover{
+    cursor: pointer;
+    color: black;
+    background-color:#dcdbdb ;
+    border: none;
+}
+.HomePage3_Head{
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 70px;
+}
+.GoodThing_Main{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 20px;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: bold;
+   
+}
+.HomePage3_hr{
+    color: black;
+}
+.IG_Main{
+    margin-top: 50px;
+}
+.IG_Part1{
+    width: 30%;
+    display: flex;
+    font-size: 40px;
+    background-color: white;
+    padding: 10px 0px;
+    margin: auto;
+}
+.IG_Part1_Head{
+    font-size:18px;
+    letter-spacing: 3px;
+    color: #333333;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.IG_Part1_Text{
+    font-size: 16px;
+    font-weight: lighter;
+    color: #333333;
+    margin-top: -15px;
+    margin-bottom: 100px;
+}
+.IG_Part1_Border{
+  border: 1px solid black;
+  margin-top: -70px;
+}
+.IG_Part3_Head{
+ font-size: 28px;
+ color: #333333;
+}
+.IG_Part3_Text{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 30px;
+}
