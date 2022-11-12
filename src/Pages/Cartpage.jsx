@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { SingleCart } from "../Components/SingleCart";
-import { getproductsuccess } from "../Redux/action";
+import { getproductsuccess, resetcartbag } from "../Redux/action";
 import "./Cartpage.css";
 import Swal from "sweetalert2";
 let styles = {
@@ -21,6 +21,12 @@ export const Cartpage = () => {
   let [total, settotal] = useState(0);
   let dispatch = useDispatch();
   let navigate = useNavigate();
+  function scrollTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 
   let sumProduct = () => {
     if (data.filter((e) => e.cartquantity > 0) == 0) {
@@ -40,9 +46,7 @@ export const Cartpage = () => {
     data
       .filter((e) => e.cartquantity > 0)
       .forEach((e) =>
-        axios.patch(`http://localhost:8080/products/${e.id}`, {
-          cartquantity: 0,
-        })
+        dispatch(resetcartbag(e.id))
       );
     setstate((prev) => prev + 1);
     Swal.fire({
@@ -50,6 +54,7 @@ export const Cartpage = () => {
       text: "Thankyou For Shoping",
       type: "success",
     });
+    scrollTop()
     navigate("/");
   };
 
