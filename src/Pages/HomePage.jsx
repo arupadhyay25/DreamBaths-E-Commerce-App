@@ -3,6 +3,7 @@ import "./HomePage.css";
 import Slider from "react-slick";
 import HomePage3 from "../Components/HomePage3"
 import ShopCollection from "../Components/ShopCollection"
+import Gotottop from "../Components/Gotottop";
 
 export const HomePage = () => {
   const settings = {
@@ -139,6 +140,7 @@ export const HomePage = () => {
 
       <ShopCollection/>
       <HomePage3/>
+      <Gotottop/>
     </>
   );
 };
