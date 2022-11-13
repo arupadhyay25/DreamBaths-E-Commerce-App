@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./LoginPage.module.css";
-// import users from "./users.json";
 
 const users = [
   {
@@ -45,22 +44,24 @@ export const LoginPage = () => {
   const [show, setShow] = useState(true);
 
   return (
-    <div className={styles.main}>
-      <div className={styles.pagePart}>
-        <div className={styles.ppPart1}>
-          <img
-            src="/Image/people.jpeg"
-            alt="peopleImg"
-            width="100%"
-            className={styles.loginImg}
-          />
-        </div>
-        <div className={styles.ppPart2}>
-          {show ? (
-            <LoginComp onShow={() => setShow(false)} />
-          ) : (
-            <SignupComp onShow={() => setShow(true)} />
-          )}
+    <div className={styles.loginpage}>
+      <div className={styles.main}>
+        <div className={styles.pagePart}>
+          <div className={styles.ppPart1}>
+            <img
+              src="/Image/people.jpeg"
+              alt="peopleImg"
+              width="100%"
+              className={styles.loginImg}
+            />
+          </div>
+          <div className={styles.ppPart2}>
+            {show ? (
+              <LoginComp onShow={() => setShow(false)} />
+            ) : (
+              <SignupComp onShow={() => setShow(true)} />
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -91,44 +92,51 @@ const LoginComp = ({ onShow }) => {
     }
   };
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <Heading size="2xl" mb={5} className={styles.textColorGradient}>
-        Welcome Back
-      </Heading>
+    <>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          zoom: "0.8",
+        }}
+      >
+        <Heading size="2xl" mb={5} className={styles.textColorGradient}>
+          Welcome Back
+        </Heading>
 
-      <p className={styles.textp}>
-        If you already have an account with us, sign in below
-      </p>
-      <br />
-      <div className={styles.formlogin}>
-        <div>
-          <p style={{ fontSize: "14px" }}>Email Address</p>
+        <p className={styles.textp}>
+          If you already have an account with us, sign in below
+        </p>
+        <br />
+        <div className={styles.formlogin}>
+          <div>
+            <p style={{ fontSize: "14px" }}>Email Address</p>
 
-          <input type="email" className={styles.inp} ref={emailLRef} />
-          <br />
-          <br />
-          <p style={{ fontSize: "14px" }}>Password</p>
+            <input type="email" className={styles.inp} ref={emailLRef} />
+            <br />
+            <br />
+            <p style={{ fontSize: "14px" }}>Password</p>
 
-          <input type="password" className={styles.inp} ref={passLRef} />
-        </div>
-        <p className={styles.colorBlue}>Forgot Password ?</p>
-        <button className={styles.sub} onClick={handleLogin}>
-          Login
-        </button>
-        {/* <input type="submit" value="Login" className={styles.sub} /> */}
-        <div className={styles.linehr}></div>
-        <div className={styles.forgotsignFlex}>
-          <p className={styles.pointerhover}>
-            Don't have an account?{" "}
-            <span className={styles.colorBlue} onClick={() => onShow()}>
-              SignUp
-            </span>
-          </p>
+            <input type="password" className={styles.inp} ref={passLRef} />
+          </div>
+          <p className={styles.colorBlue}>Forgot Password ?</p>
+          <button className={styles.sub} onClick={handleLogin}>
+            Login
+          </button>
+          {/* <input type="submit" value="Login" className={styles.sub} /> */}
+          <div className={styles.linehr}></div>
+          <div className={styles.forgotsignFlex}>
+            <p className={styles.pointerhover}>
+              Don't have an account?{" "}
+              <span className={styles.colorBlue} onClick={() => onShow()}>
+                SignUp
+              </span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -167,7 +175,7 @@ const SignupComp = ({ onShow }) => {
       <Heading size="lg" className={styles.textColorGradient}>
         Sign Up
       </Heading>
-    <br />
+      <br />
       <p className={styles.textp}>Lets get you set Up</p>
       <br />
       <div className={styles.formlogin}>

@@ -50,7 +50,7 @@ export const SingleCart = ({ arr, setstate }) => {
         </div>
       </div>
       <div>
-        <h1 className="Cart-price">₹ {arr.price.toFixed(2)}</h1>
+        <h1 className="Cart-price">₹ {arr.price.toFixed(2)*arr.cartquantity}</h1>
       </div>
     </div>
   );

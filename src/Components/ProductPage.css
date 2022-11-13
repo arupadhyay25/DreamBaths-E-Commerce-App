@@ -20,6 +20,8 @@
   margin: auto;
   display: flex;
   cursor: pointer;
+  /* border: solid; */
+  zoom: 0.9;
 }
 /* left */
 .Product-left-div {
