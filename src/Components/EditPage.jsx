@@ -36,12 +36,12 @@ export const EditPage = () => {
 
   let getproductbyid = () => {
     axios
-      .get(`http://localhost:8080/products/${id}`)
+      .get(`https://sepia-mercurial-novel.glitch.me/api/products${id}`)
       .then((r) => setshowdata(r.data));
   };
 
   let addpatch = () => {
-    axios.patch(`http://localhost:8080/products/${id}`, patchdata);
+    axios.patch(`https://sepia-mercurial-novel.glitch.me/api/products/${id}`, patchdata);
     setkey("");
     setvalue("");
     setflag(true);

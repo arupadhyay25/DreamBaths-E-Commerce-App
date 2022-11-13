@@ -38,7 +38,7 @@ export const getproductfailure = () => {
 };
 export const addtocart = (id) => (dispatch) => {
   axios
-    .patch(`http://localhost:8080/products/${id}`, {
+    .patch(`https://sepia-mercurial-novel.glitch.me/api/products/${id}`, {
       cartquantity: 1,
     })
     .then(() =>
@@ -49,7 +49,7 @@ export const addtocart = (id) => (dispatch) => {
 };
 export const addproductquantity = (id, page) => (dispatch) => {
   axios
-    .patch(`http://localhost:8080/products/${id}`, {
+    .patch(`https://sepia-mercurial-novel.glitch.me/api/products/${id}`, {
       cartquantity: page + 1,
     })
     .then(() =>
@@ -60,7 +60,7 @@ export const addproductquantity = (id, page) => (dispatch) => {
 };
 export const subproductquantity = (id, page) => (dispatch) => {
   axios
-    .patch(`http://localhost:8080/products/${id}`, {
+    .patch(`https://sepia-mercurial-novel.glitch.me/api/products/${id}`, {
       cartquantity: page - 1,
     })
     .then(() =>
@@ -71,7 +71,7 @@ export const subproductquantity = (id, page) => (dispatch) => {
 };
 export const resetcartbag= (id) => (dispatch) => {
   axios
-    .patch(`http://localhost:8080/products/${id}`, {
+    .patch(`https://sepia-mercurial-novel.glitch.me/api/products/${id}`, {
       cartquantity: 0,
     })
     .then(() =>

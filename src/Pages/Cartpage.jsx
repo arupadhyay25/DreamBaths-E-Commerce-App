@@ -60,7 +60,7 @@ export const Cartpage = () => {
 
   useEffect(() => {
     sumProduct();
-    let url = `http://localhost:8080/products`;
+    let url = `https://sepia-mercurial-novel.glitch.me/api/products`;
     let datapack = [url];
     dispatch(getproductsuccess(datapack));
   }, [total, state]);

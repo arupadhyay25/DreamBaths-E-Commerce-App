@@ -32,7 +32,7 @@ export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
         _page: page,
         _limit: 13,
       };
-      let url = `http://localhost:8080/products?category=${category}`;
+      let url = `https://sepia-mercurial-novel.glitch.me/api/products?category=${category}`;
       let data = [url, queryparams];
       dispatch(getproductsuccess(data));
     }
