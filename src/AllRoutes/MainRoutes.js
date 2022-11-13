@@ -12,7 +12,6 @@ import { HolidayShop } from "../Pages/HolidayShop";
 import { LoginPage } from "../Pages/LoginPage";
 import { Admin } from "../Pages/Admin";
 import { Cartpage } from "../Pages/Cartpage";
-import { Trail } from "../Pages/Trail";
 
 export const MainRoutes = () => {
   return (
@@ -27,8 +26,8 @@ export const MainRoutes = () => {
       <Route path="/home-fragrance" element={<WallflowerAirFreshners />} />
       <Route path="/hand-soaps-sanitizers" element={<HandSoapsSanitizers />} />
       <Route path="/mens-shop" element={<MensShop />} />
-      <Route path="/moxy-collection" element={<Moxy />} />
       <Route path="/holiday-shop" element={<HolidayShop />} />
+      <Route path="/moxy-collection" element={<Moxy />} />
     </Routes>
   );
 };

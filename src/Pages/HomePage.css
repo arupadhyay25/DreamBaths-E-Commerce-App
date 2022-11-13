@@ -27,13 +27,12 @@
 
 .sliderbody-0234 {
   width: 80%;
- height: 350px;
+  height: 350px;
   background-color: rgb(242 242 242);
   margin: auto;
   margin-top: 50px;
   text-align: center;
   padding: 25px;
- 
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -54,6 +53,7 @@
 .slidercarditemtype02 {
   font-size: 14px;
   padding-top: 5px;
+  text-align: center;
 }
 .byonegetonefree {
   padding-top: 5px;
@@ -96,7 +96,5 @@
   }
   .sliderbody-0234 {
     width: 95%;
-    
-    
   }
 }
