@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../Redux/action";
 import "./SingleProduct.css";
 
 export const Singleproduct = ({
@@ -27,8 +29,9 @@ export const Singleproduct = ({
   state,
   setstate,
 }) => {
+  let dispatch = useDispatch();
   let handleAddtocart = (id) => {
-    axios.patch(`http://localhost:8080/products/${id}`, { cartquantity: 1 });
+    dispatch(addtocart(id));
     setstate(state + 1);
   };
 

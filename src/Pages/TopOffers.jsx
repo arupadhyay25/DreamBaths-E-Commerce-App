@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Footer } from "../Components/Footer";
+import { Navbar } from "../Components/Navbar";
 
 const Info = styled.div`
   width : 100%;
@@ -11,7 +13,6 @@ const Info = styled.div`
     margin : 100px auto;
     text-align : left;
   }
-  
 `;
 const Detail = styled.p`
   margin : 0;
@@ -23,47 +24,48 @@ const Detail = styled.p`
   
 `
 const TopOfferDiv = styled.div`
- 
-  grid-template-columns : repeat(1,1fr);
-  width : 100%;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
   @media (min-width: 768px) {
-  display : grid;
-  grid-template-columns : repeat(3,1fr);
-  grid-gap : 20px;
-  width : 70%;
-  height : auto;
-  margin : 50px auto ; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    width: 70%;
+    height: auto;
+    margin: 50px auto;
   }
-
-`
+`;
 const TopOfferDataDiv = styled.div`
   margin-bottom : 30px;
   @media (min-width: 768px){
   margin-bottom: 30px;
   border:1px solid #D3D3D3;
   }
-`
+`;
 const Header = styled.div`
-    width : 80%;
-    height : auto;
-    margin : 20px auto;
-    display: block ;
-    text-align : left;
-`
+  width: 80%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  text-align: left;
+`;
 const Anounce = styled.div`
-  display : block;
-  text-align : center;
+  display: block;
+  text-align: center;
   align-itmes: center;
-  height : 40px;
-  padding-top : 5px;
-  border : 1px solid;
-  width : 100%;
-  background-color: rgb(228,5,50);
-  color : white;
-  font-size : 18px;
+  height: 40px;
+  padding-top: 5px;
+  border: 1px solid;
+  width: 100%;
+  background-color: rgb(228, 5, 50);
+  color: white;
+  font-size: 18px;
   font-weight: bold;
-`
+`;
 const Advertise = styled.img`
+width: 80%;
+margin : auto;  
+@media (min-width: 768px){
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -99,6 +101,16 @@ const ShopButton = styled.button`
   font-weight : 700;
 `;
 
+const UnderLine = styled.hr`
+  width : 100%;
+  border-bottom : 1px solid black;
+  margin : 40px auto;
+  @media (min-width: 768px){
+    border-bottom : 1px solid black;
+    margin : 40px auto;
+    width : 45%;
+  } 
+`
 export const TopOffers = () => {
   const offerData = [
     {
@@ -117,7 +129,7 @@ export const TopOffers = () => {
       image:
         "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw7afb083a/images/Christmas2022/sp_holtrads-gifting_c1_ss.jpg?yocs=o_s_",
       text: " Hand Soaps",
-      btext: "All @ ₹ 2199",  
+      btext: "All @ ₹ 2199",
     },
     {
       image:

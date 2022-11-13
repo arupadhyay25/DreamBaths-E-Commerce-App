@@ -1,6 +1,19 @@
-
+import  SimpleSlider  from './HomePage3Slider'
 import styles from './HomePage3.module.css'
 import { IoLogoInstagram } from "react-icons/io";
+const Twoimg = (props) =>{
+    const {img1 , img2 , alt} = props
+    return (
+        <div>
+        <div className={styles.Holiday_img1}>
+            <img src={img1} alt={alt}/>
+        </div>
+        <div className={styles.Holiday_img2}>
+            <img src={img2} alt={alt}/>
+        </div>
+       </div>
+    )
+}
 const HomePage3=()=>{
     const GoodThing = [
         {img : '/Image/homepage/Good_Thing1.jpg' , Text : 'Join the VIPs'},
@@ -14,27 +27,21 @@ const HomePage3=()=>{
     const Button_arr = ['STOCKING STUFFERS','GIFT SETS','GIFT UNDER $15','GIFT UNDER $40','GIFT FOR HER','GIFT for HIM']
     return (
         <div className={styles.HomePage3_Main}>
-           <div>
-            <div className={styles.Holiday_img1}>
-                <img src="/Image/homepage/Holiday_img_1.jpg" alt="Holiday_Img"/>
-            </div>
-            <div className={styles.Holiday_img2}>
-                <img src="/Image/homepage/Holiday_img_2.jpg" alt="Holiday_Img"/>
-            </div>
-           </div>
+          <Twoimg
+          img1 = '/Image/homepage/Holiday_img_1.jpg'
+          img2 = '/Image/homepage/Holiday_img_2.jpg'
+          alt  = 'Holiday_Img'
+           />
          {/* button  arrays*/}
          <div className={styles.HomePage3_button_arr}>
             {Button_arr.map((el,i)=><div key={i}>{el}</div>)}
          </div>
          {/* Second img */}
-         <div>
-            <div className={styles.Holiday_img1}>
-                <img src="/Image/homepage/lmig5.jpg" alt="Holiday_Img"/>
-            </div>
-            <div className={styles.Holiday_img2}>
-                <img src="/Image/homepage/lmig6.jpg" alt="Holiday_Img"/>
-            </div>
-           </div>
+         <Twoimg
+          img1 = '/Image/homepage/lmig5.jpg'
+          img2 = '/Image/homepage/lmig6.jpg'
+          alt  = 'ShopMoxy'
+           />
            {/* MORE GOOD THINGS, THIS WAY */}
            <div className={styles.HomePage3_Head}>
             MORE GOOD THINGS, THIS WAY
@@ -49,14 +56,18 @@ const HomePage3=()=>{
            <div>
            
             <div className={styles.IG_Main}>
-                <div className={styles.IG_Part1}>
-                    <IoLogoInstagram  />
-                    <div className={styles.IG_Part1_Head}>@BATHANDBODYWORKS</div>
-                </div>
-                <div className={styles.IG_Part1_Text}>Daily inspiration. Instant happiness. Right here.</div>
-                <div className={styles.IG_Part1_Border}></div>            
+                <div>
+                    <hr className={styles.IG_Hr} />
+                </div>       
+                <div className={styles.IG_Head}>
+                   <IoLogoInstagram  className={styles.IG_font}/>
+                   <p>@BATHANDBODYWORKS</p>
+                </div>  
+                <div className={styles.IG_Text}>
+                Daily inspiration. Instant happiness. Right here.
+                </div>   
             </div>
-            {/* REACT SLICK */}
+            <SimpleSlider />
               <div>
                <div className={styles.IG_Part3_Head}>
                Bath & Body Works

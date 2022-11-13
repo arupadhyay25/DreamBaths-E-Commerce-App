@@ -17,6 +17,7 @@ export const Navbar = () => {
 
   return (
     <>
+      <br />
       <Slider {...settings} className="slid">
         <div>
           <h3>10% off for new users on first order</h3>
@@ -83,7 +84,7 @@ export const Navbar = () => {
           <Link className="pagelinks-cat012" to="/moxy-collection">
             Moxy
           </Link>
-          <Link className="pagelinks-cat012" to="holiday-shop">
+          <Link className="pagelinks-cat012" to="/holiday-shop">
             Holiday Shop
           </Link>
         </div>
@@ -143,7 +144,7 @@ export const Navbar = () => {
           </h4>
 
           <h4 onClick={() => setisMobail(!isMobail)}>
-            <Link className="drawer-links-0934" to="holiday-shop">
+            <Link className="drawer-links-0934" to="/holiday-shop">
               Holiday Shop
             </Link>
           </h4>
@@ -155,7 +156,11 @@ export const Navbar = () => {
           </h4>
         </div>
       </div>
-      <img src="/Image/homepage/adbaner.jpg" alt="add" className="navaddsec-21"/>
+      <img
+        src="/Image/homepage/adbaner.jpg"
+        alt="add"
+        className="navaddsec-21"
+      />
     </>
   );
 };
