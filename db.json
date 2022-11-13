@@ -15,7 +15,7 @@
     {
       "title": "Classic Flannel",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwcf9d3d94/crop/026553504_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 90.62,
+      "price": 92.35,
       "titledesp": "Body Spray",
       "id": 2,
       "cartquantity": 0,
@@ -215,7 +215,7 @@
     {
       "title": "Dark Kiss",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw45232305/crop/026426654_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 88.36630380662027,
+      "price": 90.25,
       "titledesp": "Fine Fragrance Mist",
       "id": 20,
       "cartquantity": 0,
@@ -8373,6 +8373,28 @@
       "reviewCount": 0,
       "rating": 4,
       "id": 761
+    },
+    {
+      "title": "masai",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw729ebf2e/crop/026569410_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 100.25,
+      "titledesp": "teaching",
+      "cartquantity": 0,
+      "category": "education",
+      "reviewCount": 0,
+      "rating": 4,
+      "id": 762
+    },
+    {
+      "title": "masai",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc5cb77d9/crop/026539038_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 100.25,
+      "titledesp": "teaching",
+      "cartquantity": 0,
+      "category": "education",
+      "reviewCount": 0,
+      "rating": 4,
+      "id": 763
     }
   ]
 }

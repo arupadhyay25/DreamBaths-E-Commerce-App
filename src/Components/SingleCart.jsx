@@ -3,7 +3,11 @@ import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addproductquantity, resetcartbag, subproductquantity } from "../Redux/action";
+import {
+  addproductquantity,
+  resetcartbag,
+  subproductquantity,
+} from "../Redux/action";
 
 export const SingleCart = ({ arr, setstate }) => {
   let [page, setpage] = useState(arr.cartquantity);
@@ -20,7 +24,6 @@ export const SingleCart = ({ arr, setstate }) => {
     setstate((prev) => prev + 1);
   };
   let handledelete = (id) => {
-    
     dispatch(resetcartbag(id));
     setstate((prev) => prev + 1);
   };
@@ -50,7 +53,9 @@ export const SingleCart = ({ arr, setstate }) => {
         </div>
       </div>
       <div>
-        <h1 className="Cart-price">₹ {arr.price.toFixed(2)*arr.cartquantity}</h1>
+        <h1 className="Cart-price">
+          ₹ {(arr.price * arr.cartquantity).toFixed(2)}
+        </h1>
       </div>
     </div>
   );

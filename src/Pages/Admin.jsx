@@ -204,7 +204,7 @@ export const Admin = () => {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Icon fontSize="4xl" as={FiSettings} />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/login">
+            <Link to="/">
               <Icon fontSize="4xl" as={GrUserAdmin} />
             </Link>
           </div>

@@ -4,7 +4,8 @@
     position: sticky;
     font-size: 35px;
     bottom: 20px;  
-    left:95%;  
-    
+    left:95%; 
+    border:none;
+    background-color: white;
   }
 
