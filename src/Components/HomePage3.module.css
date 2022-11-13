@@ -1,26 +1,30 @@
 .HomePage3_Main{
-    width:80%;
+    width:85%;
     margin: auto;
 }
 .Holiday_img1{
-    margin-top: 70px;
+    margin-top: 80px;
 }
 .Holiday_img2{
     display: none;
 }
+.Holiday_img1:hover{
+    cursor: pointer;
+}
+.Holiday_img2:hover{
+    cursor: pointer;
+}
 .HomePage3_button_arr{
-    width: 90%;
-
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    gap: 20px;
+    width: 95%;
+    display: flex;
     margin: auto;
+    justify-content: space-evenly;
+    margin-top: 50px;
 }
 .HomePage3_button_arr div{
     margin-top: 30px;
-    padding: 15px 9px;
+    padding: 15px 20px;
     font-size: 16px;
-    border: 1px solid black;
     color: white;
     font-weight: 700;
     background-color: #333333;
@@ -29,14 +33,15 @@
     cursor: pointer;
     color: black;
     background-color:#dcdbdb ;
-    border: none;
 }
+
 .HomePage3_Head{
     font-size: 24px;
     color: #333333;
     text-align: center;
     font-weight: bold;
     margin-top: 70px;
+    margin-bottom: 10px;
 }
 .GoodThing_Main{
     display: grid;
@@ -45,39 +50,49 @@
     font-size: 14px;
     text-decoration: underline;
     font-weight: bold;
-   
+    text-align: center;
+    margin: auto;
+}
+.GoodThing_Main img:hover{
+    cursor: pointer;
+}
+.GoodThing_Main p{
+    text-align: center;
+}
+.GoodThing_Main p:hover{
+    cursor: pointer;
 }
 .HomePage3_hr{
     color: black;
 }
 .IG_Main{
+    margin-top: 70px;
+}
+.IG_Hr{
+    border: 1px solid black;
     margin-top: 50px;
 }
-.IG_Part1{
-    width: 30%;
+.IG_Head{
+    background-color:white;
     display: flex;
-    font-size: 40px;
-    background-color: white;
-    padding: 10px 0px;
+    width: 40%;
+    padding: 20px;
     margin: auto;
+    margin-top: -45px;
 }
-.IG_Part1_Head{
-    font-size:18px;
-    letter-spacing: 3px;
+.IG_font{
+    font-size: 40px;
+}
+.IG_Head p{
+    font-size: 25px;
     color: #333333;
-    font-weight: 600;
-    margin-top: 10px;
+    letter-spacing: 4px;
 }
-.IG_Part1_Text{
-    font-size: 16px;
-    font-weight: lighter;
-    color: #333333;
-    margin-top: -15px;
-    margin-bottom: 100px;
-}
-.IG_Part1_Border{
-  border: 1px solid black;
-  margin-top: -70px;
+.IG_Text{
+    margin-top: -20px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #666666;
 }
 .IG_Part3_Head{
  font-size: 28px;
@@ -86,5 +101,88 @@
 .IG_Part3_Text{
     width: 70%;
     margin: auto;
+    font-size: 16px;
     margin-bottom: 30px;
+    color: #666666;
+    margin-bottom: 150px;
+}
+.HomPage_slider{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.HomPage_slider img{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+.HomPage_slider img:hover{
+    cursor: pointer;
+}
+
+@media (max-width:750px){
+    .HomePage3_Main{
+        width:100%;
+        margin: auto;
+    }
+    .Holiday_img1{
+       display: none;
+    }
+    .Holiday_img2{
+        display: block;
+        margin: auto;
+        margin-top: 80px;
+    }
+    .Holiday_img2 img{
+        display: block;
+        margin: auto; 
+    }
+    .HomePage3_button_arr{
+        width: 90%;
+        display: grid;
+        margin: auto;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px 30px;
+    }
+    .HomePage3_button_arr div{
+        padding: 10px 15px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .HomePage3_Head{
+        font-size: 20px;
+    }
+    .GoodThing_Main{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .GoodThing_Main img{
+        width: 95%;
+    }
+    .IG_Hr{
+       display: none;
+    }
+    .IG_Part3_Head{
+        font-size: 25px;
+       }
+    .IG_Part3_Text{
+           width: 90%;
+           text-align:justify;
+    }
+    .IG_Head{
+        width: 95%;
+        padding: 20px;
+        margin: auto;
+        margin-top: 0px;
+    }
+    .IG_font{
+        font-size: 30px;
+    }
+    .IG_Head p{
+        font-size: 20px;
+    }
+    .IG_Text{
+        margin-top: -20px;
+        font-size: 12px;
+        letter-spacing: 0px;
+    }
 }
