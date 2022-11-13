@@ -1,11 +1,16 @@
 import React from "react";
 import "./HomePage.css";
 import Slider from "react-slick";
-import HomePage3 from "../Components/HomePage3";
-import ShopCollection from "../Components/ShopCollection";
+
+import HomePage3 from "../Components/HomePage3"
+import ShopCollection from "../Components/ShopCollection"
+import Gotottop from "../Components/Gotottop";
+
+
 import { Footer } from "../Components/Footer";
 import { Navbar } from "../Components/Navbar";
 import { Text } from "@chakra-ui/react";
+
 
 export const HomePage = () => {
   const settings = {
@@ -81,9 +86,29 @@ export const HomePage = () => {
           <div>
             <div className="silksliderinerdiv2">
               {" "}
+              <h2 className="slidercardhead02">2 days only!</h2>
+              <Text className="slidercarditemtype02">All Body Lotion</Text>
+              <h1 className="byonegetonefree">Rs. 3.95</h1>
+              <p className="slidercarditemtype02">Lowest-price item is free</p>
+              <button className="sliderbtn">SHOP</button>
+            </div>
+          </div>
+          <div>
+            <div className="silksliderinerdiv2">
+              {" "}
               <h2 className="slidercardhead02">Limited time only!</h2>
-              <Text className="slidercarditemtype02">All candles</Text>
-              <h1 className="byonegetonefree">Buy1,Get 1 FREE</h1>
+              <p className="slidercarditemtype02">Hand Soap</p>
+              <h1 className="byonegetonefree">Buy2,Get 1 FREE</h1>
+              <p className="slidercarditemtype02">Limit 20 with code: MASAI20</p>
+              <button className="sliderbtn">SHOP</button>
+            </div>
+          </div>
+          <div>
+            <div className="silksliderinerdiv2">
+              {" "}
+              <h2 className="slidercardhead02">Limited time only!</h2>
+              <p className="slidercarditemtype02">Travel ,HAnd & Lip Care</p>
+              <h1 className="byonegetonefree">Get low as Rs.30</h1>
               <p className="slidercarditemtype02">Lowest-price item is free</p>
               <button className="sliderbtn">SHOP</button>
             </div>
@@ -102,28 +127,8 @@ export const HomePage = () => {
             <div className="silksliderinerdiv2">
               {" "}
               <h2 className="slidercardhead02">Limited time only!</h2>
-              <p className="slidercarditemtype02">All candles</p>
-              <h1 className="byonegetonefree">Buy1,Get 1 FREE</h1>
-              <p className="slidercarditemtype02">Lowest-price item is free</p>
-              <button className="sliderbtn">SHOP</button>
-            </div>
-          </div>
-          <div>
-            <div className="silksliderinerdiv2">
-              {" "}
-              <h2 className="slidercardhead02">Limited time only!</h2>
-              <p className="slidercarditemtype02">All candles</p>
-              <h1 className="byonegetonefree">Buy1,Get 1 FREE</h1>
-              <p className="slidercarditemtype02">Lowest-price item is free</p>
-              <button className="sliderbtn">SHOP</button>
-            </div>
-          </div>
-          <div>
-            <div className="silksliderinerdiv2">
-              {" "}
-              <h2 className="slidercardhead02">Limited time only!</h2>
-              <p className="slidercarditemtype02">All candles</p>
-              <h1 className="byonegetonefree">Buy1,Get 1 FREE</h1>
+              <p className="slidercarditemtype02">Room Spray</p>
+              <h1 className="byonegetonefree">Get low as Rs.30 </h1>
               <p className="slidercarditemtype02">Lowest-price item is free</p>
               <button className="sliderbtn">SHOP</button>
             </div>
@@ -142,8 +147,12 @@ export const HomePage = () => {
         className="homeimg-tpohead4"
       />
 
-      <ShopCollection />
-      <HomePage3 />
+
+      <ShopCollection/>
+      <HomePage3/>
+      <Gotottop/>
+
+      
       <Footer />
     </>
   );

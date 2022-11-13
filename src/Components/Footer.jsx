@@ -5,6 +5,7 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import { IoLogoInstagram } from "react-icons/io";
 import { FaTiktok } from "react-icons/fa";
 import { TfiYoutube } from "react-icons/tfi";
+import Gotottop from "./Gotottop";
 import {
   Menu,
   Button,
@@ -67,6 +68,7 @@ export const Footer = () => {
   };
   return (
     <div className={styles.Footer}>
+  
       <hr />
       <div className={styles.Footer_Main}>
         <div className={styles.Footer_One}>
@@ -137,6 +139,7 @@ export const Footer = () => {
   <MenuItem>FIND US</MenuItem>
   </ MenuList>
   </Menu>
+ 
         </div>
       <div className={styles.Footer_Main2}>
         <div>
@@ -153,10 +156,12 @@ export const Footer = () => {
             ))}
           </div>
         </div>
+        
         <div className={styles.Footer_Main3}>
           © 2022 Bath & Body Works Direct, Inc. All Rights Reserved
         </div>
       </div>
+      
     </div>
   );
 };

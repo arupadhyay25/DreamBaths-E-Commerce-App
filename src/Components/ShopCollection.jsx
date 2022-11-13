@@ -29,9 +29,16 @@ const CollectionDataDiv = styled.div`
     width : 80%;
     margin:auto;
     grid-template-columns : repeat(2,1fr);
-    grid-gap : 30px;
+   grid-gap:20px;
+    
 }
    
+`
+const CollectionMater=styled.div`
+  width:100%;
+ 
+  text-align : center;
+  
 `
 const CategoryImage = styled.img`
     width : 100%;
@@ -115,11 +122,11 @@ const ShopCollection = () => {
         <CollectionDataDiv>
         {collectionData.map((e) => {
             return (
-              <div>
-                <img src={e.image} alt="" style={{borderRadius: "10px"}}/>
+              <CollectionMater>
+                <img src={e.image} alt="" style={{borderRadius: "10px",width:"100%"}}/>
                 <p style={{textAlign:"center", margin: "15px auto", color : "grey"}}>{e.text}</p>
                 <CategoryLinks><Link to={"/"}>{e.link}</Link></CategoryLinks>
-              </div>
+              </CollectionMater>
             );
             })}
         </CollectionDataDiv>
