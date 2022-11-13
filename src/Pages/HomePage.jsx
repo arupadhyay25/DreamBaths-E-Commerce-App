@@ -6,8 +6,7 @@ import HomePage3 from "../Components/HomePage3"
 import ShopCollection from "../Components/ShopCollection"
 import Gotottop from "../Components/Gotottop";
 
-import HomePage3 from "../Components/HomePage3";
-import ShopCollection from "../Components/ShopCollection";
+
 import { Footer } from "../Components/Footer";
 import { Navbar } from "../Components/Navbar";
 import { Text } from "@chakra-ui/react";
@@ -153,8 +152,7 @@ export const HomePage = () => {
       <HomePage3/>
       <Gotottop/>
 
-      <ShopCollection />
-      <HomePage3 />
+      
       <Footer />
     </>
   );
