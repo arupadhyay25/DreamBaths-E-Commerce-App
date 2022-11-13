@@ -12,10 +12,10 @@ export const getproductrequest = () => {
     type: GET_PRODUCTS_REQUEST,
   };
 };
-let params={
-  _sort:"price",
-  _order:"asc"
-}
+let params = {
+  _sort: "price",
+  _order: "asc",
+};
 export let getproductsuccess = (data) => (dispatch) => {
   axios
     .get(data[0], {
@@ -36,9 +36,47 @@ export const getproductfailure = () => {
     type: GET_PRODUCTS_FAILURE,
   };
 };
-export const addproductquantity = () => {
-  return {
-    type: ADD_PRODUCTS_QUANTITY,
-  };
+export const addtocart = (id) => (dispatch) => {
+  axios
+    .patch(`http://localhost:8080/products/${id}`, {
+      cartquantity: 1,
+    })
+    .then(() =>
+      dispatch({
+        type: ADD_PRODUCTS_QUANTITY,
+      })
+    );
 };
-
+export const addproductquantity = (id, page) => (dispatch) => {
+  axios
+    .patch(`http://localhost:8080/products/${id}`, {
+      cartquantity: page + 1,
+    })
+    .then(() =>
+      dispatch({
+        type: ADD_PRODUCTS_QUANTITY,
+      })
+    );
+};
+export const subproductquantity = (id, page) => (dispatch) => {
+  axios
+    .patch(`http://localhost:8080/products/${id}`, {
+      cartquantity: page - 1,
+    })
+    .then(() =>
+      dispatch({
+        type: ADD_PRODUCTS_QUANTITY,
+      })
+    );
+};
+export const resetcartbag= (id) => (dispatch) => {
+  axios
+    .patch(`http://localhost:8080/products/${id}`, {
+      cartquantity: 0,
+    })
+    .then(() =>
+      dispatch({
+        type: ADD_PRODUCTS_QUANTITY,
+      })
+    );
+};

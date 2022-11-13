@@ -5,9 +5,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { SingleCart } from "../Components/SingleCart";
-import { getproductsuccess } from "../Redux/action";
+import { getproductsuccess, resetcartbag } from "../Redux/action";
 import "./Cartpage.css";
 import Swal from "sweetalert2";
+import { Navbar } from "../Components/Navbar";
+import { Footer } from "../Components/Footer";
 let styles = {
   display: "flex",
   alignItems: "center",
@@ -21,13 +23,19 @@ export const Cartpage = () => {
   let [total, settotal] = useState(0);
   let dispatch = useDispatch();
   let navigate = useNavigate();
+  function scrollTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 
   let sumProduct = () => {
     if (data.filter((e) => e.cartquantity > 0) == 0) {
       settotal(0);
     } else {
       let sum = 0;
-      let arr = data
+      let arrs = data
         .filter((e) => e.cartquantity > 0)
         .forEach((e) => (sum += e.price * e.cartquantity));
       settotal(sum);
@@ -39,17 +47,14 @@ export const Cartpage = () => {
   let handlecheakout = () => {
     data
       .filter((e) => e.cartquantity > 0)
-      .forEach((e) =>
-        axios.patch(`http://localhost:8080/products/${e.id}`, {
-          cartquantity: 0,
-        })
-      );
+      .forEach((e) => dispatch(resetcartbag(e.id)));
     setstate((prev) => prev + 1);
     Swal.fire({
       title: "Order Placed Succesfully !!",
       text: "Thankyou For Shoping",
       type: "success",
     });
+    scrollTop();
     navigate("/");
   };
 
@@ -69,6 +74,7 @@ export const Cartpage = () => {
 
   return (
     <>
+      <Navbar />
       <div className="Product-Cart-Heading">
         <h1 className="Product-Cart-header-h1">Shopping Cart</h1>
         <Alert status="info">
@@ -182,6 +188,7 @@ export const Cartpage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

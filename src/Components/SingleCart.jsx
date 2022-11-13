@@ -2,26 +2,26 @@ import { AddIcon, DeleteIcon, MinusIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addproductquantity, resetcartbag, subproductquantity } from "../Redux/action";
 
 export const SingleCart = ({ arr, setstate }) => {
   let [page, setpage] = useState(arr.cartquantity);
+  let dispatch = useDispatch();
 
   let AddQuantocart = (id) => {
-    axios.patch(`http://localhost:8080/products/${id}`, {
-      cartquantity: page + 1,
-    });
+    dispatch(addproductquantity(id, page));
     setpage(page + 1);
     setstate((prev) => prev + 1);
   };
   let SubQuantocart = (id) => {
-    axios.patch(`http://localhost:8080/products/${id}`, {
-      cartquantity: page - 1,
-    });
+    dispatch(subproductquantity(id, page));
     setpage(page - 1);
     setstate((prev) => prev + 1);
   };
   let handledelete = (id) => {
-    axios.patch(`http://localhost:8080/products/${id}`, { cartquantity: 0 });
+    
+    dispatch(resetcartbag(id));
     setstate((prev) => prev + 1);
   };
 

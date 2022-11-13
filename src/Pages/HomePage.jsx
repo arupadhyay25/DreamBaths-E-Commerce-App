@@ -1,8 +1,17 @@
 import React from "react";
 import "./HomePage.css";
 import Slider from "react-slick";
+
 import HomePage3 from "../Components/HomePage3"
 import ShopCollection from "../Components/ShopCollection"
+import Gotottop from "../Components/Gotottop";
+
+import HomePage3 from "../Components/HomePage3";
+import ShopCollection from "../Components/ShopCollection";
+import { Footer } from "../Components/Footer";
+import { Navbar } from "../Components/Navbar";
+import { Text } from "@chakra-ui/react";
+
 
 export const HomePage = () => {
   const settings = {
@@ -12,7 +21,7 @@ export const HomePage = () => {
     centerMode: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    rows:1,
+    rows: 1,
     swipeToSlide: true,
     variableWidth: true,
     responsive: [
@@ -23,8 +32,8 @@ export const HomePage = () => {
           slidesToScroll: 3,
           infinite: true,
           centerMode: true,
-          rows:1,
-        }
+          rows: 1,
+        },
       },
       {
         breakpoint: 600,
@@ -33,8 +42,8 @@ export const HomePage = () => {
           slidesToScroll: 1,
           infinite: true,
           centerMode: true,
-          rows:1,
-        }
+          rows: 1,
+        },
       },
       {
         breakpoint: 480,
@@ -42,13 +51,15 @@ export const HomePage = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          rows:1,
-        }
-      }
-    ]
+          rows: 1,
+        },
+      },
+    ],
   };
   return (
     <>
+      <Navbar />
+
       <div className="homeheade-01">LIMITED TIME ONLY!</div>
       <img
         src="/Image/homepage/limg1.gif"
@@ -65,7 +76,7 @@ export const HomePage = () => {
         <h1>TODAY'S TOP OFFERS</h1>
         <Slider {...settings} className="nowr215">
           <div>
-            <div className="silksliderinerdiv2">
+            <div  style={{textAlign:"center"}} className="silksliderinerdiv2">
               <h2 className="slidercardhead02">Limited time only!</h2>
               <p className="slidercarditemtype02">All candles</p>
               <h1 className="byonegetonefree">Buy1,Get 1 FREE</h1>
@@ -77,7 +88,7 @@ export const HomePage = () => {
             <div className="silksliderinerdiv2">
               {" "}
               <h2 className="slidercardhead02">Limited time only!</h2>
-              <p className="slidercarditemtype02">All candles</p>
+              <Text className="slidercarditemtype02">All candles</Text>
               <h1 className="byonegetonefree">Buy1,Get 1 FREE</h1>
               <p className="slidercarditemtype02">Lowest-price item is free</p>
               <button className="sliderbtn">SHOP</button>
@@ -137,8 +148,14 @@ export const HomePage = () => {
         className="homeimg-tpohead4"
       />
 
+
       <ShopCollection/>
       <HomePage3/>
+      <Gotottop/>
+
+      <ShopCollection />
+      <HomePage3 />
+      <Footer />
     </>
   );
 };

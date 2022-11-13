@@ -6,6 +6,7 @@
 }
 .Footer_One{
     height: 100%;
+    zoom: 0.9;
 }
 .Footer_One_Head{
     text-align: left;
@@ -13,11 +14,11 @@
     line-height: 18px;
     font-weight: bold;
     color: #333333;
-  }
+}
 .Footer_One_Child{
-font-size: 14px;
-text-align: left;
-margin: 7px 0px;
+    font-size: 14px;
+    text-align: left;
+    margin: 7px 0px;
 }
 .Footer_One_Child_box , .Footer_One_Child_box2{
     display: flex;
@@ -36,11 +37,11 @@ margin: 7px 0px;
     border: 1px dashed grey;
 }
 .Footer_One_Child_submit{ 
-  background-color: #333333;
-  color: white;
-  padding: 9.5px 18px;
-  font-size: 13px;
-  margin-left: -22px;
+    background-color: #333333;
+    color: white;
+    padding: 9.5px 18px;
+    font-size: 13px;
+    margin-left: -22px;
 }
 .Footer_One_Child_submit:hover{
     background-color: #F2F2F2;
@@ -48,14 +49,14 @@ margin: 7px 0px;
     cursor: pointer;
 }
 .Footer_info{
- font-size: 30px;
- padding: 7px;
- background-color:#F2F2F2;
- color: #666666;
- border-radius: 20px;
- margin-right: 43px;
- margin-left: -17px;
- margin-top: 3px;
+    font-size: 30px;
+    padding: 7px;
+    background-color:#F2F2F2;
+    color: #666666;
+    border-radius: 20px;
+    margin-right: 43px;
+    margin-left: -17px;
+    margin-top: 3px;
 } 
 .Footer_info:hover{
     color: white;
@@ -68,7 +69,7 @@ margin: 7px 0px;
     margin-top: 35px;
     margin-bottom: 15px; 
     
-     
+    
 }
 .Footer_One_Icons{
     width: 95%;
@@ -81,7 +82,7 @@ margin: 7px 0px;
     font-size: 28px;
 }
 .Facebook:hover{
-  cursor: pointer;
+    cursor: pointer;
 }
 .Twitter{
     color: #54a9e9;
@@ -110,7 +111,7 @@ margin: 7px 0px;
     border-radius: 30px;
 }
 .TikTok:hover{
-  cursor: pointer;
+    cursor: pointer;
 }
 .Youtube{
     background-color: red;
@@ -142,16 +143,16 @@ margin: 7px 0px;
     font-weight: bold;
     color: #333333;
     margin-left: 7px;
- }
+}
 .Footer_Two_columnChild{
-   padding: 7px;
+    padding: 7px;
 }
 .Footer_Two_columnChild:hover{
     color: #005699;
     cursor: pointer;
- }
+}
 .Footer_Main2 {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 span{
@@ -160,7 +161,7 @@ span{
 }
 
 .Footer_icons{
-
+    
     font-size: 20px;
 }
 .Footer_Main2{
@@ -172,12 +173,15 @@ span{
     display: grid;
     grid-template-columns: 8% 8% 12% 24% 33% 17%;
     margin-top: 30px;
+    zoom: 0.8;
+    padding-top: 30px
 }
 .Footer_Main22{
     display: grid ;
     width: 50%;
     margin: auto;
     margin-top: 5px;
+    zoom: 0.8;
     grid-template-columns:40% 60%
 }
 .Footer_Main2_child{

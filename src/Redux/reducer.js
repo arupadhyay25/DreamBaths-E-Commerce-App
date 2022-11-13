@@ -1,4 +1,5 @@
 import {
+  ADD_PRODUCTS_QUANTITY,
   GET_PRODUCTS_FAILURE,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
@@ -28,6 +29,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isError: true,
+      };
+    case ADD_PRODUCTS_QUANTITY:
+      return {
+        ...state,
+        isError: false,
       };
 
     default:
