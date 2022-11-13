@@ -7,7 +7,7 @@ import {
 } from "react-icons/bs";
 import styles from "./Admin.module.css";
 import Plot from "react-plotly.js";
-import { Button, Icon, TableContainer, Text } from "@chakra-ui/react";
+import { Box, Button, Icon, TableContainer, Text } from "@chakra-ui/react";
 import { GrUserAdmin } from "react-icons/gr";
 import { FiSettings } from "react-icons/fi";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -34,7 +34,7 @@ import { AddPatch } from "../Components/AddPatch";
 import { SearchIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { getproductsuccess } from "../Redux/action";
-import { EditPage } from "./EditPage";
+import { EditPage } from "../Components/EditPage";
 import { Link } from "react-router-dom";
 export const Admin = () => {
   const [rawData, setRawData] = useState({});
@@ -219,7 +219,7 @@ export const Admin = () => {
               borderRadius="13px"
               fontSize="2xl"
               fontWeight="bold"
-              status="info"
+              colorScheme="blue"
             >
               Dashboard
             </Button>
@@ -232,7 +232,7 @@ export const Admin = () => {
               borderRadius="13px"
               fontSize="2xl"
               fontWeight="bold"
-              status="info"
+              colorScheme="blue"
             >
               Category
             </Button>
@@ -245,7 +245,7 @@ export const Admin = () => {
               borderRadius="13px"
               fontSize="2xl"
               fontWeight="bold"
-              status="info"
+              colorScheme="blue"
             >
               Add Products
             </Button>
@@ -258,7 +258,7 @@ export const Admin = () => {
               borderRadius="13px"
               fontSize="2xl"
               fontWeight="bold"
-              status="info"
+              colorScheme="blue"
             >
               Edit Products
             </Button>
@@ -266,14 +266,17 @@ export const Admin = () => {
         </div>
         <div ref={dashRef} className={styles.mainDash}>
           <Heading textAlign="center">
-            <Alert
-              borderRadius="20px"
+            <Box
+              borderRadius="10px"
               size="lg"
               textAlign="center"
-              status="info"
+              color="white"
+              bg="blue.500"
+              pt="10px"
+              pb="10px"
             >
               Dashboard
-            </Alert>
+            </Box>
           </Heading>
           <br />
           <div className={styles.dashFlexItem}>
@@ -349,14 +352,17 @@ export const Admin = () => {
         </div>
         <div ref={categoryRef} className={styles.mainDash}>
           <Heading size="lg">
-            <Alert
-              borderRadius="20px"
+            <Box
+              borderRadius="10px"
               size="lg"
               textAlign="center"
-              status="info"
+              color="white"
+              bg="blue.500"
+              pt="10px"
+              pb="10px"
             >
               Category
-            </Alert>
+            </Box>
           </Heading>
           <br />
           <div className={styles.categoryBox}>
@@ -433,33 +439,39 @@ export const Admin = () => {
         </div>
         <div ref={productRef} className={styles.mainDash}>
           <Heading size="lg">
-            <Alert
-              borderRadius="20px"
+            <Box
+              borderRadius="10px"
               size="lg"
               textAlign="center"
-              status="info"
+              color="white"
+              bg="blue.500"
+              pt="10px"
+              pb="10px"
             >
-              Products
-            </Alert>
+              Add Products
+            </Box>
           </Heading>
           <br />
-          <div className={styles.productPageCss}>
+          <div>
             <AddPatch />
           </div>
         </div>
         <div ref={producteditRef} className={styles.mainDash}>
           <Heading size="lg">
-            <Alert
-              borderRadius="20px"
+            <Box
+              borderRadius="10px"
               size="lg"
               textAlign="center"
-              status="info"
+              color="white"
+              bg="blue.500"
+              pt="10px"
+              pb="10px"
             >
-              Edit Products
-            </Alert>
+              Add Products
+            </Box>
           </Heading>
           <br />
-          <div className={styles.productPageCss}>
+          <div>
             <EditPage />
           </div>
         </div>

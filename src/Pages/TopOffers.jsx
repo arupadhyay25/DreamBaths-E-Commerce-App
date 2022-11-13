@@ -152,6 +152,7 @@ export const TopOffers = () => {
   ];
   return (
           <>
+          <Navbar/>
             <Header>
             <h1 style={{fontWeight:"bolder",fontSize:"22px"}}>TOP OFFERS</h1>
             <br></br>
@@ -202,6 +203,7 @@ export const TopOffers = () => {
               <h1 style={{fontSize:"25px",fontWeight:"600"}}>What is the Bath & Body Works return policy?</h1>
               <Detail>We’re always updating this page with the latest and greatest Bath & Body Works sales, so bookmark it now and check back often. Other coupon sites can wait – this is the spot to check for the best deals. Hint, hint: now that you’ve seen our greatest deals shop our <span><a href="/">newest arrivals.</a></span> </Detail>
             </Info>
+            <Footer></Footer>
           </>
           );
 };
