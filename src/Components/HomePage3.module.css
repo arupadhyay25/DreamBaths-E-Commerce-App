@@ -1,10 +1,17 @@
 .HomePage3_Main{
-    width:85%;
+    width:80%;
     margin: auto;
+  
 }
 .Holiday_img1{
+ 
     margin-top: 80px;
 }
+.Holiday_img1>img{
+    width: 100%;
+    
+}
+
 .Holiday_img2{
     display: none;
 }
