@@ -1,11 +1,17 @@
 import React from "react";
 import "./HomePage.css";
 import Slider from "react-slick";
+
+import HomePage3 from "../Components/HomePage3"
+import ShopCollection from "../Components/ShopCollection"
+import Gotottop from "../Components/Gotottop";
+
 import HomePage3 from "../Components/HomePage3";
 import ShopCollection from "../Components/ShopCollection";
 import { Footer } from "../Components/Footer";
 import { Navbar } from "../Components/Navbar";
 import { Text } from "@chakra-ui/react";
+
 
 export const HomePage = () => {
   const settings = {
@@ -141,6 +147,11 @@ export const HomePage = () => {
         alt=""
         className="homeimg-tpohead4"
       />
+
+
+      <ShopCollection/>
+      <HomePage3/>
+      <Gotottop/>
 
       <ShopCollection />
       <HomePage3 />

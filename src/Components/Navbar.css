@@ -3,12 +3,13 @@
   width:100%;
   margin-top: -25px;
   height: 45px;
-  background-color: #e5f0da;
-  color: rgb(17, 77, 30);
+  background-color: #dbdaf0;
+  color: rgb(17, 31, 77);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  font-weight:700;
 }
 
 .navbar {
