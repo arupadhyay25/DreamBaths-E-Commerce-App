@@ -3,22 +3,22 @@
     {
       "title": "Bourbon_edit",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwef08bb2c/crop/026552804_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 80.63,
+      "price": 79.63,
       "titledesp": "Ultimate Hydration Body Cream",
       "id": 1,
-      "cartquantity": 4,
+      "cartquantity": 0,
       "category": "bodycare",
       "reviewCount": 299,
       "rating": 1,
-      "": "80.25"
+      "": ""
     },
     {
       "title": "Classic Flannel",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwcf9d3d94/crop/026553504_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 92.35,
+      "price": 95.25,
       "titledesp": "Body Spray",
       "id": 2,
-      "cartquantity": 1,
+      "cartquantity": 0,
       "category": "bodycare",
       "reviewCount": 264,
       "rating": 4,
@@ -30,7 +30,7 @@
       "price": 94.36499501852572,
       "titledesp": "Shower Steamers",
       "id": 3,
-      "cartquantity": 0,
+      "cartquantity": 3,
       "category": "bodycare",
       "reviewCount": 294,
       "rating": 1,
@@ -105,7 +105,7 @@
     {
       "title": "Black Tie",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw69703bc4/crop/026577313_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 85.42942506498208,
+      "price": 76.45,
       "titledesp": "3-in-1 Hair, Face & Body Wash",
       "id": 10,
       "cartquantity": 0,
@@ -248,7 +248,7 @@
     {
       "title": "Winter Candy Apple",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5d2efd4d/crop/026539034_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 134.85124267442666,
+      "price": 135.68,
       "titledesp": "Daily Nourishing Body Lotion",
       "id": 23,
       "cartquantity": 0,
@@ -270,7 +270,7 @@
     {
       "title": "Teakwood",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw99e2e55a/crop/026526261_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 104.97680022267068,
+      "price": 105.98,
       "titledesp": "Daily Nourishing Body Lotion",
       "id": 25,
       "cartquantity": 0,
@@ -878,7 +878,7 @@
       "price": 66.75293306695659,
       "titledesp": "Travel Size Ultimate Hydration Body Cream",
       "id": 80,
-      "cartquantity": 0,
+      "cartquantity": 1,
       "category": "bodycare",
       "reviewCount": 224,
       "rating": 4
@@ -8395,6 +8395,28 @@
       "reviewCount": 0,
       "rating": 4,
       "id": 763
+    },
+    {
+      "title": "masai",
+      "image": "https://drive.google.com/file/d/1CJ70hG9EJlKeCxr72-FXImrIV8KweT5u/view?usp=sharing",
+      "price": 150,
+      "titledesp": "teaching",
+      "cartquantity": 0,
+      "category": "education",
+      "reviewCount": 0,
+      "rating": 4,
+      "id": 764
+    },
+    {
+      "title": "masai",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkd_U1uTQ_vUOlaHVGdpPLYZCq_uQgyWrsuA&usqp=CAU",
+      "price": 150,
+      "titledesp": "teaching",
+      "cartquantity": 0,
+      "category": "educatiopn",
+      "reviewCount": 0,
+      "rating": 4,
+      "id": 765
     }
   ]
 }

@@ -12,6 +12,8 @@ import { HolidayShop } from "../Pages/HolidayShop";
 import { LoginPage } from "../Pages/LoginPage";
 import { Admin } from "../Pages/Admin";
 import { Cartpage } from "../Pages/Cartpage";
+import { CheckoutPage } from "../Pages/CheckoutPage";
+import { PaymentPage } from "../Pages/PaymentPage";
 
 export const MainRoutes = () => {
   return (
@@ -19,7 +21,9 @@ export const MainRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/cart" element={<Cartpage />} />
-      <Route path="login" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/checkoutpage" element={<CheckoutPage />} />
+      <Route path="/payment" element={<PaymentPage />} />
       <Route path="/top-offers" element={<TopOffers />} />
       <Route path="/body-care" element={<BodyCare />} />
       <Route path="/candles" element={<Candles />} />

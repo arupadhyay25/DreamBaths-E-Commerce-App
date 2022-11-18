@@ -12,7 +12,6 @@ import { GrUserAdmin } from "react-icons/gr";
 import { FiSettings } from "react-icons/fi";
 import { IoNotificationsOutline } from "react-icons/io5";
 import {
-  Alert,
   Heading,
   Input,
   Table,
@@ -32,8 +31,6 @@ import { useState } from "react";
 import axios from "axios";
 import { AddPatch } from "../Components/AddPatch";
 import { SearchIcon } from "@chakra-ui/icons";
-import { useDispatch, useSelector } from "react-redux";
-import { getproductsuccess } from "../Redux/action";
 import { EditPage } from "../Components/EditPage";
 import { Link } from "react-router-dom";
 export const Admin = () => {
@@ -45,11 +42,6 @@ export const Admin = () => {
   const productRef = useRef();
   const producteditRef = useRef();
   let [Productcount, setproductcount] = useState(0);
-  let makepatch = () => {
-    axios.patch(`https://cwproject.onrender.com/api/products/1`, {
-      cartquantity: 20,
-    });
-  };
   const visibleDash = () => {
     dashRef.current.style.display = "block";
     categoryRef.current.style.display = "none";
@@ -411,12 +403,12 @@ export const Admin = () => {
                       <div style={{ display: "flex", alignItems: "center" }}>
                         <BsSortNumericUp
                           onClick={() => {
-                            ascSortCat();
+                            ascSortProd();
                           }}
                         />
                         <BsSortNumericDown
                           onClick={() => {
-                            descSortCat();
+                            descSortProd();
                           }}
                         />
                       </div>

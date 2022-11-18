@@ -10,7 +10,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addtocart } from "../Redux/action";
@@ -107,7 +106,7 @@ export const Singleproduct = ({
           </Box>
         </Box>
         <Box>
-          {cartquantity != 0 ? (
+          {cartquantity !== 0 ? (
             <Alert borderRadius={15} w="auto" status="success">
               <AlertIcon />
               Added to cart !!

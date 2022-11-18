@@ -1,7 +1,6 @@
 import styles from './HomePage3.module.css'
 
 import Slider from "react-slick";
-import { color } from '@chakra-ui/react';
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (

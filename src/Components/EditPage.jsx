@@ -36,12 +36,12 @@ export const EditPage = () => {
 
   let getproductbyid = () => {
     axios
-      .get(`https://sepia-mercurial-novel.glitch.me/api/products${id}`)
+      .get(`http://localhost:8080/products/${id}`)
       .then((r) => setshowdata(r.data));
   };
 
   let addpatch = () => {
-    axios.patch(`https://sepia-mercurial-novel.glitch.me/api/products/${id}`, patchdata);
+    axios.patch(`http://localhost:8080/products/${id}`, patchdata);
     setkey("");
     setvalue("");
     setflag(true);
@@ -50,14 +50,13 @@ export const EditPage = () => {
 
   useEffect(() => {
     let newval = value;
-    if (key == "price" || key == "rating") {
+    if (key === "price" || key === "rating") {
       newval = Number(value);
     }
     setpatchdata({
       [key]: newval,
     });
     getproductbyid();
-    console.log(key);
   }, [key, value]);
   return (
     <div>

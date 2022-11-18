@@ -41,7 +41,7 @@ export const AddPatch = () => {
       reviewCount: 264,
       rating: 4,
     });
-    axios.post(`https://sepia-mercurial-novel.glitch.me/api/products`, patchdata);
+    axios.post(`http://localhost:8080/products`, patchdata);
     setpcat("");
     setpsubcat("");
     setpcat("");

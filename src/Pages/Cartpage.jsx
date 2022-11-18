@@ -1,9 +1,8 @@
-import { AddIcon, CalendarIcon, DeleteIcon, MinusIcon } from "@chakra-ui/icons";
+import { CalendarIcon } from "@chakra-ui/icons";
 import { Alert, AlertIcon, Button, Center, Text } from "@chakra-ui/react";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SingleCart } from "../Components/SingleCart";
 import { getproductsuccess, resetcartbag } from "../Redux/action";
 import "./Cartpage.css";
@@ -31,11 +30,11 @@ export const Cartpage = () => {
   }
 
   let sumProduct = () => {
-    if (data.filter((e) => e.cartquantity > 0) == 0) {
+    if (data.filter((e) => e.cartquantity > 0) === 0) {
       settotal(0);
     } else {
       let sum = 0;
-      let arrs = data
+      data
         .filter((e) => e.cartquantity > 0)
         .forEach((e) => (sum += e.price * e.cartquantity));
       settotal(sum);
@@ -60,7 +59,7 @@ export const Cartpage = () => {
 
   useEffect(() => {
     sumProduct();
-    let url = `https://sepia-mercurial-novel.glitch.me/api/products`;
+    let url = `http://localhost:8080/products`;
     let datapack = [url];
     dispatch(getproductsuccess(datapack));
   }, [total, state]);
@@ -176,13 +175,15 @@ export const Cartpage = () => {
             </div>
             <br />
             <Center>
-              <Button
-                disabled={total == 0}
-                onClick={handlecheakout}
-                colorScheme="teal"
-              >
-                PROCEED TO CHECKOUT
-              </Button>
+              <Link to="/checkoutpage">
+                <Button
+                  disabled={total == 0}
+                  // onClick={handlecheakout}
+                  colorScheme="teal"
+                >
+                  PROCEED TO CHECKOUT
+                </Button>
+              </Link>
             </Center>
             <br />
           </div>

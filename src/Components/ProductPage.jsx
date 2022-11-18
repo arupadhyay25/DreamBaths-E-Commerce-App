@@ -10,7 +10,6 @@ import { useLocation, useSearchParams } from "react-router-dom";
 
 export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
   let [page, setpage] = useState(1);
-  let [cart, setcart] = useState([]);
   let dispatch = useDispatch();
   let Products = useSelector((s) => s.products);
   let [state, setstate] = useState(0);
@@ -32,7 +31,7 @@ export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
         _page: page,
         _limit: 13,
       };
-      let url = `https://sepia-mercurial-novel.glitch.me/api/products?category=${category}`;
+      let url = `http://localhost:8080/products/?category=${category}`;
       let data = [url, queryparams];
       dispatch(getproductsuccess(data));
     }
@@ -53,7 +52,7 @@ export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
               <h1>{heading}</h1>
             </div>
             <div>
-              <Button disabled={page == 1} onClick={() => setpage(page - 1)}>
+              <Button disabled={page === 1} onClick={() => setpage(page - 1)}>
                 <ArrowLeftIcon />
               </Button>
               &nbsp;&nbsp;
@@ -83,7 +82,7 @@ export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
               ))}
           </div>
           <div>
-            <Button disabled={page == 1} onClick={() => setpage(page - 1)}>
+            <Button disabled={page === 1} onClick={() => setpage(page - 1)}>
               <ArrowLeftIcon />
             </Button>
             &nbsp;&nbsp;
