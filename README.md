@@ -36,8 +36,21 @@ DreamBaths is an E-Commerce websitr that sells personal care and beauty products
 
 
 ## Snapshots 📷
-- Landing Page (Home Page):
-  
+- Landing Page (UserSide):
+![user1](https://user-images.githubusercontent.com/105644684/202635114-c2961d53-a9af-4c37-b9f6-bdeee9bbde8f.JPG)
+- Product Page (UserSide):
+![user2](https://user-images.githubusercontent.com/105644684/202635126-4972738f-a661-414f-87d7-a600bc4f4d78.JPG)
+- Cart Page (UserSide):
+![user3](https://user-images.githubusercontent.com/105644684/202635130-33da66a4-71b6-4be7-a8ef-c1027175e18f.JPG)
+- Dasboard section (AdminSide):
+![admin1](https://user-images.githubusercontent.com/105644684/202635253-32eeecbb-40ee-4f7c-ac7a-1e563e1bc13f.JPG)
+- Category Section (AdminSide):
+![admin2](https://user-images.githubusercontent.com/105644684/202635257-e6c5f06c-7e7d-45d9-a90f-de6e88710790.JPG)
+- Add Production Section (AdminSide):
+![admin3](https://user-images.githubusercontent.com/105644684/202635258-5eaeaf7a-6246-4139-91dc-d2565416f13c.JPG)
+- Edit Product Section (AdminSide):
+![admin4](https://user-images.githubusercontent.com/105644684/202635261-e1c7374d-adf3-42d3-8823-738c14542c86.JPG)
+
 
 
 ### End Notes 📑
