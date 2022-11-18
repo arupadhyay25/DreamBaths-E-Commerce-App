@@ -8377,25 +8377,25 @@
       "rating": 1
     },
     {
-      "title": "Mahogany Teakwood",
-      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwdfe0df3d/crop/026437376_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 85.1190796718068,
-      "titledesp": "Single Wick Candle",
-      "id": 541,
+      "title": "Fall in Bloom",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc8995ed3/hires/026501701_alt_1.jpg?sh=413&yocs=q_s_",
+      "price": 86.99345722115063,
+      "titledesp": "Shea Butter Cleansing Bar",
+      "id": 484,
       "cartquantity": 0,
-      "category": "mensshop",
-      "reviewCount": 190,
-      "rating": 1
+      "category": "handshops",
+      "reviewCount": 420,
+      "rating": 3
     },
     {
-      "title": "Coffee & Whiskey",
-      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwfeb1e3f8/crop/026538273_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 149.60335208119537,
-      "titledesp": "3-Wick Candle",
-      "id": 554,
+      "title": "Vanilla Bean Noel",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8ab78bd7/crop/026539029_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 119.9311003312024,
+      "titledesp": "Ultimate Hydration Body Cream",
+      "id": 722,
       "cartquantity": 0,
-      "category": "mensshop",
-      "reviewCount": 235,
+      "category": "holidays",
+      "reviewCount": 381,
       "rating": 3
     }
   ]

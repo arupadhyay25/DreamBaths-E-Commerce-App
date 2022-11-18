@@ -10,7 +10,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  background-color: antiquewhite;
+  background-color: #ADD8E6;
 }
 .topbarleft {
   width: 20%;
@@ -36,10 +36,10 @@
   align-items: center;
 }
 .sideMenuAdmin {
-  background-color: antiquewhite;
+  background-color: #ADD8E6 ;
   margin: 0px;
   width: 20%;
-  min-height: 700px;
+  min-height: 900px;
   z-index: 10;
   display: flex;
   flex-direction: column;

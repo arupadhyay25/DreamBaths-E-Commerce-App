@@ -45,11 +45,11 @@ export const Admin = () => {
   const productorderRef = useRef();
   let [Productcount, setproductcount] = useState(0);
   const visibleDash = () => {
-    dashRef.current.style.display = "none";
+    dashRef.current.style.display = "block";
     categoryRef.current.style.display = "none";
     productRef.current.style.display = "none";
     producteditRef.current.style.display = "none";
-    productorderRef.current.style.display = "block";
+    productorderRef.current.style.display = "none";
   };
   const visibleCategory = () => {
     dashRef.current.style.display = "none";
@@ -306,12 +306,12 @@ export const Admin = () => {
             <div className={`${styles.cardBox} ${styles.colorBlue}`}>
               {/* <img></img> */}
               <Text className={styles.cardTitle}>Weekly Sells</Text>
-              <Text>$ 19268</Text>
+              <Text>₹ 19268</Text>
             </div>
             <div className={`${styles.cardBox} ${styles.colorPink}`}>
               {/* <img></img> */}
-              <Text className={styles.cardTitle}>Weekly Visitors Count</Text>
-              <Text>1150</Text>
+              <Text className={styles.cardTitle}>Weekly order Count</Text>
+              <Text>150</Text>
             </div>
           </div>
 

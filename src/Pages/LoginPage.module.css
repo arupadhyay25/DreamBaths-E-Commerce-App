@@ -17,9 +17,6 @@ body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  position: fixed;
-  top: 0%;
-  left: 0%;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -50,6 +47,10 @@ body {
   min-height: auto;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
     rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  position: fixed;
+  top: 13%;
+  left: 16%;
+  zoom: 1.2;
 }
 .textColorGradient {
   height: auto;
