@@ -2,11 +2,10 @@ import { CalendarIcon } from "@chakra-ui/icons";
 import { Alert, AlertIcon, Button, Center, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SingleCart } from "../Components/SingleCart";
-import { getproductsuccess, resetcartbag } from "../Redux/action";
+import { getproductsuccess } from "../Redux/action";
 import "./Cartpage.css";
-import Swal from "sweetalert2";
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
 let styles = {
@@ -21,13 +20,6 @@ export const Cartpage = () => {
   let [coupons, setcoupons] = useState(0);
   let [total, settotal] = useState(0);
   let dispatch = useDispatch();
-  let navigate = useNavigate();
-  function scrollTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
 
   let sumProduct = () => {
     if (data.filter((e) => e.cartquantity > 0) === 0) {
@@ -42,19 +34,6 @@ export const Cartpage = () => {
   };
   let handlecoupons = () => {
     setcoupons(30);
-  };
-  let handlecheakout = () => {
-    data
-      .filter((e) => e.cartquantity > 0)
-      .forEach((e) => dispatch(resetcartbag(e.id)));
-    setstate((prev) => prev + 1);
-    Swal.fire({
-      title: "Order Placed Succesfully !!",
-      text: "Thankyou For Shoping",
-      type: "success",
-    });
-    scrollTop();
-    navigate("/");
   };
 
   useEffect(() => {

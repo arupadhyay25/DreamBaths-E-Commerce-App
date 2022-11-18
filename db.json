@@ -30,7 +30,7 @@
       "price": 94.36499501852572,
       "titledesp": "Shower Steamers",
       "id": 3,
-      "cartquantity": 3,
+      "cartquantity": 0,
       "category": "bodycare",
       "reviewCount": 294,
       "rating": 1,
@@ -70,7 +70,7 @@
       "rating": 3
     },
     {
-      "title": "Noir",
+      "title": "Noir_edit",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwbcff0897/crop/026529919_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
       "price": 148.02297066294722,
       "titledesp": "Ultimate Hydration Body Cream",
@@ -878,7 +878,7 @@
       "price": 66.75293306695659,
       "titledesp": "Travel Size Ultimate Hydration Body Cream",
       "id": 80,
-      "cartquantity": 1,
+      "cartquantity": 0,
       "category": "bodycare",
       "reviewCount": 224,
       "rating": 4

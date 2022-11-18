@@ -1,0 +1,26 @@
+.Card-main {
+  border: solid #dbdaf0;
+  width: 75%;
+  height: auto;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  gap: 20px;
+}
+.Card-left {
+  width: 50%;
+}
+.Card-right {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+.Card-right > div {
+  text-align: left;
+}
+
+#debit-card {
+  width: 130%;
+  height: 100%;
+}

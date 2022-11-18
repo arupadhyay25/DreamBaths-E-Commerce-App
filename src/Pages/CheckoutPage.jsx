@@ -42,7 +42,7 @@ export const CheckoutPage = () => {
               Add delivery instructions
             </Text>
             <br />
-            <Button size="sm" fontSize="sm">
+            <Button  onClick={handleaddress} size="sm" fontSize="sm">
               Use this Address
             </Button>
           </Text>
@@ -79,19 +79,21 @@ export const CheckoutPage = () => {
             <Input size="sm" />
             <br />
           </div>
-          <div>
-            <label style={{ fontSize: "14px", fontWeight: "bold" }}>
-              Mobile number
-            </label>
-            <Input size="sm" />
-            <br />
-          </div>
-          <div>
-            <label style={{ fontSize: "14px", fontWeight: "bold" }}>
-              Pincode
-            </label>
-            <Input size="sm" />
-            <br />
+          <div style={{display:"flex",justifyContent:"space-between"}}>
+            <div>
+              <label style={{ fontSize: "14px", fontWeight: "bold" }}>
+                Mobile number
+              </label>
+              <Input size="sm" />
+              <br />
+            </div>
+            <div>
+              <label style={{ fontSize: "14px", fontWeight: "bold" }}>
+                Pincode
+              </label>
+              <Input size="sm" />
+              <br />
+            </div>
           </div>
           <div>
             <label style={{ fontSize: "14px", fontWeight: "bold" }}>
