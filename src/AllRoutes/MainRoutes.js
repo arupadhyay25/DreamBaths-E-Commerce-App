@@ -22,7 +22,7 @@ export const MainRoutes = () => {
       <Route path="/admin" element={<Admin />} />
       <Route path="/cart" element={<Cartpage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/checkoutpage" element={<CheckoutPage />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
       <Route path="/payment" element={<PaymentPage />} />
       <Route path="/top-offers" element={<TopOffers />} />
       <Route path="/body-care" element={<BodyCare />} />

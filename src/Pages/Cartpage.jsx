@@ -2,12 +2,13 @@ import { CalendarIcon } from "@chakra-ui/icons";
 import { Alert, AlertIcon, Button, Center, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SingleCart } from "../Components/SingleCart";
 import { getproductsuccess } from "../Redux/action";
 import "./Cartpage.css";
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
+import axios from "axios";
 let styles = {
   display: "flex",
   alignItems: "center",
@@ -20,6 +21,7 @@ export const Cartpage = () => {
   let [coupons, setcoupons] = useState(0);
   let [total, settotal] = useState(0);
   let dispatch = useDispatch();
+  let navigate = useNavigate();
 
   let sumProduct = () => {
     if (data.filter((e) => e.cartquantity > 0) === 0) {
@@ -32,8 +34,16 @@ export const Cartpage = () => {
       settotal(sum);
     }
   };
+  let addelement = (elem) => {
+    axios.post(`http://localhost:8080/orders/`, elem);
+  };
   let handlecoupons = () => {
     setcoupons(30);
+  };
+
+  let handlecheakoutbutton = () => {
+    data.filter((e) => e.cartquantity > 0).forEach((e) => addelement(e));
+    navigate("/checkout");
   };
 
   useEffect(() => {
@@ -154,15 +164,13 @@ export const Cartpage = () => {
             </div>
             <br />
             <Center>
-              <Link to="/checkoutpage">
-                <Button
-                  disabled={total == 0}
-                  // onClick={handlecheakout}
-                  colorScheme="teal"
-                >
-                  PROCEED TO CHECKOUT
-                </Button>
-              </Link>
+              <Button
+                disabled={total == 0}
+                onClick={handlecheakoutbutton}
+                colorScheme="teal"
+              >
+                PROCEED TO CHECKOUT
+              </Button>
             </Center>
             <br />
           </div>

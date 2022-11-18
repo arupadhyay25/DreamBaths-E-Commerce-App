@@ -33,6 +33,7 @@ import { AddPatch } from "../Components/AddPatch";
 import { SearchIcon } from "@chakra-ui/icons";
 import { EditPage } from "../Components/EditPage";
 import { Link } from "react-router-dom";
+import { Orderpage } from "./Orderpage";
 export const Admin = () => {
   const [rawData, setRawData] = useState({});
   const [selectedCat, setSelectedCat] = useState("");
@@ -41,30 +42,42 @@ export const Admin = () => {
   const categoryRef = useRef();
   const productRef = useRef();
   const producteditRef = useRef();
+  const productorderRef = useRef();
   let [Productcount, setproductcount] = useState(0);
   const visibleDash = () => {
-    dashRef.current.style.display = "block";
+    dashRef.current.style.display = "none";
     categoryRef.current.style.display = "none";
     productRef.current.style.display = "none";
     producteditRef.current.style.display = "none";
+    productorderRef.current.style.display = "block";
   };
   const visibleCategory = () => {
     dashRef.current.style.display = "none";
     categoryRef.current.style.display = "block";
     productRef.current.style.display = "none";
     producteditRef.current.style.display = "none";
+    productorderRef.current.style.display = "none";
   };
   const visibleProduct = () => {
     dashRef.current.style.display = "none";
     categoryRef.current.style.display = "none";
     productRef.current.style.display = "block";
     producteditRef.current.style.display = "none";
+    productorderRef.current.style.display = "none";
   };
   const visibleeditProduct = () => {
     dashRef.current.style.display = "none";
     categoryRef.current.style.display = "none";
     productRef.current.style.display = "none";
     producteditRef.current.style.display = "block";
+    productorderRef.current.style.display = "none";
+  };
+  const visibleOrder = () => {
+    dashRef.current.style.display = "none";
+    categoryRef.current.style.display = "none";
+    productRef.current.style.display = "none";
+    producteditRef.current.style.display = "none";
+    productorderRef.current.style.display = "block";
   };
   useEffect(() => {
     visibleDash();
@@ -253,6 +266,19 @@ export const Admin = () => {
               colorScheme="blue"
             >
               Edit Products
+            </Button>
+          </Text>
+          <br />
+          <Text onClick={visibleOrder}>
+            <Button
+              w="100%"
+              p={7}
+              borderRadius="13px"
+              fontSize="2xl"
+              fontWeight="bold"
+              colorScheme="blue"
+            >
+              Orders
             </Button>
           </Text>
         </div>
@@ -465,6 +491,25 @@ export const Admin = () => {
           <br />
           <div>
             <EditPage />
+          </div>
+        </div>
+        <div ref={productorderRef} className={styles.mainDash}>
+          <Heading size="lg">
+            <Box
+              borderRadius="10px"
+              size="lg"
+              textAlign="center"
+              color="white"
+              bg="blue.500"
+              pt="10px"
+              pb="10px"
+            >
+              Orders
+            </Box>
+          </Heading>
+          <br />
+          <div>
+            <Orderpage />
           </div>
         </div>
       </div>
