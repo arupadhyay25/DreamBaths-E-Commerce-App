@@ -41,34 +41,34 @@ DreamBaths is an E-Commerce websitr that sells personal care and beauty products
 ## Snapshots 📷
 
 - Landing Page (UserSide):<br/>
- 
+
   <img src="https://user-images.githubusercontent.com/105644684/202831484-08ebb230-11a6-4265-b504-09e2a0e93f22.JPG" width="100%"/>
 
 - Product Page (UserSide):<br/>
-  ![user2](https://user-images.githubusercontent.com/105644684/202831467-fe6e0554-02e2-42b1-affe-3c0814dfe733.JPG)
+  <img src="https://user-images.githubusercontent.com/105644684/202831467-fe6e0554-02e2-42b1-affe-3c0814dfe733.JPG" width="100%"/>
 
 - Cart Page (UserSide):<br/>
 
-![user3](https://user-images.githubusercontent.com/105644684/202831469-85e878e3-1b9a-4b6a-a0b4-bcd2eaad9470.JPG)
+<img src="https://user-images.githubusercontent.com/105644684/202831469-85e878e3-1b9a-4b6a-a0b4-bcd2eaad9470.JPG" width="100%"/>
 
 - Payment Page (UserSide):<br/>
-  ![user4](https://user-images.githubusercontent.com/105644684/202831471-f3e256e4-fff0-4acf-8faf-7ab5045c25b5.JPG)
+  <img src="https://user-images.githubusercontent.com/105644684/202831471-f3e256e4-fff0-4acf-8faf-7ab5045c25b5.JPG" width="100%"/>
 
 - Dasboard section (AdminSide):<br/>
 
-![admin1](https://user-images.githubusercontent.com/105644684/202831472-65eb3730-0696-4f10-9721-f8c91ef0d449.JPG)
+<img src="https://user-images.githubusercontent.com/105644684/202831472-65eb3730-0696-4f10-9721-f8c91ef0d449.JPG" width="100%"/>
 
 - Category Section (AdminSide):<br/>
-  ![admin2](https://user-images.githubusercontent.com/105644684/202831473-73ad6639-8848-42c5-8eff-a3d494200c75.JPG)
+  <img src="https://user-images.githubusercontent.com/105644684/202831473-73ad6639-8848-42c5-8eff-a3d494200c75.JPG" width="100%"/>
 
 - Add Production Section (AdminSide):
-  ![admin3](https://user-images.githubusercontent.com/105644684/202831474-10b6dd09-6fbf-407f-92fe-8dbbf65ba7aa.JPG)
+  <img src="https://user-images.githubusercontent.com/105644684/202831474-10b6dd09-6fbf-407f-92fe-8dbbf65ba7aa.JPG" width="100%"/>
 
 - Edit Product Section (AdminSide):<br/>
-  ![admin4](https://user-images.githubusercontent.com/105644684/202831476-a3b00510-314e-42a1-a267-040561ca7654.JPG)
+  <img src="https://user-images.githubusercontent.com/105644684/202831476-a3b00510-314e-42a1-a267-040561ca7654.JPG" width="100%"/>
 
 - Orders Section (AdminSide):<br/>
-  ![admin5](https://user-images.githubusercontent.com/105644684/202831480-054525e8-e7a5-4c14-a424-bbc2357a6cc9.JPG)
+  <img src="https://user-images.githubusercontent.com/105644684/202831480-054525e8-e7a5-4c14-a424-bbc2357a6cc9.JPG" width="100%"/>
 
 ### End Notes 📑
 

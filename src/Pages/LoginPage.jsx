@@ -1,4 +1,14 @@
-import { Heading } from "@chakra-ui/react";
+import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogOverlay,
+  Button,
+  Heading,
+  useDisclosure,
+} from "@chakra-ui/react";
 import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
@@ -71,13 +81,16 @@ const LoginComp = ({ onShow }) => {
   const emailLRef = useRef();
   const passLRef = useRef();
   const navigate = useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
+
   const handleLogin = () => {
     let user1 = users.filter((el) => {
       return el.email === emailLRef.current.value;
     });
     if (user1.length > 0) {
       if (user1[0].password === passLRef.current.value) {
-        alert("you are logined successfully");
+        //alert
         localStorage.setItem("user", JSON.stringify(user1[0]));
         if (user1[0].role === "user") {
           navigate("/");
@@ -121,9 +134,35 @@ const LoginComp = ({ onShow }) => {
             <input type="password" className={styles.inp} ref={passLRef} />
           </div>
           <p className={styles.colorBlue}>Forgot Password ?</p>
-          <button className={styles.sub} onClick={handleLogin}>
-            Login
-          </button>
+          <>
+            <Button className={styles.sub} colorScheme="blue" onClick={onOpen}>
+              Login
+            </Button>
+
+            <AlertDialog
+              isOpen={isOpen}
+              leastDestructiveRef={cancelRef}
+              onClose={onClose}
+            >
+              <AlertDialogOverlay>
+                <AlertDialogContent>
+                  <AlertDialogHeader fontSize="lg" fontWeight="bold">
+                    Dear Customer
+                  </AlertDialogHeader>
+
+                  <AlertDialogBody>
+                    You have Logged In Successfully !!
+                  </AlertDialogBody>
+
+                  <AlertDialogFooter>
+                    <Button colorScheme="blue" onClick={handleLogin} ml={3}>
+                      Ok
+                    </Button>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialogOverlay>
+            </AlertDialog>
+          </>
           {/* <input type="submit" value="Login" className={styles.sub} /> */}
           <div className={styles.linehr}></div>
           <div className={styles.forgotsignFlex}>

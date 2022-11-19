@@ -6,7 +6,7 @@
       "price": 79.63,
       "titledesp": "Ultimate Hydration Body Cream",
       "id": 1,
-      "cartquantity": 0,
+      "cartquantity": 1,
       "category": "bodycare",
       "reviewCount": 299,
       "rating": 1,
@@ -8388,15 +8388,50 @@
       "rating": 3
     },
     {
-      "title": "Vanilla Bean Noel",
-      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8ab78bd7/crop/026539029_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
-      "price": 119.9311003312024,
+      "title": "Winter Candy Apple",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw9a155ef7/crop/026559346_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 69.67348297399333,
+      "titledesp": "Cleansing Gel Hand Soap",
+      "id": 434,
+      "cartquantity": 1,
+      "category": "handshops",
+      "reviewCount": 18,
+      "rating": 1
+    },
+    {
+      "title": "Winter Candy Apple",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc5cb77d9/crop/026539038_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 121.02335990995867,
+      "titledesp": "Shower Gel",
+      "id": 5,
+      "cartquantity": 1,
+      "category": "bodycare",
+      "reviewCount": 150,
+      "rating": 5
+    },
+    {
+      "title": "Bourbon_edit",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwef08bb2c/crop/026552804_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 79.63,
       "titledesp": "Ultimate Hydration Body Cream",
-      "id": 722,
-      "cartquantity": 0,
-      "category": "holidays",
-      "reviewCount": 381,
-      "rating": 3
+      "id": 1,
+      "cartquantity": 1,
+      "category": "bodycare",
+      "reviewCount": 299,
+      "rating": 1,
+      "": ""
+    },
+    {
+      "title": "Eucalyptus Lavender",
+      "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw729ebf2e/crop/026569410_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=q_s_",
+      "price": 94.36499501852572,
+      "titledesp": "Shower Steamers",
+      "id": 3,
+      "cartquantity": 1,
+      "category": "bodycare",
+      "reviewCount": 294,
+      "rating": 1,
+      "": "95.26"
     }
   ]
 }

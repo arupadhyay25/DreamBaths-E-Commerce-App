@@ -13,7 +13,14 @@ export const CheckoutPage = () => {
     <>
       <Navbar />
       <br />
-      <div style={{ width: "80%", margin: "auto" }}>
+      <div
+        style={{
+          width: "80%",
+          margin: "auto",
+          backgroundColor: "whitesmoke",
+          padding: "20px",
+        }}
+      >
         <Heading>Select a delivery address</Heading>
         <br />
         <Center>
@@ -42,14 +49,20 @@ export const CheckoutPage = () => {
               Add delivery instructions
             </Text>
             <br />
-            <Button  onClick={handleaddress} size="sm" fontSize="sm">
+            <Button
+              ml={10}
+              colorScheme="blue"
+              onClick={handleaddress}
+              size="sm"
+              fontSize="sm"
+            >
               Use this Address
             </Button>
           </Text>
           <br />
         </div>
         <hr />
-        <div style={{ width: "60%", textAlign: "left" }}>
+        <div style={{ width: "60%", textAlign: "left", padding: "20px" }}>
           <Text fontSize="xl" fontWeight="bold">
             Add a new address
           </Text>
@@ -79,7 +92,7 @@ export const CheckoutPage = () => {
             <Input size="sm" />
             <br />
           </div>
-          <div style={{display:"flex",justifyContent:"space-between"}}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div>
               <label style={{ fontSize: "14px", fontWeight: "bold" }}>
                 Mobile number
@@ -159,7 +172,13 @@ export const CheckoutPage = () => {
             <br />
           </div>
           <div>
-            <Button onClick={handleaddress} size="sm" fontSize="sm">
+            <Button
+              ml={10}
+              colorScheme="blue"
+              onClick={handleaddress}
+              size="sm"
+              fontSize="sm"
+            >
               Use this Address
             </Button>
           </div>
