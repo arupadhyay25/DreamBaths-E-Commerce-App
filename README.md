@@ -41,8 +41,8 @@ DreamBaths is an E-Commerce websitr that sells personal care and beauty products
 ## Snapshots 📷
 
 - Landing Page (UserSide):<br/>
-  ![user1](https://user-images.githubusercontent.com/105644684/202831484-08ebb230-11a6-4265-b504-09e2a0e93f22.JPG)
-  <img src="https://user-images.githubusercontent.com/105644684/202831484-08ebb230-11a6-4265-b504-09e2a0e93f22.JPG" width="200" height="400" />
+ 
+  <img src="https://user-images.githubusercontent.com/105644684/202831484-08ebb230-11a6-4265-b504-09e2a0e93f22.JPG" width="100%"/>
 
 - Product Page (UserSide):<br/>
   ![user2](https://user-images.githubusercontent.com/105644684/202831467-fe6e0554-02e2-42b1-affe-3c0814dfe733.JPG)
