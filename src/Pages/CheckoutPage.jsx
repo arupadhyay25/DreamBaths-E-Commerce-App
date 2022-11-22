@@ -1,6 +1,6 @@
 import { Button, Center, Heading, Input, Select, Text } from "@chakra-ui/react";
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Footer } from "../Components/Footer";
 import { Navbar } from "../Components/Navbar";
 
@@ -23,15 +23,13 @@ export const CheckoutPage = () => {
       >
         <Heading>Select a delivery address</Heading>
         <br />
-        <Center>
-          <Text fontSize="xs">
-            Is the address you'd like to use displayed below? If so, click the
-            corresponding "Deliver to this address" button. Or you can enter a
-            new delivery address.
-          </Text>
-        </Center>
+        <Text fontSize="xs">
+          Is the address you'd like to use displayed below? If so, click the
+          corresponding "Deliver to this address" button. Or you can enter a new
+          delivery address.
+        </Text>
         <hr />
-        <div>
+        <div style={{textAlign:"left"}}>
           <br />
           <Text fontWeight="normal">
             <Text fontSize="md" fontWeight="bold">

@@ -76,7 +76,7 @@ export const Cartpage = () => {
           {data
             .filter((e) => e.cartquantity > 0)
             .map((arr, i) => (
-              <SingleCart arr={arr} setstate={setstate} />
+              <SingleCart key={i} arr={arr} setstate={setstate} />
             ))}
           {data.filter((e) => e.cartquantity > 0).length == 0 ? (
             <>

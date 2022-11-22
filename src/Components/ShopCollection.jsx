@@ -106,9 +106,9 @@ const ShopCollection = () => {
     <>
         <h1 style={{fontSize:"25px", fontWeight:"600", margin:"20px"}}>SHOP BY CATEGORY</h1>
         <CategoryDataDiv>
-        {categoryData.map((e) => {
+        {categoryData.map((e,i) => {
             return (
-              <CategoryContent >
+              <CategoryContent key={i} >
                 <CategoryImage src={e.image} alt=""  />
                 <CategoryLinks><Link to={"/"}>{e.text}</Link></CategoryLinks>
               </CategoryContent>
@@ -120,9 +120,9 @@ const ShopCollection = () => {
         <TextDes>Let fragrance dreams become reality with a unique blend of sapphire berries,<br /> night-blooming orchid and crystalized vanilla.</TextDes>
         <button style={{padding:"10px 40px",backgroundColor:"gray",color:"white",fontWeight:"600",margin:"20px auto"}}>SHOP THE COLLECTION</button>
         <CollectionDataDiv>
-        {collectionData.map((e) => {
+        {collectionData.map((e,i) => {
             return (
-              <CollectionMater>
+              <CollectionMater key={i}>
                 <img src={e.image} alt="" style={{borderRadius: "10px",width:"100%"}}/>
                 <p style={{textAlign:"center", margin: "15px auto", color : "grey"}}>{e.text}</p>
                 <CategoryLinks><Link to={"/"}>{e.link}</Link></CategoryLinks>

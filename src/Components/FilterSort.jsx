@@ -54,7 +54,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
     rating && (params.rating = rating);
     order && (params._sort = sort) && (params._order = order);
     setSearchParams(params);
-  }, [rating,order, category, setSearchParams]);
+  }, [rating, order, category, setSearchParams]);
 
   return (
     <>
@@ -150,9 +150,9 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
           <div>
             <input
               type="checkbox"
-              value={1}
+              value={5}
               onChange={handlerating}
-              defaultChecked={rating.includes(1)}
+              defaultChecked={rating.includes(5)}
             />
             &nbsp;&nbsp;
           </div>
@@ -161,47 +161,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
               {Array(5)
                 .fill("")
                 .map((_, i) => (
-                  <StarIcon key={i} color={i < 1 ? "teal.500" : "gray.300"} />
-                ))}
-            </label>
-          </div>
-        </div>
-        <div>
-          <div>
-            <input
-              type="checkbox"
-              value={2}
-              onChange={handlerating}
-              defaultChecked={rating.includes(2)}
-            />
-            &nbsp;&nbsp;
-          </div>
-          <div>
-            <label>
-              {Array(5)
-                .fill("")
-                .map((_, i) => (
-                  <StarIcon key={i} color={i < 2 ? "teal.500" : "gray.300"} />
-                ))}
-            </label>
-          </div>
-        </div>
-        <div>
-          <div>
-            <input
-              type="checkbox"
-              value={3}
-              onChange={handlerating}
-              defaultChecked={rating.includes(3)}
-            />
-            &nbsp;&nbsp;
-          </div>
-          <div>
-            <label>
-              {Array(5)
-                .fill("")
-                .map((_, i) => (
-                  <StarIcon key={i} color={i < 3 ? "teal.500" : "gray.300"} />
+                  <StarIcon key={i} color={i < 5 ? "teal.500" : "gray.300"} />
                 ))}
             </label>
           </div>
@@ -226,13 +186,14 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
             </label>
           </div>
         </div>
+        {/* 4 */}
         <div>
           <div>
             <input
               type="checkbox"
-              value={5}
+              value={3}
               onChange={handlerating}
-              defaultChecked={rating.includes(5)}
+              defaultChecked={rating.includes(3)}
             />
             &nbsp;&nbsp;
           </div>
@@ -241,7 +202,49 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
               {Array(5)
                 .fill("")
                 .map((_, i) => (
-                  <StarIcon key={i} color={i < 5 ? "teal.500" : "gray.300"} />
+                  <StarIcon key={i} color={i < 3 ? "teal.500" : "gray.300"} />
+                ))}
+            </label>
+          </div>
+        </div>
+        {/* 3 */}
+        <div>
+          <div>
+            <input
+              type="checkbox"
+              value={2}
+              onChange={handlerating}
+              defaultChecked={rating.includes(2)}
+            />
+            &nbsp;&nbsp;
+          </div>
+          <div>
+            <label>
+              {Array(5)
+                .fill("")
+                .map((_, i) => (
+                  <StarIcon key={i} color={i < 2 ? "teal.500" : "gray.300"} />
+                ))}
+            </label>
+          </div>
+        </div>
+        {/* 2 */}
+        <div>
+          <div>
+            <input
+              type="checkbox"
+              value={1}
+              onChange={handlerating}
+              defaultChecked={rating.includes(1)}
+            />
+            &nbsp;&nbsp;
+          </div>
+          <div>
+            <label>
+              {Array(5)
+                .fill("")
+                .map((_, i) => (
+                  <StarIcon key={i} color={i < 1 ? "teal.500" : "gray.300"} />
                 ))}
             </label>
           </div>
@@ -250,13 +253,3 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
     </>
   );
 };
-/*
-"3-Wick Candle"
-"Single Wick Candle"
-"12-Day Countdown Calendar"
-"3-Wick Candle Holder"
-"Single Wick Candle Holder"
-"3-Wick Candle Magnet"
-*/
-
-// "Ultimate Hydration Body Cream":24,"Body Spray":7,"Shower Steamers":1,"Daily Nourishing Body Lotion":16,"Shower Gel":12,"3-in-1 Hair, Face & Body Wash":9,"Fine Fragrance Mist":22,"Moisturizing Body Lotion":1,"Mini Cologne":3,"Eau de Parfum":2,"Salt Body Scrub":1,"Cologne":3,"Body Spray & Ultimate Hydration Body Cream Bundle":1,"Body Wash and Foam Bath":2,"Bath Soak":2,"Exfoliating Glow Body Scrub":2,"12-Day Countdown Calendar":1,"Travel Size Shower Gel":2,"Travel Size Ultimate Hydration Body Cream":6,"Lip Gloss":4,"Shea Butter Cleansing Bar":3,"Flavor Burst Lip Gloss":3,"Travel Size Fine Fragrance Mist":9,"Travel Size Diamond Shimmer Mist":1,"Bath Fizzy""Single Wick Candle & Gentle Foaming Hand Soap Bundle""Exfoliating Lip Scrub""Hand Cream""Moisturizing Body Wash""Whipped Glow-tion"

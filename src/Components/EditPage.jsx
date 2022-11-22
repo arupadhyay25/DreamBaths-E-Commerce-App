@@ -81,7 +81,6 @@ export const EditPage = () => {
           <div
             style={{
               width: "50%",
-              border: "solid",
               borderRadius: "10px",
               padding: "10px 50px",
             }}
@@ -124,7 +123,6 @@ export const EditPage = () => {
             style={{
               width: "50%",
               height: "auto",
-              border: "solid",
               padding: "10px 50px",
               borderRadius: "10px",
               marginLeft: "2px",
@@ -133,7 +131,7 @@ export const EditPage = () => {
             <Heading mb={12} textAlign="center">
               Product to Edited
             </Heading>
-            <div>
+            <div style={{ textAlign: "left" }}>
               <Text mt={-7} mb={2}>
                 Product ID
               </Text>

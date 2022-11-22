@@ -47,7 +47,7 @@ export const AddPatch = () => {
     setpcat("");
     setprice("");
     setpimg("");
-    setflag(true)
+    setflag(true);
   };
 
   useEffect(() => {
@@ -61,34 +61,37 @@ export const AddPatch = () => {
       reviewCount: 0,
       rating: 4,
     });
-  }, [pname,pprice,pcat,psubcat,pimg]);
+  }, [pname, pprice, pcat, psubcat, pimg]);
   return (
     <div>
-      {flag?<div>
-        <Alert
-          borderRadius="10px"
-          mt={-2}
-          mb={4}
-          status="success"
-          variant="solid"
-        >
-          <AlertIcon />
-          Product added and uploaded to the server ! ! !
-        </Alert>
-      </div>:false}
+      {flag ? (
+        <div>
+          <Alert
+            borderRadius="10px"
+            mt={-2}
+            mb={4}
+            status="success"
+            variant="solid"
+          >
+            <AlertIcon />
+            Product added and uploaded to the server ! ! !
+          </Alert>
+        </div>
+      ) : (
+        false
+      )}
       <div>
         <div style={{ display: "flex", padding: "0px 0px" }}>
           <div
             style={{
               width: "50%",
-              border: "solid",
               borderRadius: "10px",
               padding: "10px 50px",
             }}
           >
             <Heading textAlign="center">Add New Product</Heading>
             <br />
-            <div>
+            <div style={{ textAlign: "left" }}>
               <Text mb={2}>Product Name</Text>
               <Input
                 variant="outline"
@@ -101,7 +104,7 @@ export const AddPatch = () => {
               <br />
               <br />
             </div>
-            <div>
+            <div  style={{ textAlign: "left" }}>
               <Text mb={2}>Product Category</Text>
               <Input
                 variant="outline"
@@ -114,7 +117,7 @@ export const AddPatch = () => {
               <br />
               <br />
             </div>
-            <div>
+            <div style={{ textAlign: "left" }}>
               <Text mb={2}>Product SubCategory</Text>
               <Input
                 variant="outline"
@@ -127,7 +130,7 @@ export const AddPatch = () => {
               <br />
               <br />
             </div>
-            <div>
+            <div style={{ textAlign: "left" }}>
               <Text mb={2}>Product ImageURL</Text>
               <Input
                 variant="outline"
@@ -140,7 +143,7 @@ export const AddPatch = () => {
               <br />
               <br />
             </div>
-            <div>
+            <div style={{ textAlign: "left" }}>
               <Text mb={2}>Product Price</Text>
               <Input
                 variant="outline"
@@ -165,10 +168,10 @@ export const AddPatch = () => {
             style={{
               width: "50%",
               height: "auto",
-              border: "solid",
               padding: "10px 50px",
               borderRadius: "10px",
               marginLeft: "2px",
+              zoom: "0.95",
             }}
           >
             <Heading mb={12} textAlign="center">

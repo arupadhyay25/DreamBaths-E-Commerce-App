@@ -3,6 +3,7 @@ import axios from "axios";
 import {
   ADD_PRODUCTS_QUANTITY,
   GET_PRODUCTS_FAILURE,
+  GET_PRODUCTS_QUANTITY,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
 } from "./actiontypes";
@@ -66,7 +67,7 @@ export const subproductquantity = (id, page) => (dispatch) => {
       })
     );
 };
-export const resetcartbag= (id) => (dispatch) => {
+export const resetcartbag = (id) => (dispatch) => {
   axios
     .patch(`http://localhost:8080/products/${id}`, {
       cartquantity: 0,

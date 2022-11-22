@@ -163,9 +163,9 @@ export const TopOffers = () => {
             
             <Advertise src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dwd53d69dd/images/Christmas2022/b1g1candles_c1_6x1.gif?yocs=s_" alt='Banner' width="80%" />
             <TopOfferDiv className="topoffer-div" >
-            {offerData.map((e) => {
+            {offerData.map((e,i) => {
             return (
-              <TopOfferDataDiv className="topoffer-data-div">
+              <TopOfferDataDiv key={i} className="topoffer-data-div">
                 <ProductImage className="topoffer-data-div-img" src={e.image} alt="" />
                 <ProductTitle className="offer-box-div-p">{e.text}</ProductTitle>
                 <ProductPrice className="offer-box-div-p1">{e.btext}</ProductPrice>

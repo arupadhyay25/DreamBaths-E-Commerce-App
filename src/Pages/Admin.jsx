@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import {
+  BsArrowDown,
+  BsArrowDownLeftSquare,
   BsSortAlphaDownAlt,
   BsSortAlphaUpAlt,
   BsSortNumericDown,
@@ -7,7 +9,15 @@ import {
 } from "react-icons/bs";
 import styles from "./Admin.module.css";
 import Plot from "react-plotly.js";
-import { Box, Button, Icon, TableContainer, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Icon,
+  Image,
+  TableContainer,
+  Text,
+} from "@chakra-ui/react";
 import { GrUserAdmin } from "react-icons/gr";
 import { FiSettings } from "react-icons/fi";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -30,7 +40,7 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { AddPatch } from "../Components/AddPatch";
-import { SearchIcon } from "@chakra-ui/icons";
+import { DownloadIcon, SearchIcon } from "@chakra-ui/icons";
 import { EditPage } from "../Components/EditPage";
 import { Link } from "react-router-dom";
 import { Orderpage } from "./Orderpage";
@@ -190,17 +200,26 @@ export const Admin = () => {
       <div className={styles.topbar}>
         <div className={styles.topbarleft}>
           <br />
-          <img src="/Image/logo.png" alt="logo" width="100%" h="40%" />
+          <img className={styles.logo} src="/Image/logo.png" alt="logo" />
           <br />
         </div>
         <div className={styles.topbarright}>
           <div>
+            <Heading fontWeight="normal">Overview</Heading>
+          </div>
+          <div
+            style={{
+              backgroundColor: "white",
+              borderRadius: "10px",
+              paddingRight: "20px",
+            }}
+          >
             <Input
-              variant="outline"
-              borderColor="teal"
+              variant="filled"
               placeholder="Product Search"
               w="100%"
               textAlign="center"
+              focusBorderColor="white"
             />
             <SearchIcon fontSize="2xl" variant="filled" />
           </div>
@@ -217,6 +236,31 @@ export const Admin = () => {
       </div>
       <div className={styles.main}>
         <div className={styles.sideMenuAdmin}>
+          <Text>
+            <br />
+            <Box bg="white" borderRadius={10} p={2} display="flex" gap={3}>
+              <Box>
+                <Image
+                  borderRadius="full"
+                  boxSize="60px"
+                  src="https://bit.ly/dan-abramov"
+                  alt="Dan Abramov"
+                />
+              </Box>
+              <Center>
+                <Box>
+                  <Text fontSize="lg" fontWeight="bold">
+                    Dan Abramov
+                  </Text>
+                  <Text>Sales manager</Text>
+                </Box>
+              </Center>
+            </Box>
+          </Text>
+          <Text display="flex" alignItems="center" textAlign="left">
+            E-Commerce
+            <BsArrowDown />
+          </Text>
           <Text onClick={visibleDash}>
             <Button
               w="100%"
@@ -242,7 +286,10 @@ export const Admin = () => {
               Category
             </Button>
           </Text>
-          <br />
+          <Text display="flex" alignItems="center" textAlign="left">
+            Products
+            <BsArrowDown />
+          </Text>
           <Text onClick={visibleProduct}>
             <Button
               w="100%"
@@ -268,7 +315,10 @@ export const Admin = () => {
               Edit Products
             </Button>
           </Text>
-          <br />
+          <Text display="flex" alignItems="center" textAlign="left">
+            Orders
+            <BsArrowDown />
+          </Text>
           <Text onClick={visibleOrder}>
             <Button
               w="100%"
