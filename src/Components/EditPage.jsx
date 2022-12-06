@@ -12,6 +12,7 @@ import {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Singleproduct } from "./Singleproduct";
+let api="https://dreambaths.onrender.com/products"
 
 let initState = {
   title: "[title here]",
@@ -36,12 +37,12 @@ export const EditPage = () => {
 
   let getproductbyid = () => {
     axios
-      .get(`http://localhost:8080/products/${id}`)
+      .get(`${api}/${id}`)
       .then((r) => setshowdata(r.data));
   };
 
   let addpatch = () => {
-    axios.patch(`http://localhost:8080/products/${id}`, patchdata);
+    axios.patch(`${api}/${id}`, patchdata);
     setkey("");
     setvalue("");
     setflag(true);

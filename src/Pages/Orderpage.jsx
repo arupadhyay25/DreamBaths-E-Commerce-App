@@ -15,20 +15,23 @@ import {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Orderpage.css";
+let apiproducts="https://dreambaths.onrender.com/products"
+let apiorders="https://dreambaths.onrender.com/products"
+
 
 export const Orderpage = () => {
   let [product, setproduct] = useState([]);
   let getorders = () => {
-    axios.get("http://localhost:8080/orders").then((r) => setproduct(r.data));
+    axios.get(`${apiorders}`).then((r) => setproduct(r.data));
   };
   let deleteelement = (id) => {
     axios
-      .delete(`http://localhost:8080/orders/${id}`)
+      .delete(`${apiorders}/${id}`)
       .then((r) => (r.data ? getorders() : getorders()));
   };
   let getsuccess = (id) => {
     axios
-      .patch(`http://localhost:8080/orders/${id}`, {
+      .patch(`${apiorders}/${id}`, {
         cartquantity: 0,
       })
       .then((r) => (r.data ? getorders() : getorders()));

@@ -9,6 +9,8 @@ import {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Singleproduct } from "./Singleproduct";
+let api="https://dreambaths.onrender.com/products"
+
 
 let initState = {
   title: "Classic Flannel",
@@ -41,7 +43,7 @@ export const AddPatch = () => {
       reviewCount: 264,
       rating: 4,
     });
-    axios.post(`http://localhost:8080/products`, patchdata);
+    axios.post(`${api}`, patchdata);
     setpcat("");
     setpsubcat("");
     setpcat("");

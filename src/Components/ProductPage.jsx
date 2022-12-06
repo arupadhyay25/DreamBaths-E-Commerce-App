@@ -7,6 +7,8 @@ import { getproductsuccess } from "../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { FilterSort } from "../Components/FilterSort";
 import { useLocation, useSearchParams } from "react-router-dom";
+let api="https://dreambaths.onrender.com/products"
+
 
 export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
   let [page, setpage] = useState(1);
@@ -31,7 +33,7 @@ export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
         _page: page,
         _limit: 13,
       };
-      let url = `http://localhost:8080/products/?category=${category}`;
+      let url = `${api}/?category=${category}`;
       let data = [url, queryparams];
       dispatch(getproductsuccess(data));
     }

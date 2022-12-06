@@ -1,12 +1,16 @@
+
 import axios from "axios";
+
 
 import {
   ADD_PRODUCTS_QUANTITY,
   GET_PRODUCTS_FAILURE,
-  GET_PRODUCTS_QUANTITY,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
 } from "./actiontypes";
+
+let apiproducts="https://dreambaths.onrender.com/products"
+let apiorders="https://dreambaths.onrender.com/products"
 
 export const getproductrequest = () => {
   return {
@@ -36,7 +40,7 @@ export const getproductfailure = () => {
 };
 export const addtocart = (id) => (dispatch) => {
   axios
-    .patch(`http://localhost:8080/products/${id}`, {
+    .patch(`${apiproducts}/${id}`, {
       cartquantity: 1,
     })
     .then(() =>
@@ -47,7 +51,7 @@ export const addtocart = (id) => (dispatch) => {
 };
 export const addproductquantity = (id, page) => (dispatch) => {
   axios
-    .patch(`http://localhost:8080/products/${id}`, {
+    .patch(`${apiproducts}/${id}`, {
       cartquantity: page + 1,
     })
     .then(() =>
@@ -58,7 +62,7 @@ export const addproductquantity = (id, page) => (dispatch) => {
 };
 export const subproductquantity = (id, page) => (dispatch) => {
   axios
-    .patch(`http://localhost:8080/products/${id}`, {
+    .patch(`${apiproducts}/${id}`, {
       cartquantity: page - 1,
     })
     .then(() =>
@@ -69,7 +73,7 @@ export const subproductquantity = (id, page) => (dispatch) => {
 };
 export const resetcartbag = (id) => (dispatch) => {
   axios
-    .patch(`http://localhost:8080/products/${id}`, {
+    .patch(`${apiproducts}/${id}`, {
       cartquantity: 0,
     })
     .then(() =>

@@ -44,6 +44,8 @@ import { DownloadIcon, SearchIcon } from "@chakra-ui/icons";
 import { EditPage } from "../Components/EditPage";
 import { Link } from "react-router-dom";
 import { Orderpage } from "./Orderpage";
+let api="https://dreambaths.onrender.com/products"
+
 export const Admin = () => {
   const [rawData, setRawData] = useState({});
   const [selectedCat, setSelectedCat] = useState("");
@@ -191,7 +193,7 @@ export const Admin = () => {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:8080/products")
+      .get("${api}")
       .then((r) => setproductcount(r.data.length));
   }, [Productcount]);
 

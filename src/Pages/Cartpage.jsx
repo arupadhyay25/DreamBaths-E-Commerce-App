@@ -14,6 +14,9 @@ let styles = {
   alignItems: "center",
   justifyContent: "space-between",
 };
+let apiproduct="https://dreambaths.onrender.com/products"
+let apiorder="https://dreambaths.onrender.com/orders"
+
 
 export const Cartpage = () => {
   let data = useSelector((s) => s.products);
@@ -35,7 +38,7 @@ export const Cartpage = () => {
     }
   };
   let addelement = (elem) => {
-    axios.post(`http://localhost:8080/orders/`, elem);
+    axios.post(`${apiorder}`, elem);
   };
   let handlecoupons = () => {
     setcoupons(30);
@@ -48,7 +51,7 @@ export const Cartpage = () => {
 
   useEffect(() => {
     sumProduct();
-    let url = `http://localhost:8080/products`;
+    let url = `${apiproduct}`;
     let datapack = [url];
     dispatch(getproductsuccess(datapack));
   }, [total, state]);
