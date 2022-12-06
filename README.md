@@ -42,33 +42,33 @@ DreamBaths is an E-Commerce websitr that sells personal care and beauty products
 
 - Landing Page (UserSide):<br/>
 
-  <img src="https://user-images.githubusercontent.com/105644684/202831484-08ebb230-11a6-4265-b504-09e2a0e93f22.JPG" width="100%"/>
+  <img src="https://user-images.githubusercontent.com/105644684/202831484-08ebb230-11a6-4265-b504-09e2a0e93f22.JPG" width="500px"/>
 
 - Product Page (UserSide):<br/>
-  <img src="https://user-images.githubusercontent.com/105644684/202831467-fe6e0554-02e2-42b1-affe-3c0814dfe733.JPG" width="100%"/>
+  <img src="https://user-images.githubusercontent.com/105644684/202831467-fe6e0554-02e2-42b1-affe-3c0814dfe733.JPG" width="500px"/>
 
 - Cart Page (UserSide):<br/>
 
-<img src="https://user-images.githubusercontent.com/105644684/202831469-85e878e3-1b9a-4b6a-a0b4-bcd2eaad9470.JPG" width="100%"/>
+<img src="https://user-images.githubusercontent.com/105644684/202831469-85e878e3-1b9a-4b6a-a0b4-bcd2eaad9470.JPG" width="500px"/>
 
 - Payment Page (UserSide):<br/>
-  <img src="https://user-images.githubusercontent.com/105644684/202831471-f3e256e4-fff0-4acf-8faf-7ab5045c25b5.JPG" width="100%"/>
+  <img src="https://user-images.githubusercontent.com/105644684/202831471-f3e256e4-fff0-4acf-8faf-7ab5045c25b5.JPG" width="500px"/>
 
 - Dasboard section (AdminSide):<br/>
 
-<img src="https://user-images.githubusercontent.com/105644684/202831472-65eb3730-0696-4f10-9721-f8c91ef0d449.JPG" width="100%"/>
+<img src="https://user-images.githubusercontent.com/105644684/202831472-65eb3730-0696-4f10-9721-f8c91ef0d449.JPG" width="500px"/>
 
 - Category Section (AdminSide):<br/>
-  <img src="https://user-images.githubusercontent.com/105644684/202831473-73ad6639-8848-42c5-8eff-a3d494200c75.JPG" width="100%"/>
+  <img src="https://user-images.githubusercontent.com/105644684/202831473-73ad6639-8848-42c5-8eff-a3d494200c75.JPG" width="500px"/>
 
 - Add Production Section (AdminSide):
-  <img src="https://user-images.githubusercontent.com/105644684/202831474-10b6dd09-6fbf-407f-92fe-8dbbf65ba7aa.JPG" width="100%"/>
+  <img src="https://user-images.githubusercontent.com/105644684/202831474-10b6dd09-6fbf-407f-92fe-8dbbf65ba7aa.JPG" width="500px"/>
 
 - Edit Product Section (AdminSide):<br/>
-  <img src="https://user-images.githubusercontent.com/105644684/202831476-a3b00510-314e-42a1-a267-040561ca7654.JPG" width="100%"/>
+  <img src="https://user-images.githubusercontent.com/105644684/202831476-a3b00510-314e-42a1-a267-040561ca7654.JPG" width="500px"/>
 
 - Orders Section (AdminSide):<br/>
-  <img src="https://user-images.githubusercontent.com/105644684/202831480-054525e8-e7a5-4c14-a424-bbc2357a6cc9.JPG" width="100%"/>
+  <img src="https://user-images.githubusercontent.com/105644684/202831480-054525e8-e7a5-4c14-a424-bbc2357a6cc9.JPG" width="500px"/>
 
 ### End Notes 📑
 
