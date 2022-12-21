@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import {
   BsArrowDown,
+  BsArrowDownLeftSquare,
   BsSortAlphaDownAlt,
   BsSortAlphaUpAlt,
   BsSortNumericDown,
