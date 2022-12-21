@@ -2,31 +2,32 @@ import { AddIcon, DeleteIcon, MinusIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import {
-  addproductquantity,
-  resetcartbag,
-  subproductquantity,
-} from "../Redux/action";
+import { useEffect } from "react";
+import { apiproduct } from "./Api";
 
-export const SingleCart = ({ arr, setstate }) => {
-  let [page, setpage] = useState(arr.cartquantity);
-  let dispatch = useDispatch();
+export const SingleCart = ({ arr, state, setstate }) => {
+  let x = arr.cartquantity;
+  let [page, setpage] = useState(x);
 
   let AddQuantocart = (id) => {
-    dispatch(addproductquantity(id, page));
     setpage(page + 1);
-    setstate((prev) => prev + 1);
+    patchdata();
   };
   let SubQuantocart = (id) => {
-    dispatch(subproductquantity(id, page));
     setpage(page - 1);
-    setstate((prev) => prev + 1);
+    patchdata();
   };
   let handledelete = (id) => {
-    dispatch(resetcartbag(id));
+    setpage(0);
+    patchdata();
     setstate((prev) => prev + 1);
   };
+  let patchdata = () => {
+    let payload = { cartquantity: page };
+    axios.patch(`${apiproduct}/${arr.id}`, payload);
+    setstate(state + 1);
+  };
+  useEffect(() => {}, [page,state]);
 
   return (
     <div key={arr.id} className="Product-Cart">
@@ -38,12 +39,12 @@ export const SingleCart = ({ arr, setstate }) => {
         <p>In Stock</p>
         <h3>from {arr.category}</h3>
         <div>
-          <Button disabled={page == 1} onClick={() => SubQuantocart(arr.id)}>
+          <Button disabled={page == 1} onClick={SubQuantocart}>
             <MinusIcon />
           </Button>
           &nbsp;&nbsp;
           <Button>{arr.cartquantity}</Button>&nbsp;&nbsp;
-          <Button onClick={() => AddQuantocart(arr.id)}>
+          <Button onClick={AddQuantocart}>
             <AddIcon />
           </Button>
           &nbsp;&nbsp;

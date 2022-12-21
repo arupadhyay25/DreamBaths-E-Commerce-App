@@ -9,10 +9,10 @@ import {
   Select,
   Text,
 } from "@chakra-ui/react";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { apiproduct } from "./Api";
 import { Singleproduct } from "./Singleproduct";
-let api="https://dreambaths.onrender.com/products"
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 let initState = {
   title: "[title here]",
@@ -36,13 +36,11 @@ export const EditPage = () => {
   let [showdata, setshowdata] = useState(initState);
 
   let getproductbyid = () => {
-    axios
-      .get(`${api}/${id}`)
-      .then((r) => setshowdata(r.data));
+    axios.get(`${apiproduct}/${id}`).then((r) => setshowdata(r.data));
   };
 
   let addpatch = () => {
-    axios.patch(`${api}/${id}`, patchdata);
+    axios.patch(`${apiproduct}/${id}`, patchdata);
     setkey("");
     setvalue("");
     setflag(true);

@@ -1,29 +1,24 @@
 import { CalendarIcon } from "@chakra-ui/icons";
 import { Alert, AlertIcon, Button, Center, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { SingleCart } from "../Components/SingleCart";
-import { getproductsuccess } from "../Redux/action";
 import "./Cartpage.css";
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
 import axios from "axios";
+import { apiorder, apiproduct } from "../Components/Api";
 let styles = {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
 };
-let apiproduct="https://dreambaths.onrender.com/products"
-let apiorder="https://dreambaths.onrender.com/orders"
-
 
 export const Cartpage = () => {
-  let data = useSelector((s) => s.products);
+  let [data, setcartdata] = useState([]);
   let [state, setstate] = useState(0);
   let [coupons, setcoupons] = useState(0);
   let [total, settotal] = useState(0);
-  let dispatch = useDispatch();
   let navigate = useNavigate();
 
   let sumProduct = () => {
@@ -49,19 +44,14 @@ export const Cartpage = () => {
     navigate("/checkout");
   };
 
-  useEffect(() => {
-    sumProduct();
-    let url = `${apiproduct}`;
-    let datapack = [url];
-    dispatch(getproductsuccess(datapack));
-  }, [total, state]);
+  let getcartProduct = () => {
+    axios.get(apiproduct).then((r) => setcartdata(r.data));
+  };
 
   useEffect(() => {
+    getcartProduct();
     sumProduct();
-    return () => {
-      sumProduct();
-    };
-  }, [sumProduct]);
+  }, [sumProduct,state]);
 
   return (
     <>
@@ -79,7 +69,7 @@ export const Cartpage = () => {
           {data
             .filter((e) => e.cartquantity > 0)
             .map((arr, i) => (
-              <SingleCart key={i} arr={arr} setstate={setstate} />
+              <SingleCart key={i} arr={arr} state={state} setstate={setstate} />
             ))}
           {data.filter((e) => e.cartquantity > 0).length == 0 ? (
             <>

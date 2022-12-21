@@ -3,41 +3,22 @@ import "./ProductPage.css";
 import { Singleproduct } from "../Components/Singleproduct";
 import { Button } from "@chakra-ui/react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import { getproductsuccess } from "../Redux/action";
-import { useDispatch, useSelector } from "react-redux";
 import { FilterSort } from "../Components/FilterSort";
-import { useLocation, useSearchParams } from "react-router-dom";
-let api="https://dreambaths.onrender.com/products"
+import { apiproduct } from "./Api";
+import axios from "axios";
 
-
-export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
+export const ProductPage = ({ cat1, cat2, cat3, cat4, heading }) => {
   let [page, setpage] = useState(1);
-  let dispatch = useDispatch();
-  let Products = useSelector((s) => s.products);
+  let [Products, setproducts] = useState([]);
   let [state, setstate] = useState(0);
 
-  let [searchParams] = useSearchParams();
-  let location = useLocation();
+  let getProduct = () => {
+    axios.get(apiproduct).then((r) => setproducts(r.data));
+  };
 
   useEffect(() => {
-    if (location || Products.length === 0) {
-      let titledesp = searchParams.getAll("titledesp");
-      let rating = searchParams.getAll("rating");
-      let _sort = searchParams.getAll("_sort");
-      let _order = searchParams.getAll("_order");
-      let queryparams = {
-        titledesp: titledesp,
-        rating: rating,
-        _sort: _sort[0],
-        _order: _order[0],
-        _page: page,
-        _limit: 13,
-      };
-      let url = `${api}/?category=${category}`;
-      let data = [url, queryparams];
-      dispatch(getproductsuccess(data));
-    }
-  }, [page, location.search, state]);
+    getProduct();
+  }, [state]);
 
   return (
     <>
@@ -83,6 +64,7 @@ export const ProductPage = ({ category, cat1, cat2, cat3, cat4, heading }) => {
                 />
               ))}
           </div>
+          {/* pagination */}
           <div>
             <Button disabled={page === 1} onClick={() => setpage(page - 1)}>
               <ArrowLeftIcon />

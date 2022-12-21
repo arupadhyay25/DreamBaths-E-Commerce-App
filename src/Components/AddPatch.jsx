@@ -8,9 +8,8 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { apiproduct } from "./Api";
 import { Singleproduct } from "./Singleproduct";
-let api="https://dreambaths.onrender.com/products"
-
 
 let initState = {
   title: "Classic Flannel",
@@ -43,7 +42,7 @@ export const AddPatch = () => {
       reviewCount: 264,
       rating: 4,
     });
-    axios.post(`${api}`, patchdata);
+    axios.post(`${apiproduct}`, patchdata);
     setpcat("");
     setpsubcat("");
     setpcat("");

@@ -1,12 +1,6 @@
-import { legacy_createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
+import { legacy_createStore } from "redux";
 import { reducer } from "./reducer";
 
-let composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-let store = legacy_createStore(
-  reducer,
-  composeEnhancers(applyMiddleware(thunk))
-);
+let store = legacy_createStore(reducer);
 
 export { store };

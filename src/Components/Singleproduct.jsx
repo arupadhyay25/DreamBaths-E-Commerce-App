@@ -10,9 +10,10 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addtocart } from "../Redux/action";
+import axios from "axios";
+import React from "react";
+import { useState } from "react";
+import { apiproduct } from "./Api";
 import "./SingleProduct.css";
 
 export const Singleproduct = ({
@@ -28,10 +29,11 @@ export const Singleproduct = ({
   state,
   setstate,
 }) => {
-  let dispatch = useDispatch();
+  let [cartstatus, setcartstatus] = useState(false);
   let handleAddtocart = (id) => {
-    dispatch(addtocart(id));
-    setstate(state + 1);
+    let payload = { cartquantity: 1 };
+    axios.patch(`${apiproduct}/${id}`, payload).then(setstate(state + 1));
+    setcartstatus(true);
   };
 
   return (
@@ -106,7 +108,7 @@ export const Singleproduct = ({
           </Box>
         </Box>
         <Box>
-          {cartquantity !== 0 ? (
+          {cartstatus === true ? (
             <Alert borderRadius={15} w="auto" status="success">
               <AlertIcon />
               Added to cart !!
@@ -117,7 +119,7 @@ export const Singleproduct = ({
               disabled={cartquantity > 0}
               colorScheme="teal"
             >
-              {cartquantity > 0 ? "added" : "ADD TO CART"}
+              ADD TO CART
             </Button>
           )}
         </Box>
