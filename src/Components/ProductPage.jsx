@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./ProductPage.css";
 import { Singleproduct } from "../Components/Singleproduct";
-import { Button } from "@chakra-ui/react";
+import { Button, Img } from "@chakra-ui/react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import { FilterSort } from "../Components/FilterSort";
 import { apiproduct } from "./Api";
 import axios from "axios";
 
-export const ProductPage = ({ cat1, cat2, cat3, cat4, heading }) => {
+export const ProductPage = ({ cat1, cat2, cat3, cat4, heading,category }) => {
   let [page, setpage] = useState(1);
   let [Products, setproducts] = useState([]);
   let [state, setstate] = useState(0);
 
   let getProduct = () => {
-    axios.get(apiproduct).then((r) => setproducts(r.data));
+    axios.get(`${apiproduct}?category=${category}`).then((r) => setproducts(r.data));
   };
 
   useEffect(() => {
@@ -45,9 +45,9 @@ export const ProductPage = ({ cat1, cat2, cat3, cat4, heading }) => {
               </Button>
             </div>
           </div>
-          <div className="Product-grid">
-            {Products.length > 0 &&
-              Products.map((e, i) => (
+          {Products.length > 0 &&(<div className="Product-grid">
+            
+              {Products.map((e, i) => (
                 <Singleproduct
                   key={i}
                   title={e.title}
@@ -63,7 +63,7 @@ export const ProductPage = ({ cat1, cat2, cat3, cat4, heading }) => {
                   setstate={setstate}
                 />
               ))}
-          </div>
+          </div>)||<Img width={'100%'} src='https://flevix.com/wp-content/uploads/2020/01/Preloader.gif' alt='loading'/>}
           {/* pagination */}
           <div>
             <Button disabled={page === 1} onClick={() => setpage(page - 1)}>
