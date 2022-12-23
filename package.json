@@ -28,6 +28,7 @@
     "styled-components": "^5.3.6",
     "sweetalert2-react": "^0.8.3",
     "thunk": "^0.0.1",
+    "validator": "^13.7.0",
     "vue-the-mask": "^0.11.1",
     "web-vitals": "^2.1.4"
   },

@@ -22,17 +22,19 @@ const AuthContextProvider = ({ children }) => {
   const handleLogin = async (username, password) => {
     dispatch(LOGIN_REQUEST());
     axios
-      .post("https://reqres.in/api/login", {
-        username: "eve.holt@reqres.in",
-        password: "123",
-      })
-      .then(function (response) {
-        dispatch(LOGIN_SUCCESS(response.data.token));
-        if(username=="masai@user.com"){
-          navigate("/")
-        }
-        else if(username=="masai@admin.com"){
-          navigate("/admin")
+      .get(`https://real-blue-pigeon-belt.cyclic.app/users?email=${username}&password=${password}`)
+      .then((res)=>{
+        if(res.data.length===0){
+          dispatch(LOGIN_FAILURE);
+
+        }else{
+          let token=`${username}:${Date.now()}`
+          dispatch(LOGIN_SUCCESS(token));
+          if(res.data[0].role==='user'){
+            navigate('/');
+          }else{
+            navigate('/admin');
+          }
         }
       })
       .catch(function (error) {

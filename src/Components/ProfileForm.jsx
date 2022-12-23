@@ -11,7 +11,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import { AuthContext } from "../Context/AuthContext/AuthContextProvider";
@@ -20,8 +20,8 @@ let initstate = {
   username: "",
   password: "",
 };
-
 const ProfileForm = () => {
+  const navigate = useNavigate();
   const { state, handleLogin } = React.useContext(AuthContext);
 
   let [formdata, setformdata] = useState(initstate);
@@ -101,6 +101,22 @@ const ProfileForm = () => {
               disabled={state.loading === true}
             >
               {state.loading ? <Spinner /> : "Login"}
+            </Button>
+            <FormLabel fontSize={13}>&nbsp;</FormLabel>
+            <FormLabel fontSize={13}>
+              <Link href="https://chakra-ui.com">
+                you dont have account please go signup first.
+                <ExternalLinkIcon mx="2px" />
+              </Link>
+            </FormLabel>
+            <Button
+              onClick={()=>{navigate('/signup')}}
+              variant="outline"
+              colorScheme="blue"
+              w="full"
+              disabled={state.loading === true}
+            >
+              Signup
             </Button>
           </FormControl>
         </GridItem>
