@@ -1,9 +1,20 @@
 import { StarIcon } from "@chakra-ui/icons";
 import { Text } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 export const FilterSort = ({ val1, val2, val3, val4 }) => {
+  const ascSortRef =useRef();
+  const descSortRef =useRef();
+  const cat1Ref = useRef();
+  const cat2Ref = useRef();
+  const cat3Ref = useRef();
+  const cat4Ref = useRef();
+  const rating1Ref = useRef();
+  const rating2Ref = useRef();
+  const rating3Ref = useRef();
+  const rating4Ref = useRef();
+  const rating5Ref = useRef();
   let [searchParams, setSearchParams] = useSearchParams();
   let [category, setcategory] = useState(
     searchParams.getAll("titledesp") || []
@@ -24,6 +35,8 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
   };
   let handlesort = (e) => {
     let option = e.target.value;
+    if(option==='asc'){descSortRef.current.checked=false}
+    if(option==='desc'){ascSortRef.current.checked=false}
     let neworder = [option];
     let newsort = ["price"];
     if (order.includes(option)) {
@@ -44,8 +57,23 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
     }
     setrating(newrating);
   };
-  let handlereset = (e) => {
-    console.log("khfk");
+  let handlereset = () => {
+    searchParams.delete('_sort');
+    searchParams.delete('titledesp');
+    searchParams.delete('_order');
+    searchParams.delete('rating');
+    cat1Ref.current.checked=false;
+    cat2Ref.current.checked=false;
+    cat3Ref.current.checked=false;
+    cat4Ref.current.checked=false;
+    rating1Ref.current.checked=false;
+    rating2Ref.current.checked=false;
+    rating3Ref.current.checked=false;
+    rating4Ref.current.checked=false;
+    rating5Ref.current.checked=false;
+    ascSortRef.current.checked=false;
+    descSortRef.current.checked=false;
+    setSearchParams()
   };
 
   useEffect(() => {
@@ -54,7 +82,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
     rating && (params.rating = rating);
     order && (params._sort = sort) && (params._order = order);
     setSearchParams(params);
-  }, [rating, order, category, setSearchParams]);
+  }, [rating, order, category,sort, setSearchParams]);
 
   return (
     <>
@@ -66,11 +94,12 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
       </div>
       <br />
       {/* sort by price */}
-      <div className="sort-by">
+      <div className="sort-by" >
         <label>Sort by Price</label>
         <br />
         <span>
           <input
+            ref={ascSortRef}
             type="checkbox"
             value="asc"
             onChange={handlesort}
@@ -82,6 +111,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <br />
         <span>
           <input
+            ref={descSortRef}
             type="checkbox"
             value="desc"
             onChange={handlesort}
@@ -93,11 +123,12 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
       </div>
       <br />
       {/* sort by category */}
-      <div className="sort-by">
+      <div className="sort-by" >
         <label>Sort by Category</label>
         <br />
         <span>
           <input
+          ref={cat1Ref}
             type="checkbox"
             value={val1}
             onChange={handleFilter}
@@ -109,6 +140,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <br />
         <span>
           <input
+          ref={cat2Ref}
             type="checkbox"
             value={val2}
             onChange={handleFilter}
@@ -120,6 +152,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <br />
         <span>
           <input
+          ref={cat3Ref}
             type="checkbox"
             value={val3}
             onChange={handleFilter}
@@ -131,6 +164,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <br />
         <span>
           <input
+          ref={cat4Ref}
             type="checkbox"
             value={val4}
             onChange={handleFilter}
@@ -149,6 +183,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <div>
           <div>
             <input
+            ref={rating5Ref}
               type="checkbox"
               value={5}
               onChange={handlerating}
@@ -169,6 +204,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <div>
           <div>
             <input
+            ref={rating4Ref}
               type="checkbox"
               value={4}
               onChange={handlerating}
@@ -190,6 +226,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <div>
           <div>
             <input
+            ref={rating3Ref}
               type="checkbox"
               value={3}
               onChange={handlerating}
@@ -211,6 +248,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <div>
           <div>
             <input
+            ref={rating2Ref}
               type="checkbox"
               value={2}
               onChange={handlerating}
@@ -232,6 +270,7 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
         <div>
           <div>
             <input
+            ref={rating1Ref}
               type="checkbox"
               value={1}
               onChange={handlerating}
