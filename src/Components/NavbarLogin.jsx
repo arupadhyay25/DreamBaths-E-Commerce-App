@@ -49,7 +49,7 @@ export const NavbarLogin = () => {
           <div className="signupsection">
             <button className="logbtn">
               <Link to="/">
-                <i  class="fa-solid fa-right-from-bracket"></i>
+                <i  className="fa-solid fa-right-from-bracket"></i>
               </Link>
             </button>
           </div>
