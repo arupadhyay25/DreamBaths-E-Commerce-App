@@ -1,33 +1,28 @@
 import { AddIcon, DeleteIcon, MinusIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 import axios from "axios";
+import { async } from "q";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { apiproduct } from "./Api";
 
 export const SingleCart = ({ arr, state, setstate }) => {
-  let x = arr.cartquantity;
-  let [page, setpage] = useState(x);
+  let [page, setpage] = useState(1);
 
   let AddQuantocart = (id) => {
     setpage(page + 1);
-    patchdata();
   };
   let SubQuantocart = (id) => {
     setpage(page - 1);
-    patchdata();
   };
-  let handledelete = (id) => {
-    setpage(0);
-    patchdata();
-    setstate((prev) => prev + 1);
-  };
-  let patchdata = () => {
-    let payload = { cartquantity: page };
-    axios.patch(`${apiproduct}/${arr.id}`, payload);
+  let handledelete = async(id) => {
+    console.log(id);
+    let payload = { cartquantity: 0 };
+    await axios
+      .patch(`${apiproduct}/${arr.id}`, payload)
+      .catch((e) => console.log("singlecart", e));
     setstate(state + 1);
   };
-  useEffect(() => {}, [page,state]);
 
   return (
     <div key={arr.id} className="Product-Cart">
@@ -43,7 +38,7 @@ export const SingleCart = ({ arr, state, setstate }) => {
             <MinusIcon />
           </Button>
           &nbsp;&nbsp;
-          <Button>{arr.cartquantity}</Button>&nbsp;&nbsp;
+          <Button>{page}</Button>&nbsp;&nbsp;
           <Button onClick={AddQuantocart}>
             <AddIcon />
           </Button>

@@ -8,6 +8,7 @@ import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
 import axios from "axios";
 import { apiorder, apiproduct } from "../Components/Api";
+import { async } from "q";
 let styles = {
   display: "flex",
   alignItems: "center",
@@ -21,37 +22,37 @@ export const Cartpage = () => {
   let [total, settotal] = useState(0);
   let navigate = useNavigate();
 
+  let sum = 0;
   let sumProduct = () => {
-    if (data.filter((e) => e.cartquantity > 0) === 0) {
+    if (data === 0) {
       settotal(0);
     } else {
-      let sum = 0;
-      data
-        .filter((e) => e.cartquantity > 0)
-        .forEach((e) => (sum += e.price * e.cartquantity));
+      data.forEach((e) => (sum += e.price));
       settotal(sum);
     }
   };
-  let addelement = (elem) => {
-    axios.post(`${apiorder}`, elem);
-  };
+  // let addelement = (elem) => {
+  //   axios.post(`${apiorder}`, elem);
+  // };
   let handlecoupons = () => {
     setcoupons(30);
   };
 
-  let handlecheakoutbutton = () => {
-    data.filter((e) => e.cartquantity > 0).forEach((e) => addelement(e));
-    navigate("/checkout");
-  };
+  // let handlecheakoutbutton = () => {
+  //   data.forEach((e) => addelement(e));
+  //   navigate("/checkout");
+  // };
 
-  let getcartProduct = () => {
-    axios.get(apiproduct).then((r) => setcartdata(r.data));
+  let getproduct = async () => {
+    await axios
+      .get(`${apiproduct}?cartquantity=1`)
+      .then((r) => setcartdata(r.data))
+      .then(sumProduct());
   };
 
   useEffect(() => {
-    getcartProduct();
-    sumProduct();
-  }, [sumProduct,state]);
+    getproduct();
+  }, [state, sum]);
 
   return (
     <>
@@ -66,12 +67,7 @@ export const Cartpage = () => {
       </div>
       <div className="Product-Cart-main">
         <div className="Product-Cart-left">
-          {data
-            .filter((e) => e.cartquantity > 0)
-            .map((arr, i) => (
-              <SingleCart key={i} arr={arr} state={state} setstate={setstate} />
-            ))}
-          {data.filter((e) => e.cartquantity > 0).length == 0 ? (
+          {data && data.length === 0 ? (
             <>
               <img src="/Image/emptycart.jpg" />
               <br />
@@ -82,7 +78,9 @@ export const Cartpage = () => {
               </Center>
             </>
           ) : (
-            false
+            data.map((arr, i) => (
+              <SingleCart key={i} arr={arr} state={state} setstate={setstate} />
+            ))
           )}
         </div>
         <div className="Product-Cart-right">
@@ -159,7 +157,7 @@ export const Cartpage = () => {
             <Center>
               <Button
                 disabled={total == 0}
-                onClick={handlecheakoutbutton}
+                // onClick={handlecheakoutbutton}
                 colorScheme="teal"
               >
                 PROCEED TO CHECKOUT
