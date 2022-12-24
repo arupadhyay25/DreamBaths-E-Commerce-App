@@ -27,7 +27,7 @@ const isUserExist = async (email)=>{
       flag=true;
     }
   }).catch((e)=>{
-    flag=true;
+    flag=false;
     console.log(e)
   })
 
@@ -43,7 +43,7 @@ const isUserExist = async (email)=>{
     const unameRef = useRef();
     const emailRef = useRef();
     const passRef = useRef();
-    const handleAddUser=()=>{
+    const handleAddUser=async()=>{
         let pass=passRef.current.value;
         let strong = validator.isStrongPassword(pass,{
             minLength: 8, minLowercase: 1,
@@ -61,21 +61,22 @@ const isUserExist = async (email)=>{
             "password":passRef.current.value,
             "role":'user'
         }
-        if(isUserExist(emailRef.current.value)){
-          alert('user already exist, do login.');
+        let result=await isUserExist(emailRef.current.value).then((result)=>{return result});
+          
+        if(result){
+          alert('user is already exist. please do login.')
           return;
         }
         axios({
             method:'post',
             url:'https://real-blue-pigeon-belt.cyclic.app/users',
-            data:JSON.stringify(user),
+            data:user,
             headers:{
                 "Content-Type":"application/json"
             }
-        }).then((res)=>{console.log(res.json);alert('user created successfully.\npage is going to redirected to login.');navigate('/login')})
+        }).then((res)=>{alert('user created successfully.\npage is going to redirected to login.');navigate('/login')})
         .catch((err)=>{
-            alert('something went wrong.\nplease try again.')
-            console.log(err);
+            navigate('/login');
         })
     }
     return (
