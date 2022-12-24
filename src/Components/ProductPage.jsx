@@ -11,20 +11,48 @@ import { useSearchParams } from "react-router-dom";
 let getProduct = (category) => {
     return axios.get(`${apiproduct}?category=${category}`);
 };
-let getSortedProduct = (category, titledesp, sort, order) => {
-    return axios.get(
-        `${apiproduct}?category=${category}&titledesp=${titledesp}&_sort=${sort}&_order=${order}`
-    );
+let getSortedProduct = async(category, titledesp, sort, order) => {
+    let data=[];
+    for(let i=0;i<titledesp.length;i++){
+
+        await axios.get(
+            `${apiproduct}?category=${category}&titledesp=${titledesp[i]}&_sort=${sort}&_order=${order}`
+        ).then((r)=>{
+            data.push(...r.data);
+        })
+    }
+    console.log(order,sort);
+    if(order==='asc'){
+        data.sort((a,b)=>{
+            if(a[sort]>b[sort])return 1;
+            if(a[sort]<b[sort])return -1;
+            return 0;
+        })
+    }else{
+        data.sort((a,b)=>{
+            if(a[sort]>b[sort])return -1;
+            if(a[sort]<b[sort])return 1;
+            return 0;
+        })
+    }
+    return data;
 };
 let getPriceSortedProduct = (category, sort, order) => {
     return axios.get(
         `${apiproduct}?category=${category}&_sort=${sort}&_order=${order}`
     );
 };
-let getCatsProducts = (category, titledesp) => {
-    return axios.get(
-        `${apiproduct}?category=${category}&titledesp=${titledesp}`
-    );
+let getCatsProducts = async(category, titledesp) => {
+    let data =[];
+    for(let i=0;i<titledesp.length;i++){
+        await axios.get(
+            `${apiproduct}?category=${category}&titledesp=${titledesp[i]}`
+        ).then((r)=>{
+            data.push(...r.data);
+        })
+    }
+
+    return data;
 };
 export const ProductPage = ({ cat1, cat2, cat3, cat4, heading, category }) => {
     let [page, setpage] = useState(1);
@@ -35,19 +63,23 @@ export const ProductPage = ({ cat1, cat2, cat3, cat4, heading, category }) => {
         console.log(searchParams.get('titledesp'));
         let sortby = searchParams.get("_sort") || "";
         let orderby = searchParams.get("_order") || "";
-        let titledesp = searchParams.get("titledesp") || "";
-        if (titledesp !== "" && sortby !== "" && orderby !== "") {
-            getSortedProduct(category, titledesp, sortby, orderby).then((r) =>
-                setproducts(r.data)
-            );
+        let titledesp = searchParams.getAll("titledesp") || [];
+        if (titledesp.length!==0 && sortby !== "" && orderby !== "") {
+            getSortedProduct(category, titledesp, sortby, orderby).then((data) =>{
+                console.log(data);
+                setproducts(data);
+        });
         } else if (sortby !== "" && orderby !== "") {
             getPriceSortedProduct(category, sortby, orderby).then((r) =>
                 setproducts(r.data)
             );
-        } else if (titledesp !== "") {
-            getCatsProducts(category, titledesp).then((r) =>
-                setproducts(r.data)
-            );
+        } else if (titledesp.length!==0) {
+             getCatsProducts(category, titledesp).then((data)=>{
+
+                console.log(data);
+                setproducts(data);
+            });
+            
         } else {
             getProduct(category).then((r) => setproducts(r.data));
         }
