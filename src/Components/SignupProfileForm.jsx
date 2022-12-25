@@ -16,24 +16,31 @@ import { useRef } from "react";
 import { useState } from "react";
 import {useNavigate } from "react-router-dom";
 import validator from 'validator'
+import { apiurl } from "./Api";
 
 const isUserExist = async (email)=>{
   let flag=false;
   await axios({
     method:'get',
-    url:`https://real-blue-pigeon-belt.cyclic.app/users?email=${email}`
+    url:`${apiurl}/users?email=${email}`
   }).then((res)=>{
-    if(res.data.length!==0){
+    if(res.data.data.length!==0){
       flag=true;
     }
   }).catch((e)=>{
-    flag=true;
+    flag=false;
     console.log(e)
   })
 
   return flag;
 }
-
+const createUser=async(user)=>{
+  return await axios({
+    method:'post',
+    url:`${apiurl}/users/signup`,
+    data:user
+})
+}
 
   
   const SignupProfileForm = () => {
@@ -43,7 +50,7 @@ const isUserExist = async (email)=>{
     const unameRef = useRef();
     const emailRef = useRef();
     const passRef = useRef();
-    const handleAddUser=()=>{
+    const handleAddUser=async()=>{
         let pass=passRef.current.value;
         let strong = validator.isStrongPassword(pass,{
             minLength: 8, minLowercase: 1,
@@ -61,21 +68,16 @@ const isUserExist = async (email)=>{
             "password":passRef.current.value,
             "role":'user'
         }
-        if(isUserExist(emailRef.current.value)){
-          alert('user already exist, do login.');
+        let result=await isUserExist(emailRef.current.value).then((result)=>{return result});
+          
+        if(result){
+          alert('user is already exist. please do login.')
           return;
         }
-        axios({
-            method:'post',
-            url:'https://real-blue-pigeon-belt.cyclic.app/users',
-            data:JSON.stringify(user),
-            headers:{
-                "Content-Type":"application/json"
-            }
-        }).then((res)=>{console.log(res.json);alert('user created successfully.\npage is going to redirected to login.');navigate('/login')})
+        createUser(user)
+        .then((res)=>{alert('user created successfully.\npage is going to redirected to login.');navigate('/login')})
         .catch((err)=>{
-            alert('something went wrong.\nplease try again.')
-            console.log(err);
+            alert("something went wrong. please try again");
         })
     }
     return (

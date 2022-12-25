@@ -58,22 +58,42 @@ export const FilterSort = ({ val1, val2, val3, val4 }) => {
     setrating(newrating);
   };
   let handlereset = () => {
-    searchParams.delete('_sort');
-    searchParams.delete('titledesp');
-    searchParams.delete('_order');
-    searchParams.delete('rating');
     cat1Ref.current.checked=false;
     cat2Ref.current.checked=false;
     cat3Ref.current.checked=false;
     cat4Ref.current.checked=false;
+    setcategory([]);
     rating1Ref.current.checked=false;
     rating2Ref.current.checked=false;
     rating3Ref.current.checked=false;
     rating4Ref.current.checked=false;
     rating5Ref.current.checked=false;
+    setrating([]);
     ascSortRef.current.checked=false;
     descSortRef.current.checked=false;
-    setSearchParams()
+    setorder([]);
+    setsort([]);
+    if(searchParams.has('_sort')){
+
+      searchParams.delete('_sort');
+      setSearchParams(searchParams);
+    }
+    if(searchParams.has('titledesp')){
+
+      searchParams.delete('titledesp');
+      setSearchParams(searchParams);
+    }
+    if(searchParams.has('_order')){
+
+      searchParams.delete('_order');
+      setSearchParams(searchParams);
+    }
+    if(searchParams.has('rating')){
+
+      searchParams.delete('rating');
+      setSearchParams(searchParams);
+    }
+    // setSearchParams(searchParams);
   };
 
   useEffect(() => {

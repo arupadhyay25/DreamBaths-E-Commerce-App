@@ -4,6 +4,7 @@ import { useReducer } from "react";
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from "./action";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { apiurl } from "../../Components/Api";
 
 // 1. create auth context and auth context provider for the entire application to have auth related data;
 
@@ -22,20 +23,19 @@ const AuthContextProvider = ({ children }) => {
   const handleLogin = async (username, password) => {
     dispatch(LOGIN_REQUEST());
     axios
-      .get(`https://real-blue-pigeon-belt.cyclic.app/users?email=${username}&password=${password}`)
+      .post(`${apiurl}/users/login`,{
+          email:username,
+          password:password     
+      })
       .then((res)=>{
-        if(res.data.length===0){
-          dispatch(LOGIN_FAILURE);
-
-        }else{
-          let token=`${username}:${Date.now()}`
-          dispatch(LOGIN_SUCCESS(token));
-          if(res.data[0].role==='user'){
+          localStorage.setItem('token',res.data.token);
+          dispatch(LOGIN_SUCCESS(res.data.token));
+          if(res.data.role==='user'){
             navigate('/');
           }else{
             navigate('/admin');
           }
-        }
+        
       })
       .catch(function (error) {
         dispatch(LOGIN_FAILURE);

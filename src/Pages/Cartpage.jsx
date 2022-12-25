@@ -1,14 +1,13 @@
 import { CalendarIcon } from "@chakra-ui/icons";
 import { Alert, AlertIcon, Button, Center, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { SingleCart } from "../Components/SingleCart";
 import "./Cartpage.css";
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
 import axios from "axios";
-import { apiorder, apiproduct } from "../Components/Api";
-import { async } from "q";
+import {  apiurl } from "../Components/Api";
 let styles = {
   display: "flex",
   alignItems: "center",
@@ -20,34 +19,34 @@ export const Cartpage = () => {
   let [state, setstate] = useState(0);
   let [coupons, setcoupons] = useState(0);
   let [total, settotal] = useState(0);
-  let navigate = useNavigate();
+  
 
   let sum = 0;
-  let sumProduct = () => {
-    if (data === 0) {
+  let sumProduct = (bill) => {
+    if (!bill) {
       settotal(0);
     } else {
-      data.forEach((e) => (sum += e.price));
-      settotal(sum);
+      
+      
+      settotal(bill);
     }
   };
-  // let addelement = (elem) => {
-  //   axios.post(`${apiorder}`, elem);
-  // };
+ 
   let handlecoupons = () => {
     setcoupons(30);
   };
 
-  // let handlecheakoutbutton = () => {
-  //   data.forEach((e) => addelement(e));
-  //   navigate("/checkout");
-  // };
-
   let getproduct = async () => {
     await axios
-      .get(`${apiproduct}?cartquantity=1`)
-      .then((r) => setcartdata(r.data))
-      .then(sumProduct());
+      .get(`${apiurl}/carts/cart`,{
+        headers:{
+          "authorization":`Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      .then((r) => {setcartdata(r.data);return r.data})
+      .then((r)=>{
+        sumProduct(r.bill);
+      });
   };
 
   useEffect(() => {
@@ -60,7 +59,7 @@ export const Cartpage = () => {
       <div className="Product-Cart-Heading">
         <h1 className="Product-Cart-header-h1">Shopping Cart</h1>
         <Alert status="info">
-          <img src="/Image/ship-free.png" width="40px" />
+          <img src="/Image/ship-free.png" width="40px" alt='ship-free'/>
           &nbsp;&nbsp;&nbsp; Yay! No convenience fee on this order.
         </Alert>
         <br />
@@ -69,7 +68,7 @@ export const Cartpage = () => {
         <div className="Product-Cart-left">
           {data && data.length === 0 ? (
             <>
-              <img src="/Image/emptycart.jpg" />
+              <img src="/Image/emptycart.jpg" alt='emptycart'/>
               <br />
               <Center>
                 <Link to="/body-care">
@@ -78,7 +77,7 @@ export const Cartpage = () => {
               </Center>
             </>
           ) : (
-            data.map((arr, i) => (
+            data.items.map((arr, i) => (
               <SingleCart key={i} arr={arr} state={state} setstate={setstate} />
             ))
           )}
@@ -93,7 +92,7 @@ export const Cartpage = () => {
               <CalendarIcon />
               <Text fontSize="md"> Apply Coupons</Text>
               <Button
-                disabled={coupons > 0 || total == 0}
+                disabled={coupons > 0 || total === 0}
                 onClick={handlecoupons}
                 size="sm"
                 colorScheme="red"
@@ -156,7 +155,7 @@ export const Cartpage = () => {
             <br />
             <Center>
               <Button
-                disabled={total == 0}
+                disabled={total === 0}
                 // onClick={handlecheakoutbutton}
                 colorScheme="teal"
               >
