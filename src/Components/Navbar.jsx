@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import Slider from "react-slick";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export const Navbar = () => {
   const [isMobail, setisMobail] = useState(false);
+  const [logined,setLogined]=useState(false);
   const navigate = useNavigate();
   var settings = {
     dots: false,
@@ -14,7 +16,18 @@ export const Navbar = () => {
     slidesToShow: 1,
     autoplay: true,
   };
-
+  useEffect(()=>{
+    let token = localStorage.getItem('token')||"";
+    if(token!==""){
+      setLogined(true);
+    }else{
+      setLogined(false);
+    }
+  },[setLogined]);
+  const logout = ()=>{
+      localStorage.removeItem('token');
+      navigate('/');
+  }
   return (
     <>
       <br />
@@ -48,17 +61,25 @@ export const Navbar = () => {
 
           <div className="signupsection">
             <button className="logbtn">
-              <Link to="/login">
+              {logined?
+                <i className="fa-regular" onClick={logout}>user</i>
+              :<Link to="/login">
                 <i className="fa-regular fa-user"></i>
-              </Link>
+              </Link>}
+              
             </button>
             <button className="favbtn">
               <i className="fa-sharp fa-solid fa-heart"></i>
             </button>
             <button className="cartbtn-0nav">
-              <Link to="/cart">
+              {logined? <Link to="/cart">
                 <i className="fa-solid fa-cart-shopping"></i>
-              </Link>
+              </Link>: 
+                <i className="fa-solid fa-cart-shopping" onClick={()=>{
+                  alert("please login first.")
+                }}></i>
+              }
+             
             </button>
           </div>
         </div>

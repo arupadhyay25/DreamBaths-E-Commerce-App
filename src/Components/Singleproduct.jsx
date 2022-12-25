@@ -13,7 +13,7 @@ import {
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { apiproduct } from "./Api";
+import { apiurl } from "./Api";
 import "./SingleProduct.css";
 
 export const Singleproduct = ({
@@ -31,9 +31,27 @@ export const Singleproduct = ({
 }) => {
   let [cartstatus, setcartstatus] = useState(false);
   let handleAddtocart = (id) => {
-    let payload = { cartquantity: 1 };
-    axios.patch(`${apiproduct}/${id}`, payload).then(setstate(state + 1));
-    setcartstatus(true);
+    let token = localStorage.getItem('token')||0;
+    if(token){
+      axios({
+        method:'post',
+        url:`${apiurl}/carts/cart`,
+        data:{
+          itemId:id,
+          quantity:1
+        },
+        headers:{
+          "authorization":`Bearer ${localStorage.getItem('token')}`
+        }
+      }).then((res)=>{
+        setcartstatus(true);
+      }).catch((e)=>{
+        alert("something went wrong.")
+      })
+    }else{
+      alert("please login first.");
+    }
+    
   };
 
   return (
