@@ -1,13 +1,13 @@
 import { CalendarIcon } from "@chakra-ui/icons";
 import { Alert, AlertIcon, Button, Center, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SingleCart } from "../Components/SingleCart";
 import "./Cartpage.css";
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
 import axios from "axios";
-import {  apiurl } from "../Components/Api";
+import { apiurl } from "../Components/Api";
 let styles = {
   display: "flex",
   alignItems: "center",
@@ -19,34 +19,38 @@ export const Cartpage = () => {
   let [state, setstate] = useState(0);
   let [coupons, setcoupons] = useState(0);
   let [total, settotal] = useState(0);
-  
+  let navigate = useNavigate();
 
   let sum = 0;
   let sumProduct = (bill) => {
     if (!bill) {
       settotal(0);
     } else {
-      
-      
       settotal(bill);
     }
   };
- 
+
   let handlecoupons = () => {
     setcoupons(30);
   };
 
   let getproduct = async () => {
     await axios
-      .get(`${apiurl}/carts/cart`,{
-        headers:{
-          "authorization":`Bearer ${localStorage.getItem('token')}`
-        }
+      .get(`${apiurl}/carts/cart`, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       })
-      .then((r) => {setcartdata(r.data);return r.data})
-      .then((r)=>{
+      .then((r) => {
+        setcartdata(r.data);
+        return r.data;
+      })
+      .then((r) => {
         sumProduct(r.bill);
       });
+  };
+  let handlecheakoutbutton = () => {
+    navigate("/checkout")
   };
 
   useEffect(() => {
@@ -59,7 +63,7 @@ export const Cartpage = () => {
       <div className="Product-Cart-Heading">
         <h1 className="Product-Cart-header-h1">Shopping Cart</h1>
         <Alert status="info">
-          <img src="/Image/ship-free.png" width="40px" alt='ship-free'/>
+          <img src="/Image/ship-free.png" width="40px" alt="ship-free" />
           &nbsp;&nbsp;&nbsp; Yay! No convenience fee on this order.
         </Alert>
         <br />
@@ -68,7 +72,7 @@ export const Cartpage = () => {
         <div className="Product-Cart-left">
           {data && data.length === 0 ? (
             <>
-              <img src="/Image/emptycart.jpg" alt='emptycart'/>
+              <img src="/Image/emptycart.jpg" alt="emptycart" />
               <br />
               <Center>
                 <Link to="/body-care">
@@ -156,7 +160,7 @@ export const Cartpage = () => {
             <Center>
               <Button
                 disabled={total === 0}
-                // onClick={handlecheakoutbutton}
+                onClick={handlecheakoutbutton}
                 colorScheme="teal"
               >
                 PROCEED TO CHECKOUT

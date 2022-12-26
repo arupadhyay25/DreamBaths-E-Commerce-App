@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { apiproduct } from "./Api";
+import { apiproduct, apiurl } from "./Api";
 import { Singleproduct } from "./Singleproduct";
 
 let initState = {
@@ -37,12 +37,11 @@ export const AddPatch = () => {
       image: pimg,
       price: Number(pprice),
       titledesp: psubcat,
-      cartquantity: 0,
       category: pcat,
       reviewCount: 264,
       rating: 4,
     });
-    axios.post(`${apiproduct}`, patchdata);
+    axios.post(`${apiurl}/products`, patchdata);
     setpcat("");
     setpsubcat("");
     setpcat("");

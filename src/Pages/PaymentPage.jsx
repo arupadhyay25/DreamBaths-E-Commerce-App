@@ -15,6 +15,8 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { resetcartbag } from "../Redux/action";
+import axios from "axios";
+import { apiurl } from "../Components/Api";
 
 export const PaymentPage = () => {
   let navigate = useNavigate();
@@ -27,9 +29,11 @@ export const PaymentPage = () => {
     });
   }
   let handlecheakout = () => {
-    data
-      .filter((e) => e.cartquantity > 0)
-      .forEach((e) => dispatch(resetcartbag(e.id)));
+    axios.delete(`${apiurl}/carts/cart/clear`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
     Swal.fire({
       title: "Order Placed Succesfully !!",
       text: "Thankyou For Shoping",

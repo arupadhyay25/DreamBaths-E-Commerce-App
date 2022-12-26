@@ -33,8 +33,6 @@ const ProfileForm = () => {
 
   let { username, password } = formdata;
 
-  console.log({ username });
-
   const onSubmit = (e) => {
     let { username, password } = formdata;
     handleLogin(username, password);
@@ -98,9 +96,9 @@ const ProfileForm = () => {
               variant="outline"
               colorScheme="blue"
               w="full"
-              disabled={state.loading === true}
+              // disabled={state.loading === true}
             >
-              {state.loading ? <Spinner /> : "Login"}
+              Login
             </Button>
             <FormLabel fontSize={13}>&nbsp;</FormLabel>
             <FormLabel fontSize={13}>
@@ -110,11 +108,13 @@ const ProfileForm = () => {
               </Link>
             </FormLabel>
             <Button
-              onClick={()=>{navigate('/signup')}}
+              onClick={() => {
+                navigate("/signup");
+              }}
               variant="outline"
               colorScheme="blue"
               w="full"
-              disabled={state.loading === true}
+              // disabled={state.loading === true}
             >
               Signup
             </Button>

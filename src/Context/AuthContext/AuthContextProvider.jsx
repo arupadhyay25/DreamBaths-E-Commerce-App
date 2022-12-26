@@ -18,28 +18,28 @@ const AuthContextProvider = ({ children }) => {
   let dispatcher = { isAuth: false, token: "C4_Eval", loading: false };
 
   let [state, dispatch] = useReducer(Reducer, dispatcher);
-  let navigate =useNavigate()
+  let navigate = useNavigate();
 
   const handleLogin = async (username, password) => {
     dispatch(LOGIN_REQUEST());
     axios
-      .post(`${apiurl}/users/login`,{
-          email:username,
-          password:password     
+      .post(`${apiurl}/users/login`, {
+        email: username,
+        password: password,
       })
-      .then((res)=>{
-          localStorage.setItem('token',res.data.token);
-          dispatch(LOGIN_SUCCESS(res.data.token));
-          if(res.data.role==='user'){
-            navigate('/');
-          }else{
-            navigate('/admin');
-          }
-        
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        dispatch(LOGIN_SUCCESS(res.data.token));
+        if (res.data.role === "user") {
+          navigate("/");
+        } else {
+          navigate("/admin");
+        }
       })
       .catch(function (error) {
         dispatch(LOGIN_FAILURE);
-        // alert(error,"Login Again !!!!");
+        alert("Login Again !!!!");
+        navigate("/login");
       });
   };
   return (

@@ -4,11 +4,23 @@ import "./Navbar.css";
 import Slider from "react-slick";
 import { useState } from "react";
 import { useEffect } from "react";
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 export const Navbar = () => {
   const [isMobail, setisMobail] = useState(false);
-  const [logined,setLogined]=useState(false);
+  const [logined, setLogined] = useState(false);
   const navigate = useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   var settings = {
     dots: false,
     infinite: true,
@@ -16,18 +28,19 @@ export const Navbar = () => {
     slidesToShow: 1,
     autoplay: true,
   };
-  useEffect(()=>{
-    let token = localStorage.getItem('token')||"";
-    if(token!==""){
+  const logout = () => {
+    onClose();
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
+  useEffect(() => {
+    let token = localStorage.getItem("token") || "";
+    if (token !== "") {
       setLogined(true);
-    }else{
+    } else {
       setLogined(false);
     }
-  },[setLogined]);
-  const logout = ()=>{
-      localStorage.removeItem('token');
-      navigate('/');
-  }
+  }, [setLogined, logined]);
   return (
     <>
       <br />
@@ -61,25 +74,58 @@ export const Navbar = () => {
 
           <div className="signupsection">
             <button className="logbtn">
-              {logined?
-                <i className="fa-regular" onClick={logout}>user</i>
-              :<Link to="/login">
-                <i className="fa-regular fa-user"></i>
-              </Link>}
-              
+              {logined ? (
+                <>
+                  <i
+                    className="fa-solid fa-right-from-bracket"
+                    onClick={onOpen}
+                  ></i>
+
+                  {/* <Button onClick={onOpen}>Open Modal</Button> */}
+
+                  <Modal isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Are you sure ?</ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        {/* <Lorem count={2} /> */}
+                        On clicking yes you will be Logged out !!!
+                      </ModalBody>
+
+                      <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                          No
+                        </Button>
+                        <Button onClick={logout} variant="ghost">
+                          Yes
+                        </Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
+                </>
+              ) : (
+                <Link to="/login">
+                  <i className="fa-regular fa-user"></i>
+                </Link>
+              )}
             </button>
             <button className="favbtn">
               <i className="fa-sharp fa-solid fa-heart"></i>
             </button>
             <button className="cartbtn-0nav">
-              {logined? <Link to="/cart">
-                <i className="fa-solid fa-cart-shopping"></i>
-              </Link>: 
-                <i className="fa-solid fa-cart-shopping" onClick={()=>{
-                  alert("please login first.")
-                }}></i>
-              }
-             
+              {logined ? (
+                <Link to="/cart">
+                  <i className="fa-solid fa-cart-shopping"></i>
+                </Link>
+              ) : (
+                <i
+                  className="fa-solid fa-cart-shopping"
+                  onClick={() => {
+                    alert("please login first.");
+                  }}
+                ></i>
+              )}
             </button>
           </div>
         </div>

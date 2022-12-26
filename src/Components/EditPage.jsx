@@ -9,7 +9,7 @@ import {
   Select,
   Text,
 } from "@chakra-ui/react";
-import { apiproduct } from "./Api";
+import { apiproduct, apiurl } from "./Api";
 import { Singleproduct } from "./Singleproduct";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -36,11 +36,11 @@ export const EditPage = () => {
   let [showdata, setshowdata] = useState(initState);
 
   let getproductbyid = () => {
-    axios.get(`${apiproduct}/${id}`).then((r) => setshowdata(r.data));
+    axios.get(`${apiurl}/products/${id}`).then((r) => setshowdata(r.data));
   };
 
   let addpatch = () => {
-    axios.patch(`${apiproduct}/${id}`, patchdata);
+    axios.patch(`${apiurl}/products/${id}`, patchdata);
     setkey("");
     setvalue("");
     setflag(true);
